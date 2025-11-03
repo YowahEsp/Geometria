@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áreas y Volúmenes de Figuras Geométricas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <style>
@@ -13,7 +17,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
             color: #333;
@@ -147,7 +151,7 @@
             transform: scale(1.1);
         }
         .formula {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'STIX Two Math', 'Times New Roman', serif;
             font-size: 14px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -156,6 +160,27 @@
             margin-top: 12px;
             line-height: 1.7;
             font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .frac {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0.2em;
+            text-align: center;
+            font-size: 0.9em;
+            line-height: 1.2;
+        }
+        .frac-numer {
+            display: block;
+            border-bottom: 2px solid white;
+            padding: 0 0.3em;
+        }
+        .frac-denom {
+            display: block;
+            padding: 0.1em 0.3em 0;
+        }
+        .frac sub, .frac sup {
+            font-size: 0.8em;
         }
         .modal {
             display: none;
@@ -248,7 +273,7 @@
             border-radius: 20px;
         }
         .modal-formula {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'STIX Two Math', 'Times New Roman', serif;
             font-size: 18px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -260,6 +285,17 @@
             line-height: 2;
             font-weight: 500;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            letter-spacing: 0.5px;
+        }
+        .modal-formula .frac {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        .modal-formula .frac-numer {
+            padding: 0.1em 0.4em;
+        }
+        .modal-formula .frac-denom {
+            padding: 0.2em 0.4em 0;
         }
         .controls-hint {
             text-align: center;
@@ -346,409 +382,437 @@
 <body>
     <div class="container">
         <h1>📐 Áreas y Volúmenes de Figuras Geométricas 📊</h1>
-        <!-- Sección 1: Figuras Planas -->
         <div class="section">
             <div class="section-title">✏️ Áreas y Perímetros de Figuras Planas</div>
             <div class="grid">
-                <!-- Cuadrado -->
                 <div class="figure-card" onclick="openModal('cuadrado')">
                     <div class="figure-title">Cuadrado</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <rect x="40" y="40" width="120" height="120" class="fig-cuadrado"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">a</text>
-                            <text x="175" y="100" text-anchor="middle" class="label">a</text>
+                            <rect x="50" y="50" width="100" height="100" class="fig-cuadrado"/>
+                            <text x="100" y="165" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 4a<br>A = a²</div>
+                    <div class="formula">P = 4a<br>A = a<sup>2</sup></div>
                 </div>
-                <!-- Rectángulo -->
                 <div class="figure-card" onclick="openModal('rectangulo')">
                     <div class="figure-title">Rectángulo</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <rect x="30" y="50" width="140" height="80" class="fig-rectangulo"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">b</text>
-                            <text x="185" y="90" text-anchor="middle" class="label">h</text>
+                            <rect x="40" y="60" width="120" height="70" class="fig-rectangulo"/>
+                            <text x="100" y="145" text-anchor="middle" class="label">b</text>
+                            <text x="170" y="95" text-anchor="middle" class="label">h</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2(b+h)<br>A = b·h</div>
+                    <div class="formula">P = 2(b+h)<br>A = bh</div>
                 </div>
-                <!-- Paralelogramo -->
                 <div class="figure-card" onclick="openModal('paralelogramo')">
                     <div class="figure-title">Paralelogramo</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="40,50 160,50 140,130 20,130" class="fig-paralelogramo"/>
-                            <line x1="20" y1="130" x2="20" y2="50" class="aux-line"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">b</text>
-                            <text x="10" y="90" text-anchor="middle" class="label">h</text>
+                            <polygon points="70,50 170,50 150,130 50,130" class="fig-paralelogramo"/>
+                            <line x1="50" y1="130" x2="50" y2="50" class="aux-line"/>
+                            <text x="110" y="145" text-anchor="middle" class="label">b</text>
+                            <text x="40" y="90" text-anchor="middle" class="label">h</text>
+                            <text x="145" y="90" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2(a+b)<br>A = b·h</div>
+                    <div class="formula">P = 2(a+b)<br>A = bh</div>
                 </div>
-                <!-- Rombo -->
                 <div class="figure-card" onclick="openModal('rombo')">
                     <div class="figure-title">Rombo</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,30 170,100 100,170 30,100" class="fig-rombo"/>
-                            <line x1="30" y1="100" x2="170" y2="100" class="aux-line"/>
-                            <line x1="100" y1="30" x2="100" y2="170" class="aux-line"/>
-                            <text x="100" y="15" text-anchor="middle" class="label">D</text>
-                            <text x="15" y="100" text-anchor="middle" class="label">d</text>
-                            <text x="135" y="65" text-anchor="middle" class="label">a</text>
+                            <polygon points="100,25 145,100 100,175 55,100" class="fig-rombo"/>
+                            <line x1="55" y1="100" x2="145" y2="100" class="aux-line"/> 
+                            <line x1="100" y1="25" x2="100" y2="175" class="aux-line"/> 
+                            <text x="125" y="110" text-anchor="middle" class="label">d</text>
+                            <text x="105" y="75" text-anchor="middle" class="label">D</text>
+                            <text x="125" y="65" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 4a<br>A = (D·d)/2</div>
+                    <div class="formula">P = 4a = 4√((d/2)<sup>2</sup>+(D/2)<sup>2</sup>)<br>A = <div class="frac"><span class="frac-numer">D·d</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Trapecio -->
                 <div class="figure-card" onclick="openModal('trapecio')">
                     <div class="figure-title">Trapecio</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="50,50 150,50 130,130 70,130" class="fig-trapecio"/>
-                            <line x1="70" y1="130" x2="70" y2="50" class="aux-line"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">B</text>
-                            <text x="65" y="90" text-anchor="middle" class="label">h</text>
-                            <text x="30" y="90" text-anchor="middle" class="label">b</text>
+                            <polygon points="60,50 140,50 160,130 40,130" class="fig-trapecio"/>
+                            <line x1="60" y1="50" x2="60" y2="130" class="aux-line"/>
+                            <text x="100" y="145" text-anchor="middle" class="label">B</text>
+                            <text x="100" y="45" text-anchor="middle" class="label">b</text>
+                            <text x="50" y="90" text-anchor="middle" class="label">h</text>
+                            <text x="30" y="90" text-anchor="middle" class="label">a</text>
+                            <text x="155" y="90" text-anchor="middle" class="label">c</text>
                         </svg>
                     </div>
-                    <div class="formula">P = a+B+c+b<br>A = (B+b)·h/2</div>
+                    <div class="formula">P = a+B+c+b<br>A = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Trapecio Recto -->
                 <div class="figure-card" onclick="openModal('trapecio_recto')">
                     <div class="figure-title">Trapecio Recto</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="40,50 160,50 160,130 70,130" class="fig-trapecio-recto"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">B</text>
-                            <text x="30" y="90" text-anchor="middle" class="label">b</text>
-                            <text x="165" y="90" text-anchor="middle" class="label">h</text>
+                            <polygon points="70,50 140,50 140,130 50,130" class="fig-trapecio-recto"/>
+                            <text x="95" y="145" text-anchor="middle" class="label">B</text>
+                            <text x="105" y="45" text-anchor="middle" class="label">b</text>
+                            <text x="150" y="90" text-anchor="middle" class="label">h</text>
+                            <text x="40" y="90" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">A = (B+b)·h/2</div>
+                    <div class="formula" style="line-height: 1.5; font-size: 13px;">P = a+b+B+h<br>P = b+B+h+√((B-b)<sup>2</sup>+h<sup>2</sup>)<br>A = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Triángulo Equilátero -->
                 <div class="figure-card" onclick="openModal('triangulo_equilatero')">
                     <div class="figure-title">Triángulo Equilátero</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,40 160,140 40,140" class="fig-triangulo-equilatero"/>
-                            <line x1="100" y1="40" x2="100" y2="140" class="aux-line"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">a</text>
-                            <text x="110" y="90" text-anchor="middle" class="label">h</text>
+                            <polygon points="100,45 165,145 35,145" class="fig-triangulo-equilatero"/>
+                            <line x1="100" y1="45" x2="100" y2="145" class="aux-line"/>
+                            <text x="100" y="160" text-anchor="middle" class="label">a</text>
+                            <text x="110" y="95" text-anchor="middle" class="label">h</text>
+                            <text x="140" y="95" text-anchor="middle" class="label">a</text>
+                            <text x="60" y="95" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 3a<br>A = a·h/2</div>
+                    <div class="formula">P = 3a<br>A = <div class="frac"><span class="frac-numer">ah</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Triángulo Isósceles -->
                 <div class="figure-card" onclick="openModal('triangulo_isosceles')">
                     <div class="figure-title">Triángulo Isósceles</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,40 160,140 40,140" class="fig-triangulo-isosceles"/>
-                            <line x1="100" y1="40" x2="100" y2="140" class="aux-line"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">b</text>
-                            <text x="110" y="90" text-anchor="middle" class="label">h</text>
-                            <text x="50" y="140" text-anchor="middle" class="label">a</text>
-                            <text x="150" y="140" text-anchor="middle" class="label">a</text>
+                            <polygon points="100,30 140,155 60,155" class="fig-triangulo-isosceles"/>
+                            <line x1="100" y1="30" x2="100" y2="155" class="aux-line"/>
+                            <text x="100" y="175" text-anchor="middle" class="label">b</text>
+                            <text x="110" y="100" text-anchor="middle" class="label">h</text>
+                            <text x="130" y="95" text-anchor="middle" class="label">a</text>
+                            <text x="70" y="95" text-anchor="middle" class="label">a</text>
+                            <text x="100" y="25" text-anchor="middle" class="label">B</text>
+                            <text x="55" y="160" text-anchor="middle" class="label">A</text>
+                            <text x="145" y="160" text-anchor="middle" class="label">C</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2a+b<br>A = b·h/2</div>
+                    <div class="formula">P = 2a+b<br>A = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Triángulo Escaleno -->
                 <div class="figure-card" onclick="openModal('triangulo_escaleno')">
                     <div class="figure-title">Triángulo Escaleno</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="70,50 160,140 40,140" class="fig-triangulo-escaleno"/>
-                            <line x1="70" y1="50" x2="70" y2="140" class="aux-line"/>
-                            <text x="100" y="190" text-anchor="middle" class="label">b</text>
-                            <text x="75" y="95" text-anchor="middle" class="label">h</text>
+                            <polygon points="85,50 165,145 35,145" class="fig-triangulo-escaleno"/>
+                            <line x1="85" y1="50" x2="85" y2="145" class="aux-line"/>
+                            <text x="85" y="40" text-anchor="middle" class="label">B</text>
+                            <text x="100" y="160" text-anchor="middle" class="label">b</text>
+                            <text x="75" y="98" text-anchor="middle" class="label">h</text>
+                            <text x="125" y="98" text-anchor="middle" class="label">c</text>
+                            <text x="60" y="98" text-anchor="middle" class="label">a</text>
+                            <text x="50" y="150" text-anchor="middle" class="label">C</text>
+                            <text x="150" y="150" text-anchor="middle" class="label">A</text>
                         </svg>
                     </div>
-                    <div class="formula">P = a+b+c<br>A = b·h/2</div>
+                    <div class="formula">P = a+b+c<br>A = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Pentágono Regular -->
                 <div class="figure-card" onclick="openModal('pentagono')">
                     <div class="figure-title">Pentágono Regular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,40 160,70 140,130 60,130 40,70" class="fig-pentagono"/>
-                            <circle cx="100" cy="85" r="5" fill="#e74c3c"/>
-                            <line x1="100" y1="85" x2="100" y2="40" class="aux-line"/>
-                            <text x="105" y="60" text-anchor="middle" class="label">a</text>
-                            <text x="130" y="50" text-anchor="middle" class="label">b</text>
+                            <polygon points="100,40 170,85 145,155 55,155 30,85" class="fig-pentagono"/>
+                            <circle cx="100" cy="105" r="3" fill="#333"/>
+                            <line x1="100" y1="105" x2="100" y2="155" class="aux-line"/>
+                            <line x1="100" y1="105" x2="145" y2="155" class="aux-line"/>
+                            <text x="105" y="130" text-anchor="start" class="label">a</text>
+                            <text x="125" y="135" text-anchor="middle" class="label">r</text>
+                            <text x="100" y="170" text-anchor="middle" class="label">b</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 5b<br>A = P·a/2</div>
+                    <div class="formula">P = 5b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Hexágono Regular -->
                 <div class="figure-card" onclick="openModal('hexagono')">
                     <div class="figure-title">Hexágono Regular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,40 150,65 150,115 100,140 50,115 50,65" class="fig-hexagono"/>
-                            <circle cx="100" cy="90" r="5" fill="#e74c3c"/>
-                            <line x1="100" y1="90" x2="100" y2="40" class="aux-line"/>
-                            <text x="105" y="65" text-anchor="middle" class="label">a</text>
-                            <text x="125" y="90" text-anchor="middle" class="label">b</text>
+                            <polygon points="100,50 143.3,75 143.3,125 100,150 56.7,125 56.7,75" class="fig-hexagono"/>
+                            <circle cx="100" cy="100" r="3" fill="#333"/>
+                            <line x1="100" y1="100" x2="100" y2="150" class="aux-line"/>
+                            <line x1="100" y1="100" x2="143.3" y2="125" class="aux-line"/>
+                            <text x="105" y="125" text-anchor="start" class="label">a</text>
+                            <text x="125" y="115" text-anchor="middle" class="label">b</text>
+                            <text x="78.35" y="137.5" text-anchor="middle" class="label">b</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 6b<br>A = P·a/2</div>
+                    <div class="formula">P = 6b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Círculo -->
                 <div class="figure-card" onclick="openModal('circulo')">
                     <div class="figure-title">Círculo</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <circle cx="100" cy="100" r="70" class="fig-circulo"/>
-                            <line x1="100" y1="100" x2="170" y2="100" class="aux-line"/>
-                            <text x="135" y="95" text-anchor="middle" class="label">r</text>
+                            <circle cx="100" cy="100" r="65" class="fig-circulo"/>
+                            <line x1="100" y1="100" x2="165" y2="100" class="aux-line"/>
+                            <circle cx="100" cy="100" r="3" fill="#333"/>
+                            <text x="132" y="95" text-anchor="middle" class="label">r</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2πr<br>A = πr²</div>
+                    <div class="formula">P = 2πr<br>A = πr<sup>2</sup></div>
                 </div>
-                <!-- Sector Circular -->
                 <div class="figure-card" onclick="openModal('sector_circular')">
                     <div class="figure-title">Sector Circular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <path d="M100,100 L170,100 A70,70 0 0,1 100,30 Z" class="fig-sector"/>
-                            <line x1="100" y1="100" x2="170" y2="100" class="aux-line"/>
-                            <path d="M120,100 A20,20 0 0,1 110,90" class="angle-arc"/>
-                            <text x="125" y="95" text-anchor="middle" class="angle-label">α</text>
-                            <text x="135" y="95" text-anchor="middle" class="label">r</text>
+                            <path d="M50,150 L150,150 A100,100 0 0,0 50,50 Z" class="fig-sector"/>
+                            <path d="M70,150 A20,20 0 0,0 50,130" class="angle-arc"/>
+                            <text x="70" y="135" text-anchor="middle" class="angle-label">α</text>
+                            <text x="100" y="165" text-anchor="middle" class="label">r</text>
+                            <text x="40" y="100" text-anchor="middle" class="label">r</text>
+                            <text x="115" y="85" text-anchor="middle" class="label">L</text>
                         </svg>
                     </div>
-                    <div class="formula">L = πr·α/180<br>A = πr²·α/360</div>
+                    <div class="formula">L = <div class="frac"><span class="frac-numer">πrα</span><span class="frac-denom">180</span></div><br>A = <div class="frac"><span class="frac-numer">πr<sup>2</sup>α</span><span class="frac-denom">360</span></div></div>
                 </div>
-                <!-- Corona Circular -->
                 <div class="figure-card" onclick="openModal('corona_circular')">
                     <div class="figure-title">Corona Circular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <circle cx="100" cy="100" r="70" class="fig-corona"/>
+                            <circle cx="100" cy="100" r="65" class="fig-corona"/>
                             <circle cx="100" cy="100" r="40" fill="white" stroke="#16a085" stroke-width="3"/>
-                            <line x1="100" y1="100" x2="170" y2="100" class="aux-line"/>
-                            <line x1="100" y1="100" x2="140" y2="100" class="aux-line"/>
-                            <text x="135" y="95" text-anchor="middle" class="label">R</text>
-                            <text x="120" y="95" text-anchor="middle" class="label">r</text>
+                            <line x1="100" y1="100" x2="165" y2="100" class="aux-line"/>
+                            <line x1="100" y1="100" x2="100" y2="60" class="aux-line"/>
+                            <circle cx="100" cy="100" r="3" fill="#333"/>
+                            <text x="132" y="95" text-anchor="middle" class="label">R</text>
+                            <text x="105" y="80" text-anchor="start" class="label">r</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2π(R+r)<br>A = π(R²-r²)</div>
+                    <div class="formula">P = 2π(R+r)<br>A = π(R<sup>2</sup>-r<sup>2</sup>)</div>
                 </div>
-                <!-- Elipse -->
                 <div class="figure-card" onclick="openModal('elipse')">
                     <div class="figure-title">Elipse</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <ellipse cx="100" cy="100" rx="80" ry="50" class="fig-elipse"/>
-                            <line x1="100" y1="100" x2="180" y2="100" class="aux-line"/>
+                            <ellipse cx="100" cy="100" rx="75" ry="50" class="fig-elipse"/>
+                            <line x1="100" y1="100" x2="175" y2="100" class="aux-line"/>
                             <line x1="100" y1="100" x2="100" y2="50" class="aux-line"/>
-                            <text x="140" y="95" text-anchor="middle" class="label">a</text>
-                            <text x="105" y="75" text-anchor="middle" class="label">b</text>
+                            <circle cx="100" cy="100" r="3" fill="#333"/>
+                            <text x="137" y="95" text-anchor="middle" class="label">a</text>
+                            <text x="105" y="75" text-anchor="start" class="label">b</text>
                         </svg>
                     </div>
-                    <div class="formula">P ≈ π(a+b)<br>A = π·a·b</div>
+                    <div class="formula">P ≈ π(a+b)<br>A = πab</div>
                 </div>
             </div>
         </div>
-        <!-- Sección 2: Figuras en el Espacio -->
         <div class="section">
             <div class="section-title">🔷 Áreas y Volúmenes de Figuras en el Espacio</div>
             <div class="grid">
-                <!-- Cubo -->
+                <!-- ===== INICIO DE CAMBIOS ===== -->
+                <!-- Se ha cambiado el viewBox de 0 0 200 200 a 25 25 150 150 para hacer zoom -->
                 <div class="figure-card" onclick="open3DModal('cubo')">
                     <div class="figure-title">Cubo</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="0 0 200 200">
-                            <!-- Cara frontal (azul) -->
+                        <svg class="figure-svg" viewBox="25 25 150 150">
                             <polygon points="50,80 50,160 130,160 130,80" fill="#5b9bd5" stroke="#000" stroke-width="2.5"/>
-                            <!-- Cara superior (azul claro) -->
                             <polygon points="50,80 90,50 170,50 130,80" fill="#8ab8e6" stroke="#000" stroke-width="2.5"/>
-                            <!-- Cara lateral derecha (azul medio) -->
                             <polygon points="130,80 170,50 170,130 130,160" fill="#6faad9" stroke="#000" stroke-width="2.5"/>
-                            <!-- Líneas internas discontinuas -->
                             <line x1="50" y1="80" x2="50" y2="160" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="50" y1="160" x2="130" y2="160" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="50" y1="160" x2="90" y2="130" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="90" y1="50" x2="90" y2="130" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="50" y1="80" x2="90" y2="50" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="90" y1="130" x2="170" y2="130" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
-                            <!-- Sin etiquetas de texto -->
                         </svg>
                     </div>
                     <div class="formula">Área: A = 6a²<br>Volumen: V = a³</div>
                 </div>
-                <!-- Ortoedro -->
                 <div class="figure-card" onclick="open3DModal('ortoedro')">
                     <div class="figure-title">Ortoedro/Prisma</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="0 0 200 200">
-                            <!-- Cara frontal (coral) - más ancha -->
+                        <svg class="figure-svg" viewBox="25 25 150 150">
                             <polygon points="30,80 30,160 150,160 150,80" fill="#e87c7c" stroke="#000" stroke-width="2.5"/>
-                            <!-- Cara superior (coral claro) - más larga -->
                             <polygon points="30,80 80,55 180,55 150,80" fill="#f5a5a5" stroke="#000" stroke-width="2.5"/>
-                            <!-- Cara lateral derecha (coral medio) - más estrecha -->
                             <polygon points="150,80 180,55 180,135 150,160" fill="#ee9090" stroke="#000" stroke-width="2.5"/>
-                            <!-- Líneas internas discontinuas -->
                             <line x1="30" y1="80" x2="30" y2="160" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="30" y1="160" x2="150" y2="160" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="30" y1="160" x2="80" y2="135" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="80" y1="55" x2="80" y2="135" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="30" y1="80" x2="80" y2="55" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
                             <line x1="80" y1="135" x2="180" y2="135" stroke="#000" stroke-width="2" stroke-dasharray="5,3"/>
-                            <!-- Sin etiquetas de texto -->
                         </svg>
                     </div>
-                    <div class="formula">Área: A = 2(ab+ac+bc)<br>Volumen: V = a×b×c</div>
+                    <div class="formula">Área: A = 2(ab+ac+bc)<br>Volumen: V = a·b·c</div>
                 </div>
-                <!-- Esfera -->
+                
                 <div class="figure-card" onclick="open3DModal('esfera')">
                     <div class="figure-title">Esfera</div>
                     <div class="figure-container">
-                        <div id="mini-esfera" class="mini-3d-container"></div>
+                        <svg class="figure-svg" viewBox="25 25 150 150">
+                            <!-- Fill the main circle -->
+                            <circle cx="100" cy="100" r="55" stroke="#000" stroke-width="2" fill="#2ecc71" fill-opacity="0.7"/>
+                            <!-- Redraw the center ellipse (no fill) -->
+                            <ellipse cx="100" cy="100" rx="55" ry="20" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+                        </svg>
                     </div>
-                    <div class="formula">A = 4πr²<br>V = (4/3)πr³</div>
+                    <div class="formula">A = 4πr²<br>V = <div class="frac"><span class="frac-numer">4</span><span class="frac-denom">3</span></div>πr³</div>
                 </div>
-                <!-- Cilindro -->
                 <div class="figure-card" onclick="open3DModal('cilindro')">
                     <div class="figure-title">Cilindro</div>
                     <div class="figure-container">
-                        <div id="mini-cilindro" class="mini-3d-container"></div>
+                        <svg class="figure-svg" viewBox="25 25 150 150">
+                            <!-- Fill the body first -->
+                            <path d="M60,70 L60,140 A40,15 0 0,0 140,140 L140,70 A40,15 0 0,1 60,70 Z" fill="#9b59b6" fill-opacity="0.7" stroke="none"/>
+                            <!-- Fill the top ellipse -->
+                            <ellipse cx="100" cy="70" rx="40" ry="15" fill="#9b59b6" fill-opacity="0.7" stroke="none"/>
+                            
+                            <!-- Draw contours on top -->
+                            <ellipse cx="100" cy="70" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
+                            <line x1="60" y1="70" x2="60" y2="140" stroke="#000" stroke-width="2"/>
+                            <line x1="140" y1="70" x2="140" y2="140" stroke="#000" stroke-width="2"/>
+                            <ellipse cx="100" cy="140" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
+                            <path d="M60,70 A40,15 0 0,1 140,70" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+                        </svg>
                     </div>
-                    <div class="formula">A_lat = 2πrh<br>V = πr²h</div>
+                    <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = 2πrh<br>A<sub>tot</sub> = 2πr(r+h)<br>V = πr²h</div>
                 </div>
-                <!-- Cono -->
                 <div class="figure-card" onclick="open3DModal('cono')">
                     <div class="figure-title">Cono</div>
                     <div class="figure-container">
-                        <div id="mini-cono" class="mini-3d-container"></div>
+                        <svg class="figure-svg" viewBox="25 25 150 150">
+                            <!-- Fill the cone body and bottom ellipse -->
+                            <path d="M100,40 L60,140 A40,15 0 0,0 140,140 Z" fill="#f39c12" fill-opacity="0.7" stroke="none" />
+                            
+                            <!-- Redraw contours on top -->
+                            <ellipse cx="100" cy="140" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
+                            <line x1="100" y1="40" x2="60" y2="140" stroke="#000" stroke-width="2"/>
+                            <line x1="100" y1="40" x2="140" y2="140" stroke="#000" stroke-width="2"/>
+                            <path d="M60,140 A40,15 0 0,1 140,140" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+                        </svg>
                     </div>
-                    <div class="formula">A_lat = πrg<br>V = (1/3)πr²h</div>
+                    <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = πrg<br>A<sub>tot</sub> = πr(r+g)<br>V = <div class="frac"><span class="frac-numer">1</span><span class="frac-denom">3</span></div>πr²h</div>
                 </div>
-                <!-- Pirámide -->
+                
+                <!-- Figuras 3D (piramide) que usan el tamaño base -->
                 <div class="figure-card" onclick="open3DModal('piramide')">
                     <div class="figure-title">Pirámide</div>
                     <div class="figure-container">
                         <div id="mini-piramide" class="mini-3d-container"></div>
                     </div>
-                    <div class="formula">A_tot = P·ap/2+A_base<br>V = (1/3)A_base·h</div>
+                    <div class="formula" style="font-size: 12px; line-height: 1.5;">A<sub>lat</sub> = <div class="frac"><span class="frac-numer">P·ap</span><span class="frac-denom">2</span></div><br>A<sub>tot</sub> = A<sub>lat</sub>+A<sub>base</sub><br>V = <div class="frac"><span class="frac-numer">1</span><span class="frac-denom">3</span></div>A<sub>base</sub>·h</div>
                 </div>
-                <!-- Semiesfera -->
+
                 <div class="figure-card" onclick="open3DModal('semiesfera')">
                     <div class="figure-title">Semiesfera</div>
                     <div class="figure-container">
-                        <div id="mini-semiesfera" class="mini-3d-container"></div>
+                        <svg class="figure-svg" viewBox="25 25 150 150">
+                            <!-- Fill the dome and base first -->
+                            <path d="M45,100 A55,55 0 0,1 155,100 A55,18 0 0,1 45,100 Z" fill="#d35400" fill-opacity="0.7" stroke="none"/>
+                            
+                            <!-- Redraw contours on top -->
+                            <path d="M45,100 A55,55 0 0,1 155,100" stroke="#000" stroke-width="2" fill="none"/>
+                            <ellipse cx="100" cy="100" rx="55" ry="18" stroke="#000" stroke-width="2" fill="none"/>
+                            <path d="M45,100 A55,18 0 0,0 155,100" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+                        </svg>
                     </div>
-                    <div class="formula">A = 3πr²<br>V = (2/3)πr³</div>
+                    <div class="formula" style="font-size: 12px; line-height: 1.5;">A<sub>curva</sub> = 2πr²<br>A<sub>tot</sub> = 3πr²<br>V = <div class="frac"><span class="frac-numer">2</span><span class="frac-denom">3</span></div>πr³</div>
                 </div>
-                <!-- Tronco de Cono -->
                 <div class="figure-card" onclick="open3DModal('tronco_cono')">
                     <div class="figure-title">Tronco de Cono</div>
                     <div class="figure-container">
-                        <div id="mini-tronco_cono" class="mini-3d-container"></div>
+                        <svg class="figure-svg" viewBox="25 25 150 150">
+                            <!-- Fill the body and bottom ellipse -->
+                            <path d="M70,70 L55,140 A45,15 0 0,0 145,140 L130,70 A30,10 0 0,1 70,70 Z" fill="#34495e" fill-opacity="0.7" stroke="none"/>
+                            <!-- Fill the top ellipse -->
+                            <ellipse cx="100" cy="70" rx="30" ry="10" fill="#34495e" fill-opacity="0.7" stroke="none"/>
+
+                            <!-- Redraw contours on top -->
+                            <ellipse cx="100" cy="140" rx="45" ry="15" stroke="#000" stroke-width="2" fill="none"/>
+                            <ellipse cx="100" cy="70" rx="30" ry="10" stroke="#000" stroke-width="2" fill="none"/>
+                            <line x1="70" y1="70" x2="55" y2="140" stroke="#000" stroke-width="2"/>
+                            <line x1="130" y1="70" x2="145" y2="140" stroke="#000" stroke-width="2"/>
+                            <path d="M70,70 A30,10 0 0,1 130,70" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+                        </svg>
                     </div>
-                    <div class="formula">V = (πh/3)(R²+Rr+r²)</div>
+                    <div class="formula" style="font-size: 11px; line-height: 1.4;">A<sub>lat</sub> = πg(R+r)<br>A<sub>tot</sub> = A<sub>lat</sub>+πR²+πr²<br>V = <div class="frac"><span class="frac-numer">πh</span><span class="frac-denom">3</span></div>(R²+Rr+r²)</div>
                 </div>
-                <!-- Tronco de Pirámide -->
+
+                <!-- Figuras 3D (tronco_piramide) que usan el tamaño base -->
                 <div class="figure-card" onclick="open3DModal('tronco_piramide')">
                     <div class="figure-title">Tronco de Pirámide</div>
                     <div class="figure-container">
                         <div id="mini-tronco_piramide" class="mini-3d-container"></div>
                     </div>
-                    <div class="formula">V = (h/3)(A_M+A_m+√(A_M·A_m))</div>
+                    <div class="formula" style="font-size: 10px; line-height: 1.4;">A<sub>lat</sub> = <div class="frac"><span class="frac-numer">(P<sub>M</sub>+P<sub>m</sub>)ap</span><span class="frac-denom">2</span></div><br>A<sub>tot</sub> = A<sub>lat</sub>+A<sub>M</sub>+A<sub>m</sub><br>V = <div class="frac"><span class="frac-numer">h</span><span class="frac-denom">3</span></div>(A<sub>M</sub>+A<sub>m</sub>+√(A<sub>M</sub>·A<sub>m</sub>))</div>
                 </div>
-                <!-- Tetraedro -->
                 <div class="figure-card" onclick="open3DModal('tetraedro')">
                     <div class="figure-title">Tetraedro</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="0 0 200 200">
-                            <!-- Caras del tetraedro con color marrón semitransparente -->
+                        <svg class="figure-svg" viewBox="25 25 150 150">
                             <polygon points="100,40 30,160 135,170" fill="#c9a57b" fill-opacity="0.5" stroke="none"/>
                             <polygon points="100,40 135,170 170,160" fill="#b8935f" fill-opacity="0.5" stroke="none"/>
                             <polygon points="100,40 30,160 170,160" fill="#d4b896" fill-opacity="0.5" stroke="none"/>
-                            <!-- Aristas visibles del tetraedro (gruesas y oscuras) -->
                             <line x1="100" y1="40" x2="30" y2="160" stroke="#000" stroke-width="3"/>
                             <line x1="100" y1="40" x2="170" y2="160" stroke="#000" stroke-width="3"/>
                             <line x1="100" y1="40" x2="135" y2="170" stroke="#000" stroke-width="3"/>
                             <line x1="30" y1="160" x2="170" y2="160" stroke="#000" stroke-width="3"/>
                             <line x1="170" y1="160" x2="135" y2="170" stroke="#000" stroke-width="3"/>
-                            <!-- Aristas internas/ocultas (discontinuas, más visibles) -->
                             <line x1="100" y1="40" x2="100" y2="155" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
                             <line x1="100" y1="155" x2="30" y2="160" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
                             <line x1="100" y1="155" x2="170" y2="160" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
                             <line x1="100" y1="155" x2="135" y2="170" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
                             <line x1="30" y1="160" x2="135" y2="170" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
                             <line x1="100" y1="40" x2="152" y2="165" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
-                            <!-- Sin etiquetas de texto -->
                         </svg>
                     </div>
-                    <div class="formula">Área: A = a²√3<br>Volumen: V = (a³√2)/12</div>
+                    <div class="formula">Área: A = a²√3<br>Volumen: V = <div class="frac"><span class="frac-numer">a³√2</span><span class="frac-denom">12</span></div></div>
                 </div>
-                <!-- Octaedro -->
                 <div class="figure-card" onclick="open3DModal('octaedro')">
                     <div class="figure-title">Octaedro</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="0 0 200 200">
-                            <!-- Caras frontales visibles -->
+                        <svg class="figure-svg" viewBox="25 25 150 150">
                             <polygon points="100,40 40,100 100,80" fill="#ffb3ba" fill-opacity="0.5" />
                             <polygon points="100,40 100,80 160,100" fill="#ffa5ae" fill-opacity="0.5" />
                             <polygon points="100,160 40,100 100,120" fill="#ffb3ba" fill-opacity="0.5" />
                             <polygon points="100,160 100,120 160,100" fill="#ffa5ae" fill-opacity="0.5" />
-                            <!-- Caras traseras (más transparentes para profundidad) -->
                             <polygon points="100,40 160,100 100,120" fill="#ffb3ba" fill-opacity="0.3" />
                             <polygon points="100,40 100,120 40,100" fill="#ffa5ae" fill-opacity="0.3" />
-                            <!-- Aristas visibles (continuas y gruesas) -->
                             <line x1="100" y1="40" x2="40" y2="100" stroke="#000" stroke-width="3"/>
                             <line x1="100" y1="40" x2="160" y2="100" stroke="#000" stroke-width="3"/>
                             <line x1="100" y1="160" x2="40" y2="100" stroke="#000" stroke-width="3"/>
                             <line x1="100" y1="160" x2="160" y2="100" stroke="#000" stroke-width="3"/>
                             <line x1="40" y1="100" x2="160" y2="100" stroke="#000" stroke-width="3"/>
-                            <!-- Aristas ocultas (punteadas) -->
                             <line x1="100" y1="40" x2="100" y2="120" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
                             <line x1="100" y1="160" x2="100" y2="80" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
                             <line x1="40" y1="100" x2="100" y2="80" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
                             <line x1="160" y1="100" x2="100" y2="80" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
                             <line x1="40" y1="100" x2="100" y2="120" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
                             <line x1="160" y1="100" x2="100" y2="120" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
-                            <!-- Sin etiquetas de texto -->
                         </svg>
                     </div>
-                    <div class="formula">Área: A = 2a²√3<br>Volumen: V = (a³√2)/3</div>
+                    <div class="formula">Área: A = 2a²√3<br>Volumen: V = <div class="frac"><span class="frac-numer">a³√2</span><span class="frac-denom">3</span></div></div>
                 </div>
-                <!-- Prismas Rectos -->
+                <!-- ===== FIN DE CAMBIOS ===== -->
+
+                <!-- Figuras 3D (prismas, icosaedro) que usan el tamaño base -->
                 <div class="figure-card" onclick="open3DModal('prismas')">
                     <div class="figure-title">Prismas Rectos</div>
                     <div class="figure-container">
                         <div id="mini-prismas" class="mini-3d-container"></div>
                     </div>
-                    <div class="formula">A_tot = 2A_base+A_lat<br>V = A_base·h</div>
+                    <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = P<sub>base</sub>·h<br>A<sub>tot</sub> = A<sub>lat</sub>+2A<sub>base</sub><br>V = A<sub>base</sub>·h</div>
                 </div>
-                <!-- Icosaedro -->
                 <div class="figure-card" onclick="open3DModal('icosaedro')">
                     <div class="figure-title">Icosaedro</div>
                     <div class="figure-container">
                         <div id="mini-icosaedro" class="mini-3d-container"></div>
                     </div>
-                    <div class="formula">Área: A = 5√3·a²<br>Volumen: V = (5/12)·(3+√5)·a³</div>
+                    <div class="formula" style="font-size: 13px; line-height: 1.5;">Área: A = 5√3·a²<br>Volumen: V = <div class="frac"><span class="frac-numer">5</span><span class="frac-denom">12</span></div>(3+√5)·a³</div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal para figuras planas -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" class="section-title" style="margin-bottom: 20px; font-size: 26px;"></h2>
             <div class="modal-figure-container">
-                <svg id="modal-svg" class="modal-figure-svg" viewBox="0 0 400 400"></svg>
+                <svg id="modal-svg" class="modal-figure-svg" viewBox="0 0 200 200"></svg>
             </div>
             <div id="modal-formula" class="modal-formula"></div>
         </div>
     </div>
-    <!-- Modal para figuras 3D -->
     <div id="modal3D" class="modal">
         <div class="modal-content">
             <span class="close" onclick="close3DModal()">&times;</span>
@@ -763,6 +827,84 @@
         </div>
     </div>
     <script>
+        const figureData = {
+            'cuadrado': {
+                title: 'Cuadrado',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><rect x="50" y="50" width="100" height="100" class="fig-cuadrado"/><text x="100" y="165" text-anchor="middle" class="label">a</text></svg>`,
+                formula: `Perímetro = 4a<br>Área = a<sup>2</sup>`
+            },
+            'rectangulo': {
+                title: 'Rectángulo',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><rect x="40" y="60" width="120" height="70" class="fig-rectangulo"/><text x="100" y="145" text-anchor="middle" class="label">b</text><text x="170" y="95" text-anchor="middle" class="label">h</text></svg>`,
+                formula: `Perímetro = 2(b+h)<br>Área = b·h`
+            },
+            'paralelogramo': {
+                title: 'Paralelogramo',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="70,50 170,50 150,130 50,130" class="fig-paralelogramo"/><line x1="50" y1="130" x2="50" y2="50" class="aux-line"/><text x="110" y="145" text-anchor="middle" class="label">b</text><text x="40" y="90" text-anchor="middle" class="label">h</text><text x="145" y="90" text-anchor="middle" class="label">a</text></svg>`,
+                formula: `Perímetro = 2(a+b)<br>Área = b·h`
+            },
+            'rombo': {
+                title: 'Rombo',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,25 145,100 100,175 55,100" class="fig-rombo"/><line x1="55" y1="100" x2="145" y2="100" class="aux-line"/><line x1="100" y1="25" x2="100" y2="175" class="aux-line"/><text x="125" y="110" text-anchor="middle" class="label">d</text><text x="105" y="75" text-anchor="middle" class="label">D</text><text x="125" y="65" text-anchor="middle" class="label">a</text></svg>`,
+                formula: `Perímetro = 4a = 4√((d/2)<sup>2</sup>+(D/2)<sup>2</sup>)<br>Área = <div class="frac"><span class="frac-numer">D·d</span><span class="frac-denom">2</span></div>`
+            },
+            'trapecio': {
+                title: 'Trapecio',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="60,50 140,50 160,130 40,130" class="fig-trapecio"/><line x1="60" y1="50" x2="60" y2="130" class="aux-line"/><text x="100" y="145" text-anchor="middle" class="label">B</text><text x="100" y="45" text-anchor="middle" class="label">b</text><text x="50" y="90" text-anchor="middle" class="label">h</text><text x="30" y="90" text-anchor="middle" class="label">a</text><text x="155" y="90" text-anchor="middle" class="label">c</text></svg>`,
+                formula: `Perímetro = a + B + c + b<br>Área = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div>`
+            },
+            'trapecio_recto': {
+                title: 'Trapecio Recto',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="70,50 140,50 140,130 50,130" class="fig-trapecio-recto"/><text x="95" y="145" text-anchor="middle" class="label">B</text><text x="105" y="45" text-anchor="middle" class="label">b</text><text x="150" y="90" text-anchor="middle" class="label">h</text><text x="40" y="90" text-anchor="middle" class="label">a</text></svg>`,
+                formula: `Perímetro = a + b + B + h<br>Perímetro = b + B + h + √((B-b)<sup>2</sup>+h<sup>2</sup>)<br>Área = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div>`
+            },
+            'triangulo_equilatero': {
+                title: 'Triángulo Equilátero',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,45 165,145 35,145" class="fig-triangulo-equilatero"/><line x1="100" y1="45" x2="100" y2="145" class="aux-line"/><text x="100" y="160" text-anchor="middle" class="label">a</text><text x="110" y="95" text-anchor="middle" class="label">h</text><text x="140" y="95" text-anchor="middle" class="label">a</text><text x="60" y="95" text-anchor="middle" class="label">a</text></svg>`,
+                formula: `Perímetro = 3a<br>Área = <div class="frac"><span class="frac-numer">ah</span><span class="frac-denom">2</span></div>`
+            },
+            'triangulo_isosceles': {
+                title: 'Triángulo Isósceles',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,30 140,155 60,155" class="fig-triangulo-isosceles"/><line x1="100" y1="30" x2="100" y2="155" class="aux-line"/><text x="100" y="175" text-anchor="middle" class="label">b</text><text x="110" y="100" text-anchor="middle" class="label">h</text><text x="130" y="95" text-anchor="middle" class="label">a</text><text x="70" y="95" text-anchor="middle" class="label">a</text><text x="100" y="25" text-anchor="middle" class="label">B</text><text x="55" y="160" text-anchor="middle" class="label">A</text><text x="145" y="160" text-anchor="middle" class="label">C</text></svg>`,
+                formula: `Perímetro = 2a + b<br>Área = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div>`
+            },
+            'triangulo_escaleno': {
+                title: 'Triángulo Escaleno',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="85,50 165,145 35,145" class="fig-triangulo-escaleno"/><line x1="85" y1="50" x2="85" y2="145" class="aux-line"/><text x="85" y="40" text-anchor="middle" class="label">B</text><text x="100" y="160" text-anchor="middle" class="label">b</text><text x="75" y="98" text-anchor="middle" class="label">h</text><text x="125" y="98" text-anchor="middle" class="label">c</text><text x="60" y="98" text-anchor="middle" class="label">a</text><text x="50" y="150" text-anchor="middle" class="label">C</text><text x="150" y="150" text-anchor="middle" class="label">A</text></svg>`,
+                formula: `Perímetro = a + b + c<br>Área = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div>`
+            },
+            'pentagono': {
+                title: 'Pentágono Regular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,40 170,85 145,155 55,155 30,85" class="fig-pentagono"/><circle cx="100" cy="105" r="3" fill="#333"/><line x1="100" y1="105" x2="100" y2="155" class="aux-line"/><line x1="100" y1="105" x2="145" y2="155" class="aux-line"/><text x="105" y="130" text-anchor="start" class="label">a</text><text x="125" y="135" text-anchor="middle" class="label">r</text><text x="100" y="170" text-anchor="middle" class="label">b</text></svg>`,
+                formula: `Perímetro (P) = 5b<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div>`
+            },
+            'hexagono': {
+                title: 'Hexágono Regular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,50 143.3,75 143.3,125 100,150 56.7,125 56.7,75" class="fig-hexagono"/><circle cx="100" cy="100" r="3" fill="#333"/><line x1="100" y1="100" x2="100" y2="150" class="aux-line"/><line x1="100" y1="100" x2="143.3" y2="125" class="aux-line"/><text x="105" y="125" text-anchor="start" class="label">a</text><text x="125" y="115" text-anchor="middle" class="label">b</text><text x="78.35" y="137.5" text-anchor="middle" class="label">b</text></svg>`,
+                formula: `Perímetro (P) = 6b<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div>`
+            },
+            'circulo': {
+                title: 'Círculo',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="65" class="fig-circulo"/><line x1="100" y1="100" x2="165" y2="100" class="aux-line"/><circle cx="100" cy="100" r="3" fill="#333"/><text x="132" y="95" text-anchor="middle" class="label">r</text></svg>`,
+                formula: `Perímetro (Longitud) = 2πr<br>Área = πr<sup>2</sup>`
+            },
+            'sector_circular': {
+                title: 'Sector Circular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><path d="M50,150 L150,150 A100,100 0 0,0 50,50 Z" class="fig-sector"/><path d="M70,150 A20,20 0 0,0 50,130" class="angle-arc"/><text x="70" y="135" text-anchor="middle" class="angle-label">α</text><text x="100" y="165" text-anchor="middle" class="label">r</text><text x="40" y="100" text-anchor="middle" class="label">r</text><text x="115" y="85" text-anchor="middle" class="label">L</text></svg>`,
+                formula: `Longitud de Arco (L) = <div class="frac"><span class="frac-numer">πrα</span><span class="frac-denom">180</span></div><br>Área = <div class="frac"><span class="frac-numer">πr<sup>2</sup>α</span><span class="frac-denom">360</span></div>`
+            },
+            'corona_circular': {
+                title: 'Corona Circular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="65" class="fig-corona"/><circle cx="100" cy="100" r="40" fill="white" stroke="#16a085" stroke-width="3"/><line x1="100" y1="100" x2="165" y2="100" class="aux-line"/><line x1="100" y1="100" x2="100" y2="60" class="aux-line"/><circle cx="100" cy="100" r="3" fill="#333"/><text x="132" y="95" text-anchor="middle" class="label">R</text><text x="105" y="80" text-anchor="start" class="label">r</text></svg>`,
+                formula: `Perímetro = 2π(R+r)<br>Área = π(R<sup>2</sup>-r<sup>2</sup>)`
+            },
+            'elipse': {
+                title: 'Elipse',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="100" rx="75" ry="50" class="fig-elipse"/><line x1="100" y1="100" x2="175" y2="100" class="aux-line"/><line x1="100" y1="100" x2="100" y2="50" class="aux-line"/><circle cx="100" cy="100" r="3" fill="#333"/><text x="137" y="95" text-anchor="middle" class="label">a</text><text x="105" y="75" text-anchor="start" class="label">b</text></svg>`,
+                formula: `Perímetro ≈ π(a+b)<br>Área = πab`
+            }
+        };
+
         let currentModal = null;
         let currentScene = null;
         let currentCamera = null;
@@ -773,13 +915,35 @@
         let miniScenes = {};
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Se inicializan solo los mini-scenes que no fueron reemplazados por SVGs
             initializeMini3DScenes();
         });
 
+        function openModal(figureName) {
+            const data = figureData[figureName];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-svg').innerHTML = data.svg;
+            document.getElementById('modal-formula').innerHTML = data.formula;
+            document.getElementById('modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            currentModal = document.getElementById('modal');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            if (modal) {
+                modal.style.display = "none";
+            }
+            currentModal = null;
+            document.body.style.overflow = 'auto';
+        }
+
         function initializeMini3DScenes() {
             const figures = [
-                'esfera', 'cilindro', 'cono', 
-                'piramide', 'semiesfera', 'tronco_cono', 'tronco_piramide', 
+                // Se han quitado 'esfera', 'cilindro', 'cono', 'semiesfera', 'tronco_cono'
+                // porque ahora usan SVG.
+                'piramide', 'tronco_piramide', 
                 'prismas', 'icosaedro'
             ];
             figures.forEach(figura => {
@@ -810,17 +974,18 @@
             const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
             directionalLight.position.set(1, 1, 1);
             scene.add(directionalLight);
+
             let geometry;
             const colors = {
-                esfera: 0x2ecc71,
-                cilindro: 0x9b59b6,
-                cono: 0xf39c12,
-                piramide: 0x1abc9c,
-                semiesfera: 0xd35400,
-                tronco_cono: 0x34495e,
-                tronco_piramide: 0x7f8c8d,
-                prismas: 0x1abc9c,
-                icosaedro: 0xFFD700
+                // 'esfera': 0x2ecc71, // SVG
+                // 'cilindro': 0x9b59b6, // SVG
+                // 'cono': 0xf39c12, // SVG
+                'piramide': 0x1abc9c,
+                // 'semiesfera': 0xd35400, // SVG
+                // 'tronco_cono': 0x34495e, // SVG
+                'tronco_piramide': 0x7f8c8d,
+                'prismas': 0x1abc9c,
+                'icosaedro': 0xFFD700
             };
             const material = new THREE.MeshStandardMaterial({
                 color: colors[figura] || 0x3498db,
@@ -829,24 +994,11 @@
                 transparent: true,
                 opacity: 0.7
             });
+
             switch(figura) {
-                case 'esfera':
-                    geometry = new THREE.SphereGeometry(1.8, 16, 16);
-                    break;
-                case 'cilindro':
-                    geometry = new THREE.CylinderGeometry(1.5, 1.5, 2.5, 16);
-                    break;
-                case 'cono':
-                    geometry = new THREE.ConeGeometry(1.5, 2.5, 16);
-                    break;
+                // Los casos de SVG se han eliminado
                 case 'piramide':
                     geometry = new THREE.ConeGeometry(1.8, 2.5, 4);
-                    break;
-                case 'semiesfera':
-                    geometry = new THREE.SphereGeometry(1.8, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2);
-                    break;
-                case 'tronco_cono':
-                    geometry = new THREE.CylinderGeometry(1.2, 1.8, 2.2, 16);
                     break;
                 case 'tronco_piramide':
                     geometry = new THREE.CylinderGeometry(1.2, 1.8, 2.2, 4);
@@ -860,16 +1012,22 @@
                 default:
                     geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
             }
+
             const mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
-            const edges = new THREE.EdgesGeometry(geometry);
-            const lineMaterial = new THREE.LineBasicMaterial({ 
-                color: 0x000000, 
-                linewidth: 2
-            });
-            const wireframe = new THREE.LineSegments(edges, lineMaterial);
-            mesh.add(wireframe);
-            
+
+            // Remove wireframes for specific shapes
+            const noWireframeShapes = ['cilindro', 'cono', 'semiesfera', 'tronco_cono']; // Esto ya no aplica a los SVGs
+            if (!noWireframeShapes.includes(figura)) {
+                const edges = new THREE.EdgesGeometry(geometry);
+                const lineMaterial = new THREE.LineBasicMaterial({ 
+                    color: 0x000000, 
+                    linewidth: 2
+                });
+                const wireframe = new THREE.LineSegments(edges, lineMaterial);
+                mesh.add(wireframe);
+            }
+
             function render() {
                 renderer.render(scene, camera);
             }
@@ -884,250 +1042,33 @@
             return line;
         }
 
-        function openModal(figura) {
-            const modal = document.getElementById('modal');
-            const svg = document.getElementById('modal-svg');
-            const formulaDiv = document.getElementById('modal-formula');
-            svg.innerHTML = '';
-            const figuras = {
-                'cuadrado': { formula: "Perímetro: P = 4a\nÁrea: A = a²" },
-                'rectangulo': { formula: "Perímetro: P = 2(b+h)\nÁrea: A = b·h" },
-                'paralelogramo': { formula: "Perímetro: P = 2(a+b)\nÁrea: A = b·h" },
-                'rombo': { formula: "Perímetro: P = 4a\nÁrea: A = (D·d)/2" },
-                'trapecio': { formula: "Perímetro: P = a+B+c+b\nÁrea: A = (B+b)·h/2" },
-                'trapecio_recto': { formula: "Perímetro: P = B+b+h+√((B-b)²+h²)\nÁrea: A = (B+b)·h/2" },
-                'triangulo_equilatero': { formula: "Perímetro: P = 3a\nÁrea: A = a·h/2 = (√3/4)a²" },
-                'triangulo_isosceles': { formula: "Perímetro: P = 2a+b\nÁrea: A = b·h/2" },
-                'triangulo_escaleno': { formula: "Perímetro: P = a+b+c\nÁrea: A = b·h/2" },
-                'pentagono': { formula: "Perímetro: P = 5b\nÁrea: A = P·a/2" },
-                'hexagono': { formula: "Perímetro: P = 6b\nÁrea: A = P·a/2" },
-                'circulo': { formula: "Perímetro: P = 2πr\nÁrea: A = πr²" },
-                'sector_circular': { formula: "Longitud arco: L = πr·α/180\nÁrea: A = πr²·α/360" },
-                'corona_circular': { formula: "Perímetro: P = 2π(R+r)\nÁrea: A = π(R²-r²)" },
-                'elipse': { formula: "Perímetro: P ≈ π(a+b)\nÁrea: A = π·a·b" }
-            };
-            createFiguraSVG(svg, figura);
-            formulaDiv.textContent = figuras[figura]?.formula || "Fórmula no disponible";
-            modal.style.display = "flex";
-            currentModal = modal;
-        }
-
-        function createFiguraSVG(svg, figura) {
-            const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-            switch(figura) {
-                case 'cuadrado':
-                    const cuad = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    cuad.setAttribute("x", "100");
-                    cuad.setAttribute("y", "100");
-                    cuad.setAttribute("width", "200");
-                    cuad.setAttribute("height", "200");
-                    cuad.setAttribute("class", "fig-cuadrado");
-                    g.appendChild(cuad);
-                    addLabel(g, "200", "320", "middle", "a");
-                    addLabel(g, "310", "200", "start", "a");
-                    break;
-                case 'rectangulo':
-                    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    rect.setAttribute("x", "80");
-                    rect.setAttribute("y", "120");
-                    rect.setAttribute("width", "240");
-                    rect.setAttribute("height", "160");
-                    rect.setAttribute("class", "fig-rectangulo");
-                    g.appendChild(rect);
-                    addLabel(g, "200", "300", "middle", "b");
-                    addLabel(g, "330", "200", "start", "h");
-                    break;
-                case 'paralelogramo':
-                    const paral = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    paral.setAttribute("points", "80,120 320,120 280,280 40,280");
-                    paral.setAttribute("class", "fig-paralelogramo");
-                    g.appendChild(paral);
-                    addLine(g, "40", "280", "40", "120", "aux-line");
-                    addLabel(g, "200", "305", "middle", "b");
-                    addLabel(g, "25", "200", "end", "h");
-                    break;
-                case 'rombo':
-                    const romb = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    romb.setAttribute("points", "200,60 340,200 200,340 60,200");
-                    romb.setAttribute("class", "fig-rombo");
-                    g.appendChild(romb);
-                    addLine(g, "60", "200", "340", "200", "aux-line");
-                    addLine(g, "200", "60", "200", "340", "aux-line");
-                    addLabel(g, "200", "40", "middle", "D");
-                    addLabel(g, "40", "200", "end", "d");
-                    addLabel(g, "270", "130", "start", "a");
-                    break;
-                case 'trapecio':
-                    const trap = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    trap.setAttribute("points", "100,120 300,120 260,280 140,280");
-                    trap.setAttribute("class", "fig-trapecio");
-                    g.appendChild(trap);
-                    addLine(g, "140", "280", "140", "120", "aux-line");
-                    addLabel(g, "200", "305", "middle", "B");
-                    addLabel(g, "125", "200", "end", "h");
-                    addLabel(g, "70", "200", "end", "b");
-                    break;
-                case 'trapecio_recto':
-                    const trapRecto = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    trapRecto.setAttribute("points", "80,120 320,120 320,280 140,280");
-                    trapRecto.setAttribute("class", "fig-trapecio-recto");
-                    g.appendChild(trapRecto);
-                    addLabel(g, "200", "305", "middle", "B");
-                    addLabel(g, "70", "200", "end", "b");
-                    addLabel(g, "330", "200", "start", "h");
-                    break;
-                case 'triangulo_equilatero':
-                    const triEq = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    triEq.setAttribute("points", "200,80 320,280 80,280");
-                    triEq.setAttribute("class", "fig-triangulo-equilatero");
-                    g.appendChild(triEq);
-                    addLine(g, "200", "80", "200", "280", "aux-line");
-                    addLabel(g, "200", "305", "middle", "a");
-                    addLabel(g, "215", "180", "start", "h");
-                    addLabel(g, "110", "275", "end", "a");
-                    addLabel(g, "290", "275", "start", "a");
-                    break;
-                case 'triangulo_isosceles':
-                    const triIso = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    triIso.setAttribute("points", "200,80 320,280 80,280");
-                    triIso.setAttribute("class", "fig-triangulo-isosceles");
-                    g.appendChild(triIso);
-                    addLine(g, "200", "80", "200", "280", "aux-line");
-                    addLabel(g, "200", "305", "middle", "b");
-                    addLabel(g, "215", "180", "start", "h");
-                    addLabel(g, "110", "275", "end", "a");
-                    addLabel(g, "290", "275", "start", "a");
-                    break;
-                case 'triangulo_escaleno':
-                    const triEsc = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    triEsc.setAttribute("points", "140,100 320,280 80,280");
-                    triEsc.setAttribute("class", "fig-triangulo-escaleno");
-                    g.appendChild(triEsc);
-                    addLine(g, "140", "100", "140", "280", "aux-line");
-                    addLabel(g, "200", "305", "middle", "b");
-                    addLabel(g, "150", "190", "start", "h");
-                    break;
-                case 'pentagono':
-                    const pent = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    pent.setAttribute("points", "200,80 320,140 280,240 120,240 80,140");
-                    pent.setAttribute("class", "fig-pentagono");
-                    g.appendChild(pent);
-                    addLine(g, "200", "170", "200", "80", "aux-line");
-                    addLabel(g, "210", "120", "start", "a");
-                    addLabel(g, "260", "100", "start", "b");
-                    break;
-                case 'hexagono':
-                    const hex = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-                    hex.setAttribute("points", "200,80 280,130 280,230 200,280 120,230 120,130");
-                    hex.setAttribute("class", "fig-hexagono");
-                    g.appendChild(hex);
-                    addLine(g, "200", "180", "200", "80", "aux-line");
-                    addLabel(g, "210", "130", "start", "a");
-                    addLabel(g, "250", "180", "start", "b");
-                    break;
-                case 'circulo':
-                    const circ = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                    circ.setAttribute("cx", "200");
-                    circ.setAttribute("cy", "200");
-                    circ.setAttribute("r", "140");
-                    circ.setAttribute("class", "fig-circulo");
-                    g.appendChild(circ);
-                    addLine(g, "200", "200", "340", "200", "aux-line");
-                    addLabel(g, "270", "190", "middle", "r");
-                    break;
-                case 'sector_circular':
-                    const sector = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                    sector.setAttribute("d", "M200,200 L340,200 A140,140 0 0,1 200,60 Z");
-                    sector.setAttribute("class", "fig-sector");
-                    g.appendChild(sector);
-                    addLine(g, "200", "200", "340", "200", "aux-line");
-                    const angleArc = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                    angleArc.setAttribute("d", "M240,200 A40,40 0 0,1 220,180");
-                    angleArc.setAttribute("class", "angle-arc");
-                    g.appendChild(angleArc);
-                    addLabel(g, "250", "190", "middle", "α");
-                    addLabel(g, "270", "190", "middle", "r");
-                    break;
-                case 'corona_circular':
-                    const corona = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                    corona.setAttribute("cx", "200");
-                    corona.setAttribute("cy", "200");
-                    corona.setAttribute("r", "140");
-                    corona.setAttribute("class", "fig-corona");
-                    g.appendChild(corona);
-                    const innerCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                    innerCircle.setAttribute("cx", "200");
-                    innerCircle.setAttribute("cy", "200");
-                    innerCircle.setAttribute("r", "80");
-                    innerCircle.setAttribute("fill", "white");
-                    innerCircle.setAttribute("stroke", "#16a085");
-                    innerCircle.setAttribute("stroke-width", "3");
-                    g.appendChild(innerCircle);
-                    addLine(g, "200", "200", "340", "200", "aux-line");
-                    addLine(g, "200", "200", "280", "200", "aux-line");
-                    addLabel(g, "270", "190", "middle", "R");
-                    addLabel(g, "240", "190", "middle", "r");
-                    break;
-                case 'elipse':
-                    const elipse = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
-                    elipse.setAttribute("cx", "200");
-                    elipse.setAttribute("cy", "200");
-                    elipse.setAttribute("rx", "160");
-                    elipse.setAttribute("ry", "100");
-                    elipse.setAttribute("class", "fig-elipse");
-                    g.appendChild(elipse);
-                    addLine(g, "200", "200", "360", "200", "aux-line");
-                    addLine(g, "200", "200", "200", "100", "aux-line");
-                    addLabel(g, "280", "190", "middle", "a");
-                    addLabel(g, "210", "150", "middle", "b");
-                    break;
-            }
-            svg.appendChild(g);
-        }
-
-        function addLabel(parent, x, y, anchor, text) {
-            const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
-            label.setAttribute("x", x);
-            label.setAttribute("y", y);
-            label.setAttribute("text-anchor", anchor);
-            label.setAttribute("class", "label");
-            label.textContent = text;
-            parent.appendChild(label);
-        }
-
-        function addLine(parent, x1, y1, x2, y2, className) {
-            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", x1);
-            line.setAttribute("y1", y1);
-            line.setAttribute("x2", x2);
-            line.setAttribute("y2", y2);
-            line.setAttribute("class", className);
-            parent.appendChild(line);
-        }
-
         function open3DModal(figura) {
             const modal = document.getElementById('modal3D');
             const container = document.getElementById('modal-3d-container');
             const formulaDiv = document.getElementById('modal3d-formula');
+
             const formulas = {
-                'cubo': "Área total: A = 6a²\nVolumen: V = a³",
-                'ortoedro': "Área total: A = 2(ab+ac+bc)\nVolumen: V = a·b·c",
-                'esfera': "Área total: A = 4πr²\nVolumen: V = (4/3)πr³",
-                'cilindro': "Área lateral: A_lat = 2πrh\nÁrea total: A_tot = 2πr(r+h)\nVolumen: V = πr²h",
-                'cono': "Área lateral: A_lat = πrg\nÁrea total: A_tot = πr(r+g)\nVolumen: V = (1/3)πr²h",
-                'piramide': "Área total: A = P·ap/2 + A_base\nVolumen: V = (1/3)A_base·h",
-                'semiesfera': "Área total: A = 3πr²\nVolumen: V = (2/3)πr³",
-                'tronco_cono': "Área total: A = π(R+r)g + πR² + πr²\nVolumen: V = (πh/3)(R²+Rr+r²)",
-                'tronco_piramide': "Área: A = (P_M+P_m)·ap/2 + A_M + A_m\nVolumen: V = (h/3)(A_M+A_m+√(A_M·A_m))",
-                'tetraedro': "Área: A = √3·a²\nVolumen: V = (√2/12)·a³\nDonde:\na = arista\nh = altura\nhc = apotema",
-                'octaedro': "Área: A = 2√3·a²\nVolumen: V = (√2/3)·a³\nDonde:\na = arista (todas las aristas son iguales)",
-                'prismas': "Área total: A = 2A_base + A_lat\nVolumen: V = A_base·h",
-                'icosaedro': "Área: A = 5√3·a²\nVolumen: V = (5/12)·(3+√5)·a³\nDonde:\na = arista"
+                'cubo': "Área total: A = 6a²<br>Volumen: V = a³",
+                'ortoedro': "Área total: A = 2(ab+ac+bc)<br>Volumen: V = a·b·c",
+                'esfera': "Área total: A = 4πr²<br>Volumen: V = <div class='frac'><span class='frac-numer'>4</span><span class='frac-denom'>3</span></div>πr³",
+                'cilindro': "Área lateral: A<sub>lat</sub> = 2πrh<br>Área total: A<sub>tot</sub> = 2πr(r+h)<br>Volumen: V = πr²h",
+                'cono': "Área lateral: A<sub>lat</sub> = πrg<br>Área total: A<sub>tot</sub> = πr(r+g)<br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>3</span></div>πr²h",
+                'piramide': "Área lateral: A<sub>lat</sub> = <div class='frac'><span class='frac-numer'>P·ap</span><span class='frac-denom'>2</span></div><br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + A<sub>base</sub><br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>3</span></div>A<sub>base</sub>·h",
+                'semiesfera': "Área base: A<sub>base</sub> = πr²<br>Área curva: A<sub>curva</sub> = 2πr²<br>Área total: A<sub>tot</sub> = 3πr²<br>Volumen: V = <div class='frac'><span class='frac-numer'>2</span><span class='frac-denom'>3</span></div>πr³",
+                'tronco_cono': "Área lateral: A<sub>lat</sub> = πg(R+r)<br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + πR² + πr²<br>Volumen: V = <div class='frac'><span class='frac-numer'>πh</span><span class='frac-denom'>3</span></div>(R²+Rr+r²)",
+                'tronco_piramide': "Área lateral: A<sub>lat</sub> = <div class='frac'><span class='frac-numer'>(P<sub>M</sub>+P<sub>m</sub>)·ap</span><span class='frac-denom'>2</span></div><br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + A<sub>M</sub> + A<sub>m</sub><br>Volumen: V = <div class='frac'><span class='frac-numer'>h</span><span class='frac-denom'>3</span></div>(A<sub>M</sub>+A<sub>m</sub>+√(A<sub>M</sub>·A<sub>m</sub>))",
+                'tetraedro': "Área: A = √3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>√2·a³</span><span class='frac-denom'>12</span></div><br>Donde:<br>a = arista<br>h = altura<br>hc = apotema",
+                'octaedro': "Área: A = 2√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>√2·a³</span><span class='frac-denom'>3</span></div><br>Donde:<br>a = arista (todas las aristas son iguales)",
+                'prismas': "Área lateral: A<sub>lat</sub> = P<sub>base</sub>·h<br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + 2A<sub>base</sub><br>Volumen: V = A<sub>base</sub>·h",
+                'icosaedro': "Área: A = 5√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>5</span><span class='frac-denom'>12</span></div>(3+√5)·a³<br>Donde:<br>a = arista"
             };
-            formulaDiv.textContent = formulas[figura] || "Fórmulas no disponibles";
+
+            formulaDiv.innerHTML = formulas[figura] || "Fórmulas no disponibles";
+
             setTimeout(() => {
                 setup3DScene(container, figura);
             }, 100);
+
             modal.style.display = "flex";
             currentModal = modal;
         }
@@ -1139,6 +1080,7 @@
             if (currentRenderer) {
                 container.innerHTML = '<div class="loader"><div class="spinner"></div>Cargando modelo 3D...</div>';
             }
+
             currentScene = new THREE.Scene();
             currentScene.background = new THREE.Color(0x2c3e50);
             currentCamera = new THREE.PerspectiveCamera(
@@ -1158,12 +1100,10 @@
 
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
             currentScene.add(ambientLight);
-
             const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
             directionalLight1.position.set(5, 5, 5);
             directionalLight1.castShadow = true;
             currentScene.add(directionalLight1);
-
             const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4);
             directionalLight2.position.set(-5, -5, -5);
             currentScene.add(directionalLight2);
@@ -1184,7 +1124,6 @@
                 prismas: 0x1abc9c,
                 icosaedro: 0xFFD700
             };
-
             const material = new THREE.MeshStandardMaterial({
                 color: colors[figura] || 0x3498db,
                 metalness: 0.3,
@@ -1197,7 +1136,6 @@
             switch(figura) {
                 case 'cubo':
                     geometry = new THREE.BoxGeometry(4, 4, 4);
-                    // Aplicar material uniforme con transparencia
                     currentMesh = new THREE.Mesh(geometry, material.clone());
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
@@ -1236,6 +1174,7 @@
                         currentMesh.add(line);
                     });
                     break;
+
                 case 'ortoedro':
                     geometry = new THREE.BoxGeometry(5, 4, 3);
                     currentMesh = new THREE.Mesh(geometry, material.clone());
@@ -1276,6 +1215,7 @@
                         currentMesh.add(line);
                     });
                     break;
+
                 case 'tetraedro':
                     const size = 4;
                     const height = size * Math.sqrt(2/3);
@@ -1328,6 +1268,7 @@
                     heightLine.computeLineDistances();
                     currentMesh.add(heightLine);
                     break;
+
                 case 'octaedro':
                     geometry = new THREE.OctahedronGeometry(3, 0);
                     const materialOctaedro = new THREE.MeshStandardMaterial({ 
@@ -1363,13 +1304,13 @@
                         currentMesh.add(line);
                     });
                     break;
+
                 case 'icosaedro':
                     geometry = new THREE.IcosahedronGeometry(3, 0);
                     currentMesh = new THREE.Mesh(geometry, material);
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
-
                     const edgesGeometryIcosaedro = new THREE.EdgesGeometry(geometry);
                     const edgesMaterialIcosaedro = new THREE.LineBasicMaterial({ 
                         color: 0xffffff, 
@@ -1378,53 +1319,156 @@
                     const wireframeIcosaedro = new THREE.LineSegments(edgesGeometryIcosaedro, edgesMaterialIcosaedro);
                     currentMesh.add(wireframeIcosaedro);
                     break;
+
                 case 'esfera':
                     geometry = new THREE.SphereGeometry(3, 32, 32);
                     currentMesh = new THREE.Mesh(geometry, material);
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
                     break;
+
                 case 'cilindro':
-                    geometry = new THREE.CylinderGeometry(2, 2, 4, 32);
-                    currentMesh = new THREE.Mesh(geometry, material);
+                    // Fixed cylinder with proper top and bottom caps
+                    const cylinderGroup = new THREE.Group();
+                    
+                    // Cylinder body
+                    const cylinderGeometry = new THREE.CylinderGeometry(2, 2, 4, 32);
+                    const cylinderMesh = new THREE.Mesh(cylinderGeometry, material);
+                    cylinderGroup.add(cylinderMesh);
+                    
+                    // Top cap
+                    const topCapGeometry = new THREE.CircleGeometry(2, 32);
+                    const topCapMesh = new THREE.Mesh(topCapGeometry, material);
+                    topCapMesh.position.y = 2;
+                    topCapMesh.rotation.x = -Math.PI / 2;
+                    cylinderGroup.add(topCapMesh);
+                    
+                    // Bottom cap
+                    const bottomCapGeometry = new THREE.CircleGeometry(2, 32);
+                    const bottomCapMesh = new THREE.Mesh(bottomCapGeometry, material);
+                    bottomCapMesh.position.y = -2;
+                    bottomCapMesh.rotation.x = Math.PI / 2;
+                    cylinderGroup.add(bottomCapMesh);
+                    
+                    currentMesh = cylinderGroup;
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
                     break;
+
                 case 'cono':
-                    geometry = new THREE.ConeGeometry(2, 4, 32);
-                    currentMesh = new THREE.Mesh(geometry, material);
+                    // Fixed cone with proper base
+                    const coneGroup = new THREE.Group();
+                    
+                    // Cone body
+                    const coneGeometry = new THREE.ConeGeometry(2, 4, 32);
+                    const coneMesh = new THREE.Mesh(coneGeometry, material);
+                    coneGroup.add(coneMesh);
+                    
+                    // Base
+                    const baseGeometry = new THREE.CircleGeometry(2, 32);
+                    const baseMesh = new THREE.Mesh(baseGeometry, material);
+                    baseMesh.position.y = -2;
+                    baseMesh.rotation.x = Math.PI / 2;
+                    coneGroup.add(baseMesh);
+                    
+                    currentMesh = coneGroup;
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
                     break;
+
                 case 'piramide':
                     geometry = new THREE.ConeGeometry(2.5, 4, 4);
                     currentMesh = new THREE.Mesh(geometry, material);
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
+                    const edgesPiramide = new THREE.EdgesGeometry(geometry);
+                    const lineMaterialPiramide = new THREE.LineBasicMaterial({ 
+                        color: 0x000000, 
+                        linewidth: 3
+                    });
+                    const wireframePiramide = new THREE.LineSegments(edgesPiramide, lineMaterialPiramide);
+                    currentMesh.add(wireframePiramide);
                     break;
+
                 case 'semiesfera':
-                    geometry = new THREE.SphereGeometry(3, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
-                    currentMesh = new THREE.Mesh(geometry, material);
+                    // Fixed hemisphere with proper base
+                    const hemisphereGroup = new THREE.Group();
+                    
+                    // Hemisphere
+                    const hemisphereGeometry = new THREE.SphereGeometry(3, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+                    const hemisphereMesh = new THREE.Mesh(hemisphereGeometry, material);
+                    hemisphereGroup.add(hemisphereMesh);
+                    
+                    // Base
+                    const hemisphereBaseGeometry = new THREE.CircleGeometry(3, 32);
+                    const hemisphereBaseMesh = new THREE.Mesh(hemisphereBaseGeometry, material);
+                    hemisphereBaseMesh.rotation.x = -Math.PI / 2;
+                    hemisphereGroup.add(hemisphereBaseMesh);
+                    
+                    currentMesh = hemisphereGroup;
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
                     break;
+
                 case 'tronco_cono':
-                    geometry = new THREE.CylinderGeometry(1.5, 2.5, 4, 32);
-                    currentMesh = new THREE.Mesh(geometry, material);
+                    // Fixed truncated cone with proper caps
+                    const truncatedConeGroup = new THREE.Group();
+                    
+                    // Truncated cone body
+                    const truncatedConeGeometry = new THREE.CylinderGeometry(1.5, 2.5, 4, 32);
+                    const truncatedConeMesh = new THREE.Mesh(truncatedConeGeometry, material);
+                    truncatedConeGroup.add(truncatedConeMesh);
+                    
+                    // Top cap
+                    const truncatedConeTopGeometry = new THREE.CircleGeometry(1.5, 32);
+                    const truncatedConeTopMesh = new THREE.Mesh(truncatedConeTopGeometry, material);
+                    truncatedConeTopMesh.position.y = 2;
+                    truncatedConeTopMesh.rotation.x = -Math.PI / 2;
+                    truncatedConeGroup.add(truncatedConeTopMesh);
+                    
+                    // Bottom cap
+                    const truncatedConeBottomGeometry = new THREE.CircleGeometry(2.5, 32);
+                    const truncatedConeBottomMesh = new THREE.Mesh(truncatedConeBottomGeometry, material);
+                    truncatedConeBottomMesh.position.y = -2;
+                    truncatedConeBottomMesh.rotation.x = Math.PI / 2;
+                    truncatedConeGroup.add(truncatedConeBottomMesh);
+                    
+                    currentMesh = truncatedConeGroup;
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
                     break;
+
                 case 'tronco_piramide':
                     geometry = new THREE.CylinderGeometry(1.5, 2.5, 4, 4);
                     currentMesh = new THREE.Mesh(geometry, material);
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
+                    const edgesTruncPyr = new THREE.EdgesGeometry(geometry);
+                    const lineMaterialTruncPyr = new THREE.LineBasicMaterial({ 
+                        color: 0x000000, 
+                        linewidth: 3
+                    });
+                    const wireframeTruncPyr = new THREE.LineSegments(edgesTruncPyr, lineMaterialTruncPyr);
+                    currentMesh.add(wireframeTruncPyr);
                     break;
+
                 case 'prismas':
                     createPrismasGroup();
                     break;
+
                 default:
                     geometry = new THREE.BoxGeometry(4, 4, 4);
                     currentMesh = new THREE.Mesh(geometry, material);
-            }
-
-            if (figura !== 'prismas' && figura !== 'cubo' && figura !== 'ortoedro' && figura !== 'tetraedro' && figura !== 'octaedro' && figura !== 'icosaedro') {
-                currentMesh.castShadow = true;
-                currentMesh.receiveShadow = true;
-                currentScene.add(currentMesh);
-                const edges = new THREE.EdgesGeometry(geometry);
-                const lineMaterial = new THREE.LineBasicMaterial({ 
-                    color: 0xffffff, 
-                    linewidth: 3
-                });
-                const wireframe = new THREE.LineSegments(edges, lineMaterial);
-                currentMesh.add(wireframe);
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
             }
 
             addDimensionLines(currentScene, figura);
@@ -1522,12 +1566,12 @@
                     const hLine = new THREE.Line(hGeometry, lineMaterial);
                     scene.add(hLine);
                     addTextLabel(scene, 'h', new THREE.Vector3(-0.8, 1.63, 0));
-                    const apotema = 3.26 * 2/3;
-                    const hcPoints = [new THREE.Vector3(0, 3.26, 0), new THREE.Vector3(0, 3.26 - apotema, 2/Math.sqrt(3))];
+                    const midBaseEdge = new THREE.Vector3(0, 0, 2/Math.sqrt(3));
+                    const hcPoints = [new THREE.Vector3(0, 3.26, 0), midBaseEdge];
                     const hcGeometry = new THREE.BufferGeometry().setFromPoints(hcPoints);
                     const hcLine = new THREE.Line(hcGeometry, lineMaterial);
                     scene.add(hcLine);
-                    addTextLabel(scene, 'hc', new THREE.Vector3(0.3, 3.26 - apotema/2, 2/(2*Math.sqrt(3))));
+                    addTextLabel(scene, 'hc', new THREE.Vector3(0.3, 1.8, 1.2));
                     break;
                 case 'octaedro':
                     const aPointsOcta = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(0, 3, 0)];
@@ -1537,7 +1581,6 @@
                     addTextLabel(scene, 'a', new THREE.Vector3(-1.8, 1.8, 0));
                     break;
                 case 'icosaedro':
-                    // Línea para la arista (a)
                     const aPointsIcosa = [new THREE.Vector3(-1.5, -1.5, 0), new THREE.Vector3(1.5, -1.5, 0)];
                     const aGeometryIcosa = new THREE.BufferGeometry().setFromPoints(aPointsIcosa);
                     const aLineIcosa = new THREE.Line(aGeometryIcosa, lineMaterial);
@@ -1572,11 +1615,11 @@
                     break;
                 case 'piramide':
                     const pyramidHeightPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(0, 2, 0)];
-                    const pyramidApothemPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(2, 0, 0)];
+                    const pyramidApothemPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(1.25, -2, 1.25)];
                     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidHeightPoints), lineMaterial));
                     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidApothemPoints), lineMaterial));
                     addTextLabel(scene, 'h', new THREE.Vector3(0.5, 0, 0));
-                    addTextLabel(scene, 'ap', new THREE.Vector3(1, 1, 0));
+                    addTextLabel(scene, 'ap', new THREE.Vector3(0.8, 0, 1.5));
                     break;
                 case 'semiesfera':
                     const semiSpherePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3, 0, 0)];
@@ -1640,14 +1683,6 @@
             scene.add(sprite);
         }
 
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            if (modal) {
-                modal.style.display = "none";
-            }
-            currentModal = null;
-        }
-
         function close3DModal() {
             const modal = document.getElementById('modal3D');
             if (modal) {
@@ -1673,9 +1708,12 @@
             currentCamera = null;
             currentMesh = null;
             currentModal = null;
-            setTimeout(() => {
-                initializeMini3DScenes();
-            }, 100);
+            
+            // Ya no es necesario recargar todas las mini-escenas,
+            // pero sí las que quedan (si quisiéramos)
+            // setTimeout(() => {
+            //     initializeMini3DScenes();
+            // }, 100);
         }
 
         window.onclick = function(event) {
