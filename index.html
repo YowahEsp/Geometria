@@ -316,6 +316,9 @@
         .fig-triangulo-equilatero { fill: #d35400; stroke: #e67e22; stroke-width: 3; }
         .fig-triangulo-isosceles { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
         .fig-triangulo-escaleno { fill: #7f8c8d; stroke: #95a5a6; stroke-width: 3; }
+        .fig-triangulo-rectangulo { fill: #8e44ad; stroke: #7d3c98; stroke-width: 3; }
+        .fig-octagono { fill: #e67e22; stroke: #d35400; stroke-width: 3; }
+        .fig-cometa { fill: #c0392b; stroke: #a93226; stroke-width: 3; }
         .fig-pentagono { fill: #ff9f43; stroke: #f39c12; stroke-width: 3; }
         .fig-hexagono { fill: #ff6b6b; stroke: #e74c3c; stroke-width: 3; }
         .fig-circulo { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
@@ -382,6 +385,7 @@
 <body>
     <div class="container">
         <h1>📐 Áreas y Volúmenes de Figuras Geométricas 📊</h1>
+        
         <div class="section">
             <div class="section-title">✏️ Áreas y Perímetros de Figuras Planas</div>
             <div class="grid">
@@ -393,8 +397,9 @@
                             <text x="100" y="165" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 4a<br>A = a<sup>2</sup></div>
+                    <div class="formula">P = 4a<br>A = a²</div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('rectangulo')">
                     <div class="figure-title">Rectángulo</div>
                     <div class="figure-container">
@@ -406,6 +411,7 @@
                     </div>
                     <div class="formula">P = 2(b+h)<br>A = bh</div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('paralelogramo')">
                     <div class="figure-title">Paralelogramo</div>
                     <div class="figure-container">
@@ -419,6 +425,7 @@
                     </div>
                     <div class="formula">P = 2(a+b)<br>A = bh</div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('rombo')">
                     <div class="figure-title">Rombo</div>
                     <div class="figure-container">
@@ -431,8 +438,9 @@
                             <text x="125" y="65" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 4a = 4√((d/2)<sup>2</sup>+(D/2)<sup>2</sup>)<br>A = <div class="frac"><span class="frac-numer">D·d</span><span class="frac-denom">2</span></div></div>
+                    <div class="formula">P = 4a = 4√((d/2)²+(D/2)²)<br>A = <div class="frac"><span class="frac-numer">D·d</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('trapecio')">
                     <div class="figure-title">Trapecio</div>
                     <div class="figure-container">
@@ -448,6 +456,7 @@
                     </div>
                     <div class="formula">P = a+B+c+b<br>A = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('trapecio_recto')">
                     <div class="figure-title">Trapecio Recto</div>
                     <div class="figure-container">
@@ -459,8 +468,9 @@
                             <text x="40" y="90" text-anchor="middle" class="label">a</text>
                         </svg>
                     </div>
-                    <div class="formula" style="line-height: 1.5; font-size: 13px;">P = a+b+B+h<br>P = b+B+h+√((B-b)<sup>2</sup>+h<sup>2</sup>)<br>A = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div></div>
+                    <div class="formula" style="line-height: 1.5; font-size: 13px;">P = a+b+B+h<br>P = b+B+h+√((B-b)²+h²)<br>A = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('triangulo_equilatero')">
                     <div class="figure-title">Triángulo Equilátero</div>
                     <div class="figure-container">
@@ -475,6 +485,7 @@
                     </div>
                     <div class="formula">P = 3a<br>A = <div class="frac"><span class="frac-numer">ah</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('triangulo_isosceles')">
                     <div class="figure-title">Triángulo Isósceles</div>
                     <div class="figure-container">
@@ -485,13 +496,11 @@
                             <text x="110" y="100" text-anchor="middle" class="label">h</text>
                             <text x="130" y="95" text-anchor="middle" class="label">a</text>
                             <text x="70" y="95" text-anchor="middle" class="label">a</text>
-                            <text x="100" y="25" text-anchor="middle" class="label">B</text>
-                            <text x="55" y="160" text-anchor="middle" class="label">A</text>
-                            <text x="145" y="160" text-anchor="middle" class="label">C</text>
                         </svg>
                     </div>
                     <div class="formula">P = 2a+b<br>A = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('triangulo_escaleno')">
                     <div class="figure-title">Triángulo Escaleno</div>
                     <div class="figure-container">
@@ -503,12 +512,88 @@
                             <text x="75" y="98" text-anchor="middle" class="label">h</text>
                             <text x="125" y="98" text-anchor="middle" class="label">c</text>
                             <text x="60" y="98" text-anchor="middle" class="label">a</text>
-                            <text x="50" y="150" text-anchor="middle" class="label">C</text>
-                            <text x="150" y="150" text-anchor="middle" class="label">A</text>
                         </svg>
                     </div>
                     <div class="formula">P = a+b+c<br>A = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div></div>
                 </div>
+
+                <div class="figure-card" onclick="openModal('triangulo_rectangulo')">
+                    <div class="figure-title">Triángulo Rectángulo</div>
+                    <div class="figure-container">
+                        <svg class="figure-svg" viewBox="0 0 200 200">
+                            <polygon points="50,150 50,50 150,150" class="fig-triangulo-rectangulo"/>
+                            <line x1="45" y1="50" x2="45" y2="150" class="aux-line"/>
+                            <line x1="50" y1="155" x2="150" y2="155" class="aux-line"/>
+                            <text x="25" y="100" text-anchor="middle" class="label">a</text>
+                            <text x="100" y="165" text-anchor="middle" class="label">b</text>
+                            <text x="110" y="110" text-anchor="middle" class="label">c</text>
+                            <path d="M65,145 L65,135 L55,135" class="angle-arc"/>
+                        </svg>
+                    </div>
+                    <div class="formula">P = a+b+c<br>A = <div class="frac"><span class="frac-numer">a·b</span><span class="frac-denom">2</span></div><br>c² = a²+b²</div>
+                </div>
+
+                <div class="figure-card" onclick="openModal('octagono')">
+                    <div class="figure-title">Octágono Regular</div>
+                    <div class="figure-container">
+                        <svg class="figure-svg" viewBox="0 0 200 200">
+                            <polygon points="100,30 150,50 170,100 150,150 100,170 50,150 30,100 50,50" class="fig-octagono"/>
+                            <circle cx="100" cy="100" r="3" fill="#333"/>
+                            <line x1="100" y1="100" x2="100" y2="170" class="aux-line"/>
+                            <line x1="100" y1="100" x2="150" y2="150" class="aux-line"/>
+                            <text x="105" y="135" text-anchor="start" class="label">a</text>
+                            <text x="125" y="125" text-anchor="middle" class="label">r</text>
+                            <text x="100" y="185" text-anchor="middle" class="label">s</text>
+                        </svg>
+                    </div>
+                    <div class="formula">P = 8s<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div><br>A = 2(1+√2)s²</div>
+                </div>
+
+                <div class="figure-card" onclick="openModal('segmento_circular')">
+                    <div class="figure-title">Segmento Circular</div>
+                    <div class="figure-container">
+                        <svg class="figure-svg" viewBox="0 0 280 200">
+                            <path d="M 52 80 A 60 60 0 0 1 148 80 L 148 80 L 100 80 Z" fill="#ffcc99" stroke="none"/>
+                            <path d="M 148 80 A 60 60 0 1 1 52 80" fill="none" stroke="#000" stroke-width="2.5"/>
+                            <path d="M 52 80 A 60 60 0 0 1 148 80" fill="none" stroke="#c44" stroke-width="2.5"/>
+                            <line x1="52" y1="80" x2="148" y2="80" stroke="#000" stroke-width="1.5"/>
+                            <line x1="100" y1="110" x2="52" y2="80" stroke="#000" stroke-width="1.5"/>
+                            <line x1="100" y1="110" x2="148" y2="80" stroke="#000" stroke-width="1.5"/>
+                            <path d="M 115 102 A 18 18 0 0 0 85 102" fill="none" stroke="#4a4" stroke-width="2"/>
+                            <path d="M 100 110 L 115 102 A 18 18 0 0 0 85 102 Z" fill="#d4f4dd" fill-opacity="0.6" stroke="none"/>
+                            <line x1="100" y1="110" x2="100" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                            <line x1="148" y1="110" x2="200" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                            <line x1="148" y1="80" x2="200" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                            <line x1="190" y1="80" x2="190" y2="110" stroke="#333" stroke-width="1.5"/>
+                            <polygon points="190,80 187,85 193,85" fill="#333"/>
+                            <polygon points="190,110 187,105 193,105" fill="#333"/>
+                            <circle cx="100" cy="110" r="2" fill="#000"/>
+                            <text x="100" y="45" text-anchor="middle" fill="#c44" font-size="20" font-weight="normal" font-style="italic">a</text>
+                            <text x="125" y="75" text-anchor="middle" fill="#000" font-size="16" font-weight="normal" font-style="italic">c</text>
+                            <text x="70" y="90" text-anchor="middle" fill="#000" font-size="16" font-weight="normal" font-style="italic">r</text>
+                            <text x="105" y="125" text-anchor="start" fill="#4a4" font-size="16" font-weight="normal" font-style="italic">α</text>
+                            <text x="205" y="98" text-anchor="start" fill="#333" font-size="16" font-weight="normal" font-style="italic">h</text>
+                        </svg>
+                    </div>
+                    <div class="formula">A = <div class="frac"><span class="frac-numer">r²</span><span class="frac-denom">2</span></div>(α - sinα)<br>L = rα<br>α en radianes</div>
+                </div>
+
+                <div class="figure-card" onclick="openModal('cometa')">
+                    <div class="figure-title">Cometa/Romboide</div>
+                    <div class="figure-container">
+                        <svg class="figure-svg" viewBox="0 0 200 200">
+                            <polygon points="100,40 150,80 100,160 50,80" class="fig-cometa"/>
+                            <line x1="50" y1="80" x2="150" y2="80" class="aux-line"/>
+                            <line x1="100" y1="40" x2="100" y2="160" class="aux-line"/>
+                            <text x="75" y="80" text-anchor="middle" class="label">d₁</text>
+                            <text x="100" y="100" text-anchor="middle" class="label">d₂</text>
+                            <text x="125" y="60" text-anchor="middle" class="label">a</text>
+                            <text x="125" y="120" text-anchor="middle" class="label">b</text>
+                        </svg>
+                    </div>
+                    <div class="formula">P = 2(a+b)<br>A = <div class="frac"><span class="frac-numer">d₁·d₂</span><span class="frac-denom">2</span></div></div>
+                </div>
+
                 <div class="figure-card" onclick="openModal('pentagono')">
                     <div class="figure-title">Pentágono Regular</div>
                     <div class="figure-container">
@@ -524,6 +609,7 @@
                     </div>
                     <div class="formula">P = 5b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('hexagono')">
                     <div class="figure-title">Hexágono Regular</div>
                     <div class="figure-container">
@@ -539,6 +625,7 @@
                     </div>
                     <div class="formula">P = 6b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('circulo')">
                     <div class="figure-title">Círculo</div>
                     <div class="figure-container">
@@ -549,8 +636,9 @@
                             <text x="132" y="95" text-anchor="middle" class="label">r</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2πr<br>A = πr<sup>2</sup></div>
+                    <div class="formula">P = 2πr<br>A = πr²</div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('sector_circular')">
                     <div class="figure-title">Sector Circular</div>
                     <div class="figure-container">
@@ -563,8 +651,9 @@
                             <text x="115" y="85" text-anchor="middle" class="label">L</text>
                         </svg>
                     </div>
-                    <div class="formula">L = <div class="frac"><span class="frac-numer">πrα</span><span class="frac-denom">180</span></div><br>A = <div class="frac"><span class="frac-numer">πr<sup>2</sup>α</span><span class="frac-denom">360</span></div></div>
+                    <div class="formula">L = <div class="frac"><span class="frac-numer">πrα</span><span class="frac-denom">180</span></div><br>A = <div class="frac"><span class="frac-numer">πr²α</span><span class="frac-denom">360</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('corona_circular')">
                     <div class="figure-title">Corona Circular</div>
                     <div class="figure-container">
@@ -578,8 +667,9 @@
                             <text x="105" y="80" text-anchor="start" class="label">r</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 2π(R+r)<br>A = π(R<sup>2</sup>-r<sup>2</sup>)</div>
+                    <div class="formula">P = 2π(R+r)<br>A = π(R²-r²)</div>
                 </div>
+
                 <div class="figure-card" onclick="openModal('elipse')">
                     <div class="figure-title">Elipse</div>
                     <div class="figure-container">
@@ -596,11 +686,10 @@
                 </div>
             </div>
         </div>
+
         <div class="section">
-            <div class="section-title">🔷 Áreas y Volúmenes de Figuras en el Espacio</div>
+            <div class="section-title">📦 Áreas y Volúmenes de Figuras en el Espacio</div>
             <div class="grid">
-                <!-- ===== INICIO DE CAMBIOS ===== -->
-                <!-- Se ha cambiado el viewBox de 0 0 200 200 a 25 25 150 150 para hacer zoom -->
                 <div class="figure-card" onclick="open3DModal('cubo')">
                     <div class="figure-title">Cubo</div>
                     <div class="figure-container">
@@ -618,6 +707,7 @@
                     </div>
                     <div class="formula">Área: A = 6a²<br>Volumen: V = a³</div>
                 </div>
+
                 <div class="figure-card" onclick="open3DModal('ortoedro')">
                     <div class="figure-title">Ortoedro/Prisma</div>
                     <div class="figure-container">
@@ -635,29 +725,24 @@
                     </div>
                     <div class="formula">Área: A = 2(ab+ac+bc)<br>Volumen: V = a·b·c</div>
                 </div>
-                
+
                 <div class="figure-card" onclick="open3DModal('esfera')">
                     <div class="figure-title">Esfera</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="25 25 150 150">
-                            <!-- Fill the main circle -->
                             <circle cx="100" cy="100" r="55" stroke="#000" stroke-width="2" fill="#2ecc71" fill-opacity="0.7"/>
-                            <!-- Redraw the center ellipse (no fill) -->
                             <ellipse cx="100" cy="100" rx="55" ry="20" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
                         </svg>
                     </div>
                     <div class="formula">A = 4πr²<br>V = <div class="frac"><span class="frac-numer">4</span><span class="frac-denom">3</span></div>πr³</div>
                 </div>
+
                 <div class="figure-card" onclick="open3DModal('cilindro')">
                     <div class="figure-title">Cilindro</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="25 25 150 150">
-                            <!-- Fill the body first -->
                             <path d="M60,70 L60,140 A40,15 0 0,0 140,140 L140,70 A40,15 0 0,1 60,70 Z" fill="#9b59b6" fill-opacity="0.7" stroke="none"/>
-                            <!-- Fill the top ellipse -->
                             <ellipse cx="100" cy="70" rx="40" ry="15" fill="#9b59b6" fill-opacity="0.7" stroke="none"/>
-                            
-                            <!-- Draw contours on top -->
                             <ellipse cx="100" cy="70" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
                             <line x1="60" y1="70" x2="60" y2="140" stroke="#000" stroke-width="2"/>
                             <line x1="140" y1="70" x2="140" y2="140" stroke="#000" stroke-width="2"/>
@@ -667,14 +752,12 @@
                     </div>
                     <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = 2πrh<br>A<sub>tot</sub> = 2πr(r+h)<br>V = πr²h</div>
                 </div>
+
                 <div class="figure-card" onclick="open3DModal('cono')">
                     <div class="figure-title">Cono</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="25 25 150 150">
-                            <!-- Fill the cone body and bottom ellipse -->
                             <path d="M100,40 L60,140 A40,15 0 0,0 140,140 Z" fill="#f39c12" fill-opacity="0.7" stroke="none" />
-                            
-                            <!-- Redraw contours on top -->
                             <ellipse cx="100" cy="140" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
                             <line x1="100" y1="40" x2="60" y2="140" stroke="#000" stroke-width="2"/>
                             <line x1="100" y1="40" x2="140" y2="140" stroke="#000" stroke-width="2"/>
@@ -683,8 +766,25 @@
                     </div>
                     <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = πrg<br>A<sub>tot</sub> = πr(r+g)<br>V = <div class="frac"><span class="frac-numer">1</span><span class="frac-denom">3</span></div>πr²h</div>
                 </div>
-                
-                <!-- Figuras 3D (piramide) que usan el tamaño base -->
+
+                <div class="figure-card" onclick="open3DModal('toro')">
+                    <div class="figure-title">Toro (Toroide)</div>
+                    <div class="figure-container">
+                        <svg class="figure-svg" viewBox="0 0 200 200">
+                            <ellipse cx="100" cy="100" rx="100" ry="55" fill="#A8D8EA" stroke="#5DADE2" stroke-width="2.5"/>
+                            <ellipse cx="100" cy="100" rx="56" ry="33" fill="white" stroke="#5DADE2" stroke-width="2.5"/>
+                            <circle cx="22" cy="100" r="22" fill="none" stroke="#5DADE2" stroke-width="2" stroke-dasharray="4,3"/>
+                            <circle cx="178" cy="100" r="22" fill="none" stroke="#5DADE2" stroke-width="2" stroke-dasharray="4,3"/>
+                            <circle cx="100" cy="100" r="3" fill="#e74c3c"/>
+                            <line x1="100" y1="100" x2="178" y2="100" stroke="#e74c3c" stroke-width="2.5" stroke-dasharray="5,3"/>
+                            <line x1="178" y1="100" x2="178" y2="78" stroke="#e74c3c" stroke-width="2.5"/>
+                            <text x="139" y="93" text-anchor="middle" class="label" fill="#e74c3c" font-size="16px" font-weight="bold">R</text>
+                            <text x="185" y="90" text-anchor="start" class="label" fill="#e74c3c" font-size="16px" font-weight="bold">r</text>
+                        </svg>
+                    </div>
+                    <div class="formula" style="font-size: 12px; line-height: 1.4;">A = 4π²Rr<br>V = 2π²Rr²</div>
+                </div>
+
                 <div class="figure-card" onclick="open3DModal('piramide')">
                     <div class="figure-title">Pirámide</div>
                     <div class="figure-container">
@@ -697,10 +797,7 @@
                     <div class="figure-title">Semiesfera</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="25 25 150 150">
-                            <!-- Fill the dome and base first -->
                             <path d="M45,100 A55,55 0 0,1 155,100 A55,18 0 0,1 45,100 Z" fill="#d35400" fill-opacity="0.7" stroke="none"/>
-                            
-                            <!-- Redraw contours on top -->
                             <path d="M45,100 A55,55 0 0,1 155,100" stroke="#000" stroke-width="2" fill="none"/>
                             <ellipse cx="100" cy="100" rx="55" ry="18" stroke="#000" stroke-width="2" fill="none"/>
                             <path d="M45,100 A55,18 0 0,0 155,100" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
@@ -708,16 +805,13 @@
                     </div>
                     <div class="formula" style="font-size: 12px; line-height: 1.5;">A<sub>curva</sub> = 2πr²<br>A<sub>tot</sub> = 3πr²<br>V = <div class="frac"><span class="frac-numer">2</span><span class="frac-denom">3</span></div>πr³</div>
                 </div>
+
                 <div class="figure-card" onclick="open3DModal('tronco_cono')">
                     <div class="figure-title">Tronco de Cono</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="25 25 150 150">
-                            <!-- Fill the body and bottom ellipse -->
                             <path d="M70,70 L55,140 A45,15 0 0,0 145,140 L130,70 A30,10 0 0,1 70,70 Z" fill="#34495e" fill-opacity="0.7" stroke="none"/>
-                            <!-- Fill the top ellipse -->
                             <ellipse cx="100" cy="70" rx="30" ry="10" fill="#34495e" fill-opacity="0.7" stroke="none"/>
-
-                            <!-- Redraw contours on top -->
                             <ellipse cx="100" cy="140" rx="45" ry="15" stroke="#000" stroke-width="2" fill="none"/>
                             <ellipse cx="100" cy="70" rx="30" ry="10" stroke="#000" stroke-width="2" fill="none"/>
                             <line x1="70" y1="70" x2="55" y2="140" stroke="#000" stroke-width="2"/>
@@ -728,7 +822,6 @@
                     <div class="formula" style="font-size: 11px; line-height: 1.4;">A<sub>lat</sub> = πg(R+r)<br>A<sub>tot</sub> = A<sub>lat</sub>+πR²+πr²<br>V = <div class="frac"><span class="frac-numer">πh</span><span class="frac-denom">3</span></div>(R²+Rr+r²)</div>
                 </div>
 
-                <!-- Figuras 3D (tronco_piramide) que usan el tamaño base -->
                 <div class="figure-card" onclick="open3DModal('tronco_piramide')">
                     <div class="figure-title">Tronco de Pirámide</div>
                     <div class="figure-container">
@@ -736,6 +829,39 @@
                     </div>
                     <div class="formula" style="font-size: 10px; line-height: 1.4;">A<sub>lat</sub> = <div class="frac"><span class="frac-numer">(P<sub>M</sub>+P<sub>m</sub>)ap</span><span class="frac-denom">2</span></div><br>A<sub>tot</sub> = A<sub>lat</sub>+A<sub>M</sub>+A<sub>m</sub><br>V = <div class="frac"><span class="frac-numer">h</span><span class="frac-denom">3</span></div>(A<sub>M</sub>+A<sub>m</sub>+√(A<sub>M</sub>·A<sub>m</sub>))</div>
                 </div>
+
+                <div class="figure-card" onclick="open3DModal('casquete_esferico')">
+    <div class="figure-title">Casquete Esférico</div>
+    <div class="figure-container">
+        <svg class="figure-svg" viewBox="0 0 400 400">
+            <defs>
+                <clipPath id="capClip">
+                    <rect x="0" y="0" width="400" height="125"/>
+                </clipPath>
+            </defs>
+            <circle cx="200" cy="200" r="150" fill="#8B9FDE" stroke="#2c3e50" stroke-width="2"/>
+            <circle cx="200" cy="200" r="150" fill="#B8A7E8" clip-path="url(#capClip)"/>
+            <ellipse cx="200" cy="125" rx="129.9" ry="30" fill="none" stroke="#2c3e50" stroke-width="2"/>
+            <path d="M 70.1,125 A 129.9,30 0 0,1 329.9,125" fill="none" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="200" y1="50" x2="200" y2="200" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="200" y1="200" x2="329.9" y2="125" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="200" y1="125" x2="329.9" y2="125" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="215" y1="50" x2="215" y2="125" stroke="#000" stroke-width="2"/>
+            <polygon points="215,50 210,60 220,60" fill="#000"/>
+            <polygon points="215,125 210,115 220,115" fill="#000"/>
+            <circle cx="200" cy="50" r="3" fill="#000"/>
+            <circle cx="200" cy="200" r="3" fill="#000"/>
+            <circle cx="200" cy="125" r="3" fill="#000"/>
+            <circle cx="332.29" cy="125" r="3" fill="#000"/>
+            <circle cx="67.71" cy="125" r="3" fill="#000"/>
+            <text x="337" y="145" font-size="20" font-style="italic" font-weight="bold" fill="#000">r</text>
+            <text x="260" y="120" font-size="20" font-style="italic" font-weight="bold" fill="#000">a</text>
+            <text x="225" y="95" font-size="20" font-style="italic" font-weight="bold" fill="#000">h</text>
+        </svg>
+    </div>
+    <div class="formula" style="font-size: 12px; line-height: 1.4;">A = 2πRh<br>V = <div class="frac"><span class="frac-numer">πh²</span><span class="frac-denom">3</span></div>(3R-h)</div>
+</div>
+
                 <div class="figure-card" onclick="open3DModal('tetraedro')">
                     <div class="figure-title">Tetraedro</div>
                     <div class="figure-container">
@@ -758,6 +884,7 @@
                     </div>
                     <div class="formula">Área: A = a²√3<br>Volumen: V = <div class="frac"><span class="frac-numer">a³√2</span><span class="frac-denom">12</span></div></div>
                 </div>
+
                 <div class="figure-card" onclick="open3DModal('octaedro')">
                     <div class="figure-title">Octaedro</div>
                     <div class="figure-container">
@@ -783,9 +910,7 @@
                     </div>
                     <div class="formula">Área: A = 2a²√3<br>Volumen: V = <div class="frac"><span class="frac-numer">a³√2</span><span class="frac-denom">3</span></div></div>
                 </div>
-                <!-- ===== FIN DE CAMBIOS ===== -->
 
-                <!-- Figuras 3D (prismas, icosaedro) que usan el tamaño base -->
                 <div class="figure-card" onclick="open3DModal('prismas')">
                     <div class="figure-title">Prismas Rectos</div>
                     <div class="figure-container">
@@ -793,6 +918,7 @@
                     </div>
                     <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = P<sub>base</sub>·h<br>A<sub>tot</sub> = A<sub>lat</sub>+2A<sub>base</sub><br>V = A<sub>base</sub>·h</div>
                 </div>
+
                 <div class="figure-card" onclick="open3DModal('icosaedro')">
                     <div class="figure-title">Icosaedro</div>
                     <div class="figure-container">
@@ -800,9 +926,18 @@
                     </div>
                     <div class="formula" style="font-size: 13px; line-height: 1.5;">Área: A = 5√3·a²<br>Volumen: V = <div class="frac"><span class="frac-numer">5</span><span class="frac-denom">12</span></div>(3+√5)·a³</div>
                 </div>
+
+                <div class="figure-card" onclick="open3DModal('dodecaedro')">
+                    <div class="figure-title">Dodecaedro</div>
+                    <div class="figure-container">
+                        <div id="mini-dodecaedro" class="mini-3d-container"></div>
+                    </div>
+                    <div class="formula" style="font-size: 13px; line-height: 1.5;">Área: A = 3√(25+10√5)·a²<br>Volumen: V = <div class="frac"><span class="frac-numer">1</span><span class="frac-denom">4</span></div>(15+7√5)·a³</div>
+                </div>
             </div>
         </div>
     </div>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -813,9 +948,11 @@
             <div id="modal-formula" class="modal-formula"></div>
         </div>
     </div>
+
     <div id="modal3D" class="modal">
         <div class="modal-content">
             <span class="close" onclick="close3DModal()">&times;</span>
+            <h2 id="modal3d-title" class="section-title" style="margin-bottom: 20px; font-size: 26px;"></h2>
             <div id="modal-3d-container" class="modal-3d-container">
                 <div class="loader">
                     <div class="spinner"></div>
@@ -826,12 +963,13 @@
             <div id="modal3d-formula" class="modal-formula"></div>
         </div>
     </div>
+
     <script>
         const figureData = {
             'cuadrado': {
                 title: 'Cuadrado',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><rect x="50" y="50" width="100" height="100" class="fig-cuadrado"/><text x="100" y="165" text-anchor="middle" class="label">a</text></svg>`,
-                formula: `Perímetro = 4a<br>Área = a<sup>2</sup>`
+                formula: `Perímetro = 4a<br>Área = a²`
             },
             'rectangulo': {
                 title: 'Rectángulo',
@@ -846,32 +984,52 @@
             'rombo': {
                 title: 'Rombo',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,25 145,100 100,175 55,100" class="fig-rombo"/><line x1="55" y1="100" x2="145" y2="100" class="aux-line"/><line x1="100" y1="25" x2="100" y2="175" class="aux-line"/><text x="125" y="110" text-anchor="middle" class="label">d</text><text x="105" y="75" text-anchor="middle" class="label">D</text><text x="125" y="65" text-anchor="middle" class="label">a</text></svg>`,
-                formula: `Perímetro = 4a = 4√((d/2)<sup>2</sup>+(D/2)<sup>2</sup>)<br>Área = <div class="frac"><span class="frac-numer">D·d</span><span class="frac-denom">2</span></div>`
+                formula: `Perímetro = 4a = 4√((d/2)² + (D/2)²)<br>Área = <div class="frac"><span class="frac-numer">D·d</span><span class="frac-denom">2</span></div>`
             },
             'trapecio': {
                 title: 'Trapecio',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="60,50 140,50 160,130 40,130" class="fig-trapecio"/><line x1="60" y1="50" x2="60" y2="130" class="aux-line"/><text x="100" y="145" text-anchor="middle" class="label">B</text><text x="100" y="45" text-anchor="middle" class="label">b</text><text x="50" y="90" text-anchor="middle" class="label">h</text><text x="30" y="90" text-anchor="middle" class="label">a</text><text x="155" y="90" text-anchor="middle" class="label">c</text></svg>`,
-                formula: `Perímetro = a + B + c + b<br>Área = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div>`
+                formula: `Perímetro = a + B + c + b<br>Área = <div class="frac"><span class="frac-numer">(B+b)·h</span><span class="frac-denom">2</span></div>`
             },
             'trapecio_recto': {
                 title: 'Trapecio Recto',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="70,50 140,50 140,130 50,130" class="fig-trapecio-recto"/><text x="95" y="145" text-anchor="middle" class="label">B</text><text x="105" y="45" text-anchor="middle" class="label">b</text><text x="150" y="90" text-anchor="middle" class="label">h</text><text x="40" y="90" text-anchor="middle" class="label">a</text></svg>`,
-                formula: `Perímetro = a + b + B + h<br>Perímetro = b + B + h + √((B-b)<sup>2</sup>+h<sup>2</sup>)<br>Área = <div class="frac"><span class="frac-numer">(B+b)h</span><span class="frac-denom">2</span></div>`
+                formula: `Perímetro = a + b + B + h = b + B + h + √((B-b)² + h²)<br>Área = <div class="frac"><span class="frac-numer">(B+b)·h</span><span class="frac-denom">2</span></div>`
             },
             'triangulo_equilatero': {
                 title: 'Triángulo Equilátero',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,45 165,145 35,145" class="fig-triangulo-equilatero"/><line x1="100" y1="45" x2="100" y2="145" class="aux-line"/><text x="100" y="160" text-anchor="middle" class="label">a</text><text x="110" y="95" text-anchor="middle" class="label">h</text><text x="140" y="95" text-anchor="middle" class="label">a</text><text x="60" y="95" text-anchor="middle" class="label">a</text></svg>`,
-                formula: `Perímetro = 3a<br>Área = <div class="frac"><span class="frac-numer">ah</span><span class="frac-denom">2</span></div>`
+                formula: `Perímetro = 3a<br>Área = <div class="frac"><span class="frac-numer">a·h</span><span class="frac-denom">2</span></div>`
             },
             'triangulo_isosceles': {
                 title: 'Triángulo Isósceles',
-                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,30 140,155 60,155" class="fig-triangulo-isosceles"/><line x1="100" y1="30" x2="100" y2="155" class="aux-line"/><text x="100" y="175" text-anchor="middle" class="label">b</text><text x="110" y="100" text-anchor="middle" class="label">h</text><text x="130" y="95" text-anchor="middle" class="label">a</text><text x="70" y="95" text-anchor="middle" class="label">a</text><text x="100" y="25" text-anchor="middle" class="label">B</text><text x="55" y="160" text-anchor="middle" class="label">A</text><text x="145" y="160" text-anchor="middle" class="label">C</text></svg>`,
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,30 140,155 60,155" class="fig-triangulo-isosceles"/><line x1="100" y1="30" x2="100" y2="155" class="aux-line"/><text x="100" y="175" text-anchor="middle" class="label">b</text><text x="110" y="100" text-anchor="middle" class="label">h</text><text x="130" y="95" text-anchor="middle" class="label">a</text><text x="70" y="95" text-anchor="middle" class="label">a</text></svg>`,
                 formula: `Perímetro = 2a + b<br>Área = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div>`
             },
             'triangulo_escaleno': {
                 title: 'Triángulo Escaleno',
-                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="85,50 165,145 35,145" class="fig-triangulo-escaleno"/><line x1="85" y1="50" x2="85" y2="145" class="aux-line"/><text x="85" y="40" text-anchor="middle" class="label">B</text><text x="100" y="160" text-anchor="middle" class="label">b</text><text x="75" y="98" text-anchor="middle" class="label">h</text><text x="125" y="98" text-anchor="middle" class="label">c</text><text x="60" y="98" text-anchor="middle" class="label">a</text><text x="50" y="150" text-anchor="middle" class="label">C</text><text x="150" y="150" text-anchor="middle" class="label">A</text></svg>`,
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="85,50 165,145 35,145" class="fig-triangulo-escaleno"/><line x1="85" y1="50" x2="85" y2="145" class="aux-line"/><text x="85" y="40" text-anchor="middle" class="label">B</text><text x="100" y="160" text-anchor="middle" class="label">b</text><text x="75" y="98" text-anchor="middle" class="label">h</text><text x="125" y="98" text-anchor="middle" class="label">c</text><text x="60" y="98" text-anchor="middle" class="label">a</text></svg>`,
                 formula: `Perímetro = a + b + c<br>Área = <div class="frac"><span class="frac-numer">b·h</span><span class="frac-denom">2</span></div>`
+            },
+            'triangulo_rectangulo': {
+                title: 'Triángulo Rectángulo',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="50,150 50,50 150,150" class="fig-triangulo-rectangulo"/><line x1="45" y1="50" x2="45" y2="150" class="aux-line"/><line x1="50" y1="155" x2="150" y2="155" class="aux-line"/><text x="25" y="100" text-anchor="middle" class="label">a</text><text x="100" y="165" text-anchor="middle" class="label">b</text><text x="110" y="110" text-anchor="middle" class="label">c</text><path d="M65,145 L65,135 L55,135" class="angle-arc"/></svg>`,
+                formula: `Perímetro = a+b+c<br>Área = <div class="frac"><span class="frac-numer">a·b</span><span class="frac-denom">2</span></div><br>c² = a²+b²`
+            },
+            'octagono': {
+                title: 'Octágono Regular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,30 150,50 170,100 150,150 100,170 50,150 30,100 50,50" class="fig-octagono"/><circle cx="100" cy="100" r="3" fill="#333"/><line x1="100" y1="100" x2="100" y2="170" class="aux-line"/><line x1="100" y1="100" x2="150" y2="150" class="aux-line"/><text x="105" y="135" text-anchor="start" class="label">a</text><text x="125" y="125" text-anchor="middle" class="label">r</text><text x="100" y="185" text-anchor="middle" class="label">s</text></svg>`,
+                formula: `Perímetro = 8s<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div><br>Área = 2(1+√2)s²`
+            },
+            'segmento_circular': {
+                title: 'Segmento Circular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 280 200"><path d="M 52 80 A 60 60 0 0 1 148 80 L 148 80 L 100 80 Z" fill="#ffcc99" stroke="none"/><path d="M 148 80 A 60 60 0 1 1 52 80" fill="none" stroke="#000" stroke-width="2.5"/><path d="M 52 80 A 60 60 0 0 1 148 80" fill="none" stroke="#c44" stroke-width="2.5"/><line x1="52" y1="80" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="52" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><path d="M 115 102 A 18 18 0 0 0 85 102" fill="none" stroke="#4a4" stroke-width="2"/><path d="M 100 110 L 115 102 A 18 18 0 0 0 85 102 Z" fill="#d4f4dd" fill-opacity="0.6" stroke="none"/><line x1="100" y1="110" x2="100" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="110" x2="200" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="80" x2="200" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="190" y1="80" x2="190" y2="110" stroke="#333" stroke-width="1.5"/><polygon points="190,80 187,85 193,85" fill="#333"/><polygon points="190,110 187,105 193,105" fill="#333"/><circle cx="100" cy="110" r="2" fill="#000"/><text x="100" y="45" text-anchor="middle" fill="#c44" font-size="20">a</text><text x="125" y="75" text-anchor="middle" fill="#000" font-size="16">c</text><text x="70" y="90" text-anchor="middle" fill="#000" font-size="16">r</text><text x="105" y="125" text-anchor="start" fill="#4a4" font-size="16">α</text><text x="205" y="98" text-anchor="start" fill="#333" font-size="16">h</text></svg>`,
+                formula: `Área = <div class="frac"><span class="frac-numer">r²</span><span class="frac-denom">2</span></div>(α - sinα)<br>Longitud de arco = rα<br>α en radianes`
+            },
+            'cometa': {
+                title: 'Cometa/Romboide',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,40 150,80 100,160 50,80" class="fig-cometa"/><line x1="50" y1="80" x2="150" y2="80" class="aux-line"/><line x1="100" y1="40" x2="100" y2="160" class="aux-line"/><text x="75" y="80" text-anchor="middle" class="label">d₁</text><text x="100" y="100" text-anchor="middle" class="label">d₂</text><text x="125" y="60" text-anchor="middle" class="label">a</text><text x="125" y="120" text-anchor="middle" class="label">b</text></svg>`,
+                formula: `Perímetro = 2(a+b)<br>Área = <div class="frac"><span class="frac-numer">d₁·d₂</span><span class="frac-denom">2</span></div>`
             },
             'pentagono': {
                 title: 'Pentágono Regular',
@@ -886,17 +1044,17 @@
             'circulo': {
                 title: 'Círculo',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="65" class="fig-circulo"/><line x1="100" y1="100" x2="165" y2="100" class="aux-line"/><circle cx="100" cy="100" r="3" fill="#333"/><text x="132" y="95" text-anchor="middle" class="label">r</text></svg>`,
-                formula: `Perímetro (Longitud) = 2πr<br>Área = πr<sup>2</sup>`
+                formula: `Perímetro (Longitud) = 2πr<br>Área = πr²`
             },
             'sector_circular': {
                 title: 'Sector Circular',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><path d="M50,150 L150,150 A100,100 0 0,0 50,50 Z" class="fig-sector"/><path d="M70,150 A20,20 0 0,0 50,130" class="angle-arc"/><text x="70" y="135" text-anchor="middle" class="angle-label">α</text><text x="100" y="165" text-anchor="middle" class="label">r</text><text x="40" y="100" text-anchor="middle" class="label">r</text><text x="115" y="85" text-anchor="middle" class="label">L</text></svg>`,
-                formula: `Longitud de Arco (L) = <div class="frac"><span class="frac-numer">πrα</span><span class="frac-denom">180</span></div><br>Área = <div class="frac"><span class="frac-numer">πr<sup>2</sup>α</span><span class="frac-denom">360</span></div>`
+                formula: `Longitud de Arco (L) = <div class="frac"><span class="frac-numer">πrα</span><span class="frac-denom">180</span></div><br>Área = <div class="frac"><span class="frac-numer">πr²α</span><span class="frac-denom">360</span></div>`
             },
             'corona_circular': {
                 title: 'Corona Circular',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="65" class="fig-corona"/><circle cx="100" cy="100" r="40" fill="white" stroke="#16a085" stroke-width="3"/><line x1="100" y1="100" x2="165" y2="100" class="aux-line"/><line x1="100" y1="100" x2="100" y2="60" class="aux-line"/><circle cx="100" cy="100" r="3" fill="#333"/><text x="132" y="95" text-anchor="middle" class="label">R</text><text x="105" y="80" text-anchor="start" class="label">r</text></svg>`,
-                formula: `Perímetro = 2π(R+r)<br>Área = π(R<sup>2</sup>-r<sup>2</sup>)`
+                formula: `Perímetro = 2π(R+r)<br>Área = π(R²-r²)`
             },
             'elipse': {
                 title: 'Elipse',
@@ -915,7 +1073,6 @@
         let miniScenes = {};
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Se inicializan solo los mini-scenes que no fueron reemplazados por SVGs
             initializeMini3DScenes();
         });
 
@@ -941,10 +1098,8 @@
 
         function initializeMini3DScenes() {
             const figures = [
-                // Se han quitado 'esfera', 'cilindro', 'cono', 'semiesfera', 'tronco_cono'
-                // porque ahora usan SVG.
                 'piramide', 'tronco_piramide', 
-                'prismas', 'icosaedro'
+                'prismas', 'icosaedro', 'dodecaedro'
             ];
             figures.forEach(figura => {
                 const container = document.getElementById(`mini-${figura}`);
@@ -977,15 +1132,11 @@
 
             let geometry;
             const colors = {
-                // 'esfera': 0x2ecc71, // SVG
-                // 'cilindro': 0x9b59b6, // SVG
-                // 'cono': 0xf39c12, // SVG
                 'piramide': 0x1abc9c,
-                // 'semiesfera': 0xd35400, // SVG
-                // 'tronco_cono': 0x34495e, // SVG
                 'tronco_piramide': 0x7f8c8d,
                 'prismas': 0x1abc9c,
-                'icosaedro': 0xFFD700
+                'icosaedro': 0xFFD700,
+                'dodecaedro': 0x8e44ad
             };
             const material = new THREE.MeshStandardMaterial({
                 color: colors[figura] || 0x3498db,
@@ -996,7 +1147,6 @@
             });
 
             switch(figura) {
-                // Los casos de SVG se han eliminado
                 case 'piramide':
                     geometry = new THREE.ConeGeometry(1.8, 2.5, 4);
                     break;
@@ -1009,6 +1159,9 @@
                 case 'icosaedro':
                     geometry = new THREE.IcosahedronGeometry(1.8, 0);
                     break;
+                case 'dodecaedro':
+                    geometry = new THREE.DodecahedronGeometry(1.8, 0);
+                    break;
                 default:
                     geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
             }
@@ -1016,17 +1169,13 @@
             const mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
 
-            // Remove wireframes for specific shapes
-            const noWireframeShapes = ['cilindro', 'cono', 'semiesfera', 'tronco_cono']; // Esto ya no aplica a los SVGs
-            if (!noWireframeShapes.includes(figura)) {
-                const edges = new THREE.EdgesGeometry(geometry);
-                const lineMaterial = new THREE.LineBasicMaterial({ 
-                    color: 0x000000, 
-                    linewidth: 2
-                });
-                const wireframe = new THREE.LineSegments(edges, lineMaterial);
-                mesh.add(wireframe);
-            }
+            const edges = new THREE.EdgesGeometry(geometry);
+            const lineMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x000000, 
+                linewidth: 2
+            });
+            const wireframe = new THREE.LineSegments(edges, lineMaterial);
+            mesh.add(wireframe);
 
             function render() {
                 renderer.render(scene, camera);
@@ -1045,7 +1194,29 @@
         function open3DModal(figura) {
             const modal = document.getElementById('modal3D');
             const container = document.getElementById('modal-3d-container');
+            const titleElem = document.getElementById('modal3d-title');
             const formulaDiv = document.getElementById('modal3d-formula');
+
+            const titles = {
+                'cubo': 'Cubo',
+                'ortoedro': 'Ortoedro/Prisma Rectangular',
+                'esfera': 'Esfera',
+                'cilindro': 'Cilindro',
+                'cono': 'Cono',
+                'toro': 'Toro (Toroide)',
+                'piramide': 'Pirámide',
+                'semiesfera': 'Semiesfera',
+                'tronco_cono': 'Tronco de Cono',
+                'tronco_piramide': 'Tronco de Pirámide',
+                'casquete_esferico': 'Casquete Esférico',
+                'tetraedro': 'Tetraedro',
+                'octaedro': 'Octaedro',
+                'prismas': 'Prismas Rectos',
+                'icosaedro': 'Icosaedro',
+                'dodecaedro': 'Dodecaedro'
+            };
+
+            titleElem.textContent = titles[figura] || figura.charAt(0).toUpperCase() + figura.slice(1);
 
             const formulas = {
                 'cubo': "Área total: A = 6a²<br>Volumen: V = a³",
@@ -1053,14 +1224,17 @@
                 'esfera': "Área total: A = 4πr²<br>Volumen: V = <div class='frac'><span class='frac-numer'>4</span><span class='frac-denom'>3</span></div>πr³",
                 'cilindro': "Área lateral: A<sub>lat</sub> = 2πrh<br>Área total: A<sub>tot</sub> = 2πr(r+h)<br>Volumen: V = πr²h",
                 'cono': "Área lateral: A<sub>lat</sub> = πrg<br>Área total: A<sub>tot</sub> = πr(r+g)<br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>3</span></div>πr²h",
+                'toro': "Área: A = 4π²Rr<br>Volumen: V = 2π²Rr²<br>Donde:<br>R = radio mayor<br>r = radio menor",
                 'piramide': "Área lateral: A<sub>lat</sub> = <div class='frac'><span class='frac-numer'>P·ap</span><span class='frac-denom'>2</span></div><br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + A<sub>base</sub><br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>3</span></div>A<sub>base</sub>·h",
                 'semiesfera': "Área base: A<sub>base</sub> = πr²<br>Área curva: A<sub>curva</sub> = 2πr²<br>Área total: A<sub>tot</sub> = 3πr²<br>Volumen: V = <div class='frac'><span class='frac-numer'>2</span><span class='frac-denom'>3</span></div>πr³",
                 'tronco_cono': "Área lateral: A<sub>lat</sub> = πg(R+r)<br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + πR² + πr²<br>Volumen: V = <div class='frac'><span class='frac-numer'>πh</span><span class='frac-denom'>3</span></div>(R²+Rr+r²)",
                 'tronco_piramide': "Área lateral: A<sub>lat</sub> = <div class='frac'><span class='frac-numer'>(P<sub>M</sub>+P<sub>m</sub>)·ap</span><span class='frac-denom'>2</span></div><br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + A<sub>M</sub> + A<sub>m</sub><br>Volumen: V = <div class='frac'><span class='frac-numer'>h</span><span class='frac-denom'>3</span></div>(A<sub>M</sub>+A<sub>m</sub>+√(A<sub>M</sub>·A<sub>m</sub>))",
-                'tetraedro': "Área: A = √3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>√2·a³</span><span class='frac-denom'>12</span></div><br>Donde:<br>a = arista<br>h = altura<br>hc = apotema",
-                'octaedro': "Área: A = 2√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>√2·a³</span><span class='frac-denom'>3</span></div><br>Donde:<br>a = arista (todas las aristas son iguales)",
+                'casquete_esferico': "Área: A = 2πRh<br>Volumen: V = <div class='frac'><span class='frac-numer'>πh²</span><span class='frac-denom'>3</span></div>(3R-h)<br>Donde:<br>R = radio de la esfera<br>h = altura del casquete",
+                'tetraedro': "Área: A = √3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>√2·a³</span><span class='frac-denom'>12</span></div><br>Donde:<br>a = arista",
+                'octaedro': "Área: A = 2√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>√2·a³</span><span class='frac-denom'>3</span></div><br>Donde:<br>a = arista",
                 'prismas': "Área lateral: A<sub>lat</sub> = P<sub>base</sub>·h<br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + 2A<sub>base</sub><br>Volumen: V = A<sub>base</sub>·h",
-                'icosaedro': "Área: A = 5√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>5</span><span class='frac-denom'>12</span></div>(3+√5)·a³<br>Donde:<br>a = arista"
+                'icosaedro': "Área: A = 5√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>5</span><span class='frac-denom'>12</span></div>(3+√5)·a³<br>Donde:<br>a = arista",
+                'dodecaedro': "Área: A = 3√(25+10√5)·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>4</span></div>(15+7√5)·a³<br>Donde:<br>a = arista"
             };
 
             formulaDiv.innerHTML = formulas[figura] || "Fórmulas no disponibles";
@@ -1115,14 +1289,17 @@
                 esfera: 0x2ecc71,
                 cilindro: 0x9b59b6,
                 cono: 0xf39c12,
+                toro: 0x6BA3D4,
                 piramide: 0x1abc9c,
                 semiesfera: 0xd35400,
                 tronco_cono: 0x34495e,
                 tronco_piramide: 0x7f8c8d,
+                casquete_esferico: 0x9b59b6,
                 tetraedro: 0xc9a57b,
                 octaedro: 0xffb3ba,
                 prismas: 0x1abc9c,
-                icosaedro: 0xFFD700
+                icosaedro: 0xFFD700,
+                dodecaedro: 0x8e44ad
             };
             const material = new THREE.MeshStandardMaterial({
                 color: colors[figura] || 0x3498db,
@@ -1214,6 +1391,58 @@
                         line.computeLineDistances();
                         currentMesh.add(line);
                     });
+                    break;
+
+                case 'toro':
+                    geometry = new THREE.TorusGeometry(3.2, 1, 32, 64);
+                    const torusMaterial = new THREE.MeshStandardMaterial({
+                        color: 0x6BA3D4,
+                        metalness: 0.5,
+                        roughness: 0.2,
+                        transparent: true,
+                        opacity: 0.9
+                    });
+                    currentMesh = new THREE.Mesh(geometry, torusMaterial);
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentMesh.rotation.x = Math.PI * 0.35;
+                    currentMesh.rotation.y = Math.PI * 0.15;
+                    currentScene.add(currentMesh);
+                    const glowGeometry = new THREE.TorusGeometry(3.2, 0.95, 32, 64);
+                    const glowMaterial = new THREE.MeshStandardMaterial({
+                        color: 0x00FFFF,
+                        metalness: 0.8,
+                        roughness: 0.1,
+                        transparent: true,
+                        opacity: 0.6,
+                        emissive: 0x00FFFF,
+                        emissiveIntensity: 0.5
+                    });
+                    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+                    currentMesh.add(glowMesh);
+                    const innerLight = new THREE.PointLight(0x00FFFF, 1, 10);
+                    innerLight.position.set(0, 0, 0);
+                    currentMesh.add(innerLight);
+                    break;
+
+                case 'casquete_esferico':
+                    const capGroup = new THREE.Group();
+                    const capAngle = Math.PI / 3;
+                    geometry = new THREE.SphereGeometry(3, 32, 16, 0, Math.PI * 2, 0, capAngle);
+                    const capMesh = new THREE.Mesh(geometry, material);
+                    capGroup.add(capMesh);
+                    // Add base circle
+                    const capRadius = 3 * Math.sin(capAngle);
+                    const capHeight = 3 * Math.cos(capAngle);
+                    const capBaseGeometry = new THREE.CircleGeometry(capRadius, 32);
+                    const capBaseMesh = new THREE.Mesh(capBaseGeometry, material);
+                    capBaseMesh.position.y = -capHeight;
+                    capBaseMesh.rotation.x = -Math.PI / 2;
+                    capGroup.add(capBaseMesh);
+                    currentMesh = capGroup;
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
                     break;
 
                 case 'tetraedro':
@@ -1320,6 +1549,21 @@
                     currentMesh.add(wireframeIcosaedro);
                     break;
 
+                case 'dodecaedro':
+                    geometry = new THREE.DodecahedronGeometry(3, 0);
+                    currentMesh = new THREE.Mesh(geometry, material);
+                    currentMesh.castShadow = true;
+                    currentMesh.receiveShadow = true;
+                    currentScene.add(currentMesh);
+                    const edgesGeometryDodecaedro = new THREE.EdgesGeometry(geometry);
+                    const edgesMaterialDodecaedro = new THREE.LineBasicMaterial({ 
+                        color: 0xffffff, 
+                        linewidth: 3
+                    });
+                    const wireframeDodecaedro = new THREE.LineSegments(edgesGeometryDodecaedro, edgesMaterialDodecaedro);
+                    currentMesh.add(wireframeDodecaedro);
+                    break;
+
                 case 'esfera':
                     geometry = new THREE.SphereGeometry(3, 32, 32);
                     currentMesh = new THREE.Mesh(geometry, material);
@@ -1329,28 +1573,20 @@
                     break;
 
                 case 'cilindro':
-                    // Fixed cylinder with proper top and bottom caps
                     const cylinderGroup = new THREE.Group();
-                    
-                    // Cylinder body
                     const cylinderGeometry = new THREE.CylinderGeometry(2, 2, 4, 32);
                     const cylinderMesh = new THREE.Mesh(cylinderGeometry, material);
                     cylinderGroup.add(cylinderMesh);
-                    
-                    // Top cap
                     const topCapGeometry = new THREE.CircleGeometry(2, 32);
                     const topCapMesh = new THREE.Mesh(topCapGeometry, material);
                     topCapMesh.position.y = 2;
                     topCapMesh.rotation.x = -Math.PI / 2;
                     cylinderGroup.add(topCapMesh);
-                    
-                    // Bottom cap
                     const bottomCapGeometry = new THREE.CircleGeometry(2, 32);
                     const bottomCapMesh = new THREE.Mesh(bottomCapGeometry, material);
                     bottomCapMesh.position.y = -2;
                     bottomCapMesh.rotation.x = Math.PI / 2;
                     cylinderGroup.add(bottomCapMesh);
-                    
                     currentMesh = cylinderGroup;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
@@ -1358,21 +1594,15 @@
                     break;
 
                 case 'cono':
-                    // Fixed cone with proper base
                     const coneGroup = new THREE.Group();
-                    
-                    // Cone body
                     const coneGeometry = new THREE.ConeGeometry(2, 4, 32);
                     const coneMesh = new THREE.Mesh(coneGeometry, material);
                     coneGroup.add(coneMesh);
-                    
-                    // Base
                     const baseGeometry = new THREE.CircleGeometry(2, 32);
                     const baseMesh = new THREE.Mesh(baseGeometry, material);
                     baseMesh.position.y = -2;
                     baseMesh.rotation.x = Math.PI / 2;
                     coneGroup.add(baseMesh);
-                    
                     currentMesh = coneGroup;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
@@ -1395,20 +1625,14 @@
                     break;
 
                 case 'semiesfera':
-                    // Fixed hemisphere with proper base
                     const hemisphereGroup = new THREE.Group();
-                    
-                    // Hemisphere
                     const hemisphereGeometry = new THREE.SphereGeometry(3, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
                     const hemisphereMesh = new THREE.Mesh(hemisphereGeometry, material);
                     hemisphereGroup.add(hemisphereMesh);
-                    
-                    // Base
                     const hemisphereBaseGeometry = new THREE.CircleGeometry(3, 32);
                     const hemisphereBaseMesh = new THREE.Mesh(hemisphereBaseGeometry, material);
                     hemisphereBaseMesh.rotation.x = -Math.PI / 2;
                     hemisphereGroup.add(hemisphereBaseMesh);
-                    
                     currentMesh = hemisphereGroup;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
@@ -1416,28 +1640,20 @@
                     break;
 
                 case 'tronco_cono':
-                    // Fixed truncated cone with proper caps
                     const truncatedConeGroup = new THREE.Group();
-                    
-                    // Truncated cone body
                     const truncatedConeGeometry = new THREE.CylinderGeometry(1.5, 2.5, 4, 32);
                     const truncatedConeMesh = new THREE.Mesh(truncatedConeGeometry, material);
                     truncatedConeGroup.add(truncatedConeMesh);
-                    
-                    // Top cap
                     const truncatedConeTopGeometry = new THREE.CircleGeometry(1.5, 32);
                     const truncatedConeTopMesh = new THREE.Mesh(truncatedConeTopGeometry, material);
                     truncatedConeTopMesh.position.y = 2;
                     truncatedConeTopMesh.rotation.x = -Math.PI / 2;
                     truncatedConeGroup.add(truncatedConeTopMesh);
-                    
-                    // Bottom cap
                     const truncatedConeBottomGeometry = new THREE.CircleGeometry(2.5, 32);
                     const truncatedConeBottomMesh = new THREE.Mesh(truncatedConeBottomGeometry, material);
                     truncatedConeBottomMesh.position.y = -2;
                     truncatedConeBottomMesh.rotation.x = Math.PI / 2;
                     truncatedConeGroup.add(truncatedConeBottomMesh);
-                    
                     currentMesh = truncatedConeGroup;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
@@ -1471,8 +1687,6 @@
                     currentScene.add(currentMesh);
             }
 
-            addDimensionLines(currentScene, figura);
-
             currentControls = new THREE.OrbitControls(currentCamera, currentRenderer.domElement);
             currentControls.enableDamping = true;
             currentControls.dampingFactor = 0.05;
@@ -1480,6 +1694,8 @@
             currentControls.minDistance = 3;
             currentControls.maxDistance = 20;
             currentControls.maxPolarAngle = Math.PI;
+
+            addDimensionLines(currentScene, figura);
 
             function animate() {
                 animationFrameId = requestAnimationFrame(animate);
@@ -1498,6 +1714,201 @@
                 }
             };
             window.addEventListener('resize', handleResize);
+        }
+
+        function addDimensionLines(scene, figura) {
+            const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000 });
+            switch(figura) {
+                case 'cubo':
+                    const cubePoints = [new THREE.Vector3(2.2, -2, 2.2), new THREE.Vector3(2.2, 2, 2.2)];
+                    const cubeGeometry = new THREE.BufferGeometry().setFromPoints(cubePoints);
+                    const cubeLine = new THREE.Line(cubeGeometry, lineMaterial);
+                    scene.add(cubeLine);
+                    addTextLabel(scene, 'a', new THREE.Vector3(2.5, 0, 2.2));
+                    break;
+                    
+                case 'ortoedro':
+                    const ortoedroHeightPoints = [new THREE.Vector3(2.5, -2, 1.5), new THREE.Vector3(2.5, 2, 1.5)];
+                    const ortoedroWidthPoints = [new THREE.Vector3(-2.5, 2, 1.5), new THREE.Vector3(2.5, 2, 1.5)];
+                    const ortoedroDepthPoints = [new THREE.Vector3(2.5, 2, -1.5), new THREE.Vector3(2.5, 2, 1.5)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ortoedroHeightPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ortoedroWidthPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ortoedroDepthPoints), lineMaterial));
+                    addTextLabel(scene, 'a', new THREE.Vector3(2.8, 0, 1.5));
+                    addTextLabel(scene, 'b', new THREE.Vector3(0, 2.3, 1.5));
+                    addTextLabel(scene, 'c', new THREE.Vector3(2.5, 2.3, 0));
+                    break;
+                    
+                case 'esfera':
+                    const spherePoints = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(3, 0, 0)];
+                    const sphereGeometry = new THREE.BufferGeometry().setFromPoints(spherePoints);
+                    const sphereLine = new THREE.Line(sphereGeometry, lineMaterial);
+                    scene.add(sphereLine);
+                    addTextLabel(scene, 'r', new THREE.Vector3(0, 0.5, 0));
+                    break;
+                    
+                case 'cilindro':
+                    const cylinderRadiusPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2, -2, 0)];
+                    const cylinderHeightPoints = [new THREE.Vector3(2.5, -2, 0), new THREE.Vector3(2.5, 2, 0)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(cylinderRadiusPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(cylinderHeightPoints), lineMaterial));
+                    addTextLabel(scene, 'r', new THREE.Vector3(1, -2.3, 0));
+                    addTextLabel(scene, 'h', new THREE.Vector3(2.8, 0, 0));
+                    break;
+                    
+                case 'cono':
+                    const coneRadiusPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2, -2, 0)];
+                    const coneHeightPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(0, 2, 0)];
+                    const coneGeneratrixPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(2, -2, 0)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(coneRadiusPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(coneHeightPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(coneGeneratrixPoints), lineMaterial));
+                    addTextLabel(scene, 'r', new THREE.Vector3(1, -2.3, 0));
+                    addTextLabel(scene, 'h', new THREE.Vector3(-0.5, 0, 0));
+                    addTextLabel(scene, 'g', new THREE.Vector3(1, 0, 0.5));
+                    break;
+                    
+                case 'toro':
+                    const toroRPoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3.2, 0, 0)];
+                    const toroRMaterial = new THREE.LineDashedMaterial({
+                        color: 0xff0000,
+                        linewidth: 2,
+                        dashSize: 0.3,
+                        gapSize: 0.2
+                    });
+                    const toroRGeometry = new THREE.BufferGeometry().setFromPoints(toroRPoints);
+                    const toroRLine = new THREE.Line(toroRGeometry, toroRMaterial);
+                    toroRLine.computeLineDistances();
+                    scene.add(toroRLine);
+                    const tororPoints = [new THREE.Vector3(3.2, 0, 0), new THREE.Vector3(3.2, 1, 0)];
+                    const tororGeometry = new THREE.BufferGeometry().setFromPoints(tororPoints);
+                    const tororLine = new THREE.Line(tororGeometry, lineMaterial);
+                    scene.add(tororLine);
+                    const centerDot = new THREE.Mesh(
+                        new THREE.SphereGeometry(0.1, 16, 16),
+                        new THREE.MeshBasicMaterial({ color: 0xff0000 })
+                    );
+                    scene.add(centerDot);
+                    addTextLabel(scene, 'R', new THREE.Vector3(1.6, 0.3, 0));
+                    addTextLabel(scene, 'r', new THREE.Vector3(3.5, 0.5, 0));
+                    break;
+                    
+                case 'piramide':
+                    const pyramidHeightPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(0, 2, 0)];
+                    const pyramidApothemPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(1.25, -2, 1.25)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidHeightPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidApothemPoints), lineMaterial));
+                    addTextLabel(scene, 'h', new THREE.Vector3(0.5, 0, 0));
+                    addTextLabel(scene, 'ap', new THREE.Vector3(0.8, 0, 1.5));
+                    break;
+                    
+                case 'semiesfera':
+                    const semiSpherePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3, 0, 0)];
+                    const semiSphereGeometry = new THREE.BufferGeometry().setFromPoints(semiSpherePoints);
+                    const semiSphereLine = new THREE.Line(semiSphereGeometry, lineMaterial);
+                    scene.add(semiSphereLine);
+                    addTextLabel(scene, 'r', new THREE.Vector3(1.5, 0.3, 0));
+                    break;
+                    
+                case 'tronco_cono':
+                    const troncoConoRPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2.5, -2, 0)];
+                    const troncoConorPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(1.5, 2, 0)];
+                    const troncoConoHPoints = [new THREE.Vector3(3, -2, 0), new THREE.Vector3(3, 2, 0)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoConoRPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoConorPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoConoHPoints), lineMaterial));
+                    addTextLabel(scene, 'R', new THREE.Vector3(1.25, -2.3, 0));
+                    addTextLabel(scene, 'r', new THREE.Vector3(0.75, 2.3, 0));
+                    addTextLabel(scene, 'h', new THREE.Vector3(3.3, 0, 0));
+                    break;
+                    
+                case 'tronco_piramide':
+                    const troncoPirBPoints = [new THREE.Vector3(-2, -2, 0), new THREE.Vector3(2, -2, 0)];
+                    const troncoPirbPoints = [new THREE.Vector3(-1.5, 2, 0), new THREE.Vector3(1.5, 2, 0)];
+                    const troncoPirHPoints = [new THREE.Vector3(2.5, -2, 0), new THREE.Vector3(2.5, 2, 0)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoPirBPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoPirbPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoPirHPoints), lineMaterial));
+                    addTextLabel(scene, 'B', new THREE.Vector3(0, -2.3, 0));
+                    addTextLabel(scene, 'b', new THREE.Vector3(0, 2.3, 0));
+                    addTextLabel(scene, 'h', new THREE.Vector3(2.8, 0, 0));
+                    break;
+                    
+                case 'casquete_esferico':
+                    const capAngle = Math.PI / 3;
+                    const capRadius = 3 * Math.sin(capAngle);
+                    const capHeight = 3 * (1 - Math.cos(capAngle));
+                    const capRPoints = [new THREE.Vector3(0, -3 * Math.cos(capAngle), 0), new THREE.Vector3(capRadius, -3 * Math.cos(capAngle), 0)];
+                    const capHPoints = [new THREE.Vector3(0, -3 * Math.cos(capAngle), 0), new THREE.Vector3(0, 3, 0)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(capRPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(capHPoints), lineMaterial));
+                    addTextLabel(scene, 'R', new THREE.Vector3(capRadius/2, -3 * Math.cos(capAngle) - 0.3, 0));
+                    addTextLabel(scene, 'h', new THREE.Vector3(-0.5, 0, 0));
+                    break;
+                    
+                case 'tetraedro':
+                    const aPoints = [new THREE.Vector3(-2, -0.3, -2/(2*Math.sqrt(3))), new THREE.Vector3(2, -0.3, -2/(2*Math.sqrt(3)))];
+                    const aGeometry = new THREE.BufferGeometry().setFromPoints(aPoints);
+                    const aLine = new THREE.Line(aGeometry, lineMaterial);
+                    scene.add(aLine);
+                    addTextLabel(scene, 'a', new THREE.Vector3(0, -0.6, -2/(2*Math.sqrt(3))));
+                    break;
+                    
+                case 'octaedro':
+                    const aPointsOcta = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(0, 3, 0)];
+                    const aGeometryOcta = new THREE.BufferGeometry().setFromPoints(aPointsOcta);
+                    const aLineOcta = new THREE.Line(aGeometryOcta, lineMaterial);
+                    scene.add(aLineOcta);
+                    addTextLabel(scene, 'a', new THREE.Vector3(-1.8, 1.8, 0));
+                    break;
+                    
+                case 'icosaedro':
+                    const aPointsIcosa = [new THREE.Vector3(-1.5, -1.5, 0), new THREE.Vector3(1.5, -1.5, 0)];
+                    const aGeometryIcosa = new THREE.BufferGeometry().setFromPoints(aPointsIcosa);
+                    const aLineIcosa = new THREE.Line(aGeometryIcosa, lineMaterial);
+                    scene.add(aLineIcosa);
+                    addTextLabel(scene, 'a', new THREE.Vector3(0, -2, 0));
+                    break;
+                    
+                case 'dodecaedro':
+                    const aPointsDode = [new THREE.Vector3(-1.07, -1.5, 0), new THREE.Vector3(1.07, -1.5, 0)];
+                    const aGeometryDode = new THREE.BufferGeometry().setFromPoints(aPointsDode);
+                    const aLineDode = new THREE.Line(aGeometryDode, lineMaterial);
+                    scene.add(aLineDode);
+                    addTextLabel(scene, 'a', new THREE.Vector3(0, -2, 0));
+                    break;
+                    
+                case 'prismas':
+                    const prismHPoints = [new THREE.Vector3(-1.5, -1.5, 1), new THREE.Vector3(-1.5, 1.5, 1)];
+                    const prismAPoints = [new THREE.Vector3(-2.5, -1.5, 0), new THREE.Vector3(-0.5, -1.5, 0)];
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismHPoints), lineMaterial));
+                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismAPoints), lineMaterial));
+                    addTextLabel(scene, 'h', new THREE.Vector3(-1.8, 0, 1.2));
+                    addTextLabel(scene, 'a', new THREE.Vector3(-1.5, -2, 0));
+                    break;
+            }
+        }
+
+        function addTextLabel(scene, text, position) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 128;
+            canvas.height = 64;
+            context.fillStyle = 'white';
+            context.font = 'Bold 48px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(text, 64, 32);
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({
+                map: texture,
+                transparent: true,
+                opacity: 0.9
+            });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.copy(position);
+            sprite.scale.set(1, 0.5, 1);
+            scene.add(sprite);
         }
 
         function createPrismasGroup() {
@@ -1534,155 +1945,6 @@
             currentMesh = group;
         }
 
-        function addDimensionLines(scene, figura) {
-            const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000 });
-            switch(figura) {
-                case 'cubo':
-                    const cubePoints = [new THREE.Vector3(2.2, -2, 2.2), new THREE.Vector3(2.2, 2, 2.2)];
-                    const cubeGeometry = new THREE.BufferGeometry().setFromPoints(cubePoints);
-                    const cubeLine = new THREE.Line(cubeGeometry, lineMaterial);
-                    scene.add(cubeLine);
-                    addTextLabel(scene, 'a', new THREE.Vector3(2.5, 0, 2.2));
-                    break;
-                case 'ortoedro':
-                    const ortoedroHeightPoints = [new THREE.Vector3(2.5, -2, 1.5), new THREE.Vector3(2.5, 2, 1.5)];
-                    const ortoedroWidthPoints = [new THREE.Vector3(-2.5, 2, 1.5), new THREE.Vector3(2.5, 2, 1.5)];
-                    const ortoedroDepthPoints = [new THREE.Vector3(2.5, 2, -1.5), new THREE.Vector3(2.5, 2, 1.5)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ortoedroHeightPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ortoedroWidthPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ortoedroDepthPoints), lineMaterial));
-                    addTextLabel(scene, 'a', new THREE.Vector3(2.8, 0, 1.5));
-                    addTextLabel(scene, 'b', new THREE.Vector3(0, 2.3, 1.5));
-                    addTextLabel(scene, 'c', new THREE.Vector3(2.5, 2.3, 0));
-                    break;
-                case 'tetraedro':
-                    const aPoints = [new THREE.Vector3(-2, -0.3, -2/(2*Math.sqrt(3))), new THREE.Vector3(2, -0.3, -2/(2*Math.sqrt(3)))];
-                    const aGeometry = new THREE.BufferGeometry().setFromPoints(aPoints);
-                    const aLine = new THREE.Line(aGeometry, lineMaterial);
-                    scene.add(aLine);
-                    addTextLabel(scene, 'a', new THREE.Vector3(0, -0.6, -2/(2*Math.sqrt(3))));
-                    const hPoints = [new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(-0.5, 3.26, 0)];
-                    const hGeometry = new THREE.BufferGeometry().setFromPoints(hPoints);
-                    const hLine = new THREE.Line(hGeometry, lineMaterial);
-                    scene.add(hLine);
-                    addTextLabel(scene, 'h', new THREE.Vector3(-0.8, 1.63, 0));
-                    const midBaseEdge = new THREE.Vector3(0, 0, 2/Math.sqrt(3));
-                    const hcPoints = [new THREE.Vector3(0, 3.26, 0), midBaseEdge];
-                    const hcGeometry = new THREE.BufferGeometry().setFromPoints(hcPoints);
-                    const hcLine = new THREE.Line(hcGeometry, lineMaterial);
-                    scene.add(hcLine);
-                    addTextLabel(scene, 'hc', new THREE.Vector3(0.3, 1.8, 1.2));
-                    break;
-                case 'octaedro':
-                    const aPointsOcta = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(0, 3, 0)];
-                    const aGeometryOcta = new THREE.BufferGeometry().setFromPoints(aPointsOcta);
-                    const aLineOcta = new THREE.Line(aGeometryOcta, lineMaterial);
-                    scene.add(aLineOcta);
-                    addTextLabel(scene, 'a', new THREE.Vector3(-1.8, 1.8, 0));
-                    break;
-                case 'icosaedro':
-                    const aPointsIcosa = [new THREE.Vector3(-1.5, -1.5, 0), new THREE.Vector3(1.5, -1.5, 0)];
-                    const aGeometryIcosa = new THREE.BufferGeometry().setFromPoints(aPointsIcosa);
-                    const aLineIcosa = new THREE.Line(aGeometryIcosa, lineMaterial);
-                    scene.add(aLineIcosa);
-                    addTextLabel(scene, 'a', new THREE.Vector3(0, -2, 0));
-                    break;
-                case 'esfera':
-                    const spherePoints = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(3, 0, 0)];
-                    const sphereGeometry = new THREE.BufferGeometry().setFromPoints(spherePoints);
-                    const sphereLine = new THREE.Line(sphereGeometry, lineMaterial);
-                    scene.add(sphereLine);
-                    addTextLabel(scene, 'r', new THREE.Vector3(0, 0, 0.5));
-                    break;
-                case 'cilindro':
-                    const cylinderRadiusPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2, -2, 0)];
-                    const cylinderHeightPoints = [new THREE.Vector3(2.5, -2, 0), new THREE.Vector3(2.5, 2, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(cylinderRadiusPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(cylinderHeightPoints), lineMaterial));
-                    addTextLabel(scene, 'r', new THREE.Vector3(1, -2.3, 0));
-                    addTextLabel(scene, 'h', new THREE.Vector3(2.8, 0, 0));
-                    break;
-                case 'cono':
-                    const coneRadiusPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2, -2, 0)];
-                    const coneHeightPoints = [new THREE.Vector3(2.5, -2, 0), new THREE.Vector3(2.5, 2, 0)];
-                    const coneGeneratrixPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(2, -2, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(coneRadiusPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(coneHeightPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(coneGeneratrixPoints), lineMaterial));
-                    addTextLabel(scene, 'r', new THREE.Vector3(1, -2.3, 0));
-                    addTextLabel(scene, 'h', new THREE.Vector3(2.8, 0, 0));
-                    addTextLabel(scene, 'g', new THREE.Vector3(1, 0, 1));
-                    break;
-                case 'piramide':
-                    const pyramidHeightPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(0, 2, 0)];
-                    const pyramidApothemPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(1.25, -2, 1.25)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidHeightPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidApothemPoints), lineMaterial));
-                    addTextLabel(scene, 'h', new THREE.Vector3(0.5, 0, 0));
-                    addTextLabel(scene, 'ap', new THREE.Vector3(0.8, 0, 1.5));
-                    break;
-                case 'semiesfera':
-                    const semiSpherePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3, 0, 0)];
-                    const semiSphereGeometry = new THREE.BufferGeometry().setFromPoints(semiSpherePoints);
-                    const semiSphereLine = new THREE.Line(semiSphereGeometry, lineMaterial);
-                    scene.add(semiSphereLine);
-                    addTextLabel(scene, 'r', new THREE.Vector3(1.5, 0, 0.5));
-                    break;
-                case 'tronco_cono':
-                    const troncoConoRPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2.5, -2, 0)];
-                    const troncoConorPoints = [new THREE.Vector3(0, 2, 0), new THREE.Vector3(1.5, 2, 0)];
-                    const troncoConoHPoints = [new THREE.Vector3(3, -2, 0), new THREE.Vector3(3, 2, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoConoRPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoConorPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoConoHPoints), lineMaterial));
-                    addTextLabel(scene, 'R', new THREE.Vector3(1.25, -2.3, 0));
-                    addTextLabel(scene, 'r', new THREE.Vector3(0.75, 2.3, 0));
-                    addTextLabel(scene, 'h', new THREE.Vector3(3.3, 0, 0));
-                    break;
-                case 'tronco_piramide':
-                    const troncoPirBPoints = [new THREE.Vector3(-2, -2, 0), new THREE.Vector3(2, -2, 0)];
-                    const troncoPirbPoints = [new THREE.Vector3(-1.5, 2, 0), new THREE.Vector3(1.5, 2, 0)];
-                    const troncoPirHPoints = [new THREE.Vector3(2.5, -2, 0), new THREE.Vector3(2.5, 2, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoPirBPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoPirbPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(troncoPirHPoints), lineMaterial));
-                    addTextLabel(scene, 'B', new THREE.Vector3(0, -2.3, 0));
-                    addTextLabel(scene, 'b', new THREE.Vector3(0, 2.3, 0));
-                    addTextLabel(scene, 'h', new THREE.Vector3(2.8, 0, 0));
-                    break;
-                case 'prismas':
-                    const prismHPoints = [new THREE.Vector3(-1.5, -1.5, 1), new THREE.Vector3(-1.5, 1.5, 1)];
-                    const prismAPoints = [new THREE.Vector3(-2.5, -1.5, 0), new THREE.Vector3(-0.5, -1.5, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismHPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismAPoints), lineMaterial));
-                    addTextLabel(scene, 'h', new THREE.Vector3(-1.8, 0, 1.2));
-                    addTextLabel(scene, 'a', new THREE.Vector3(-1.5, -2, 0));
-                    break;
-            }
-        }
-
-        function addTextLabel(scene, text, position) {
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = 128;
-            canvas.height = 64;
-            context.fillStyle = 'white';
-            context.font = 'Bold 48px Arial';
-            context.textAlign = 'center';
-            context.textBaseline = 'middle';
-            context.fillText(text, 64, 32);
-            const texture = new THREE.CanvasTexture(canvas);
-            const spriteMaterial = new THREE.SpriteMaterial({
-                map: texture,
-                transparent: true,
-                opacity: 0.9
-            });
-            const sprite = new THREE.Sprite(spriteMaterial);
-            sprite.position.copy(position);
-            sprite.scale.set(1, 0.5, 1);
-            scene.add(sprite);
-        }
-
         function close3DModal() {
             const modal = document.getElementById('modal3D');
             if (modal) {
@@ -1708,12 +1970,7 @@
             currentCamera = null;
             currentMesh = null;
             currentModal = null;
-            
-            // Ya no es necesario recargar todas las mini-escenas,
-            // pero sí las que quedan (si quisiéramos)
-            // setTimeout(() => {
-            //     initializeMini3DScenes();
-            // }, 100);
+            document.body.style.overflow = 'auto';
         }
 
         window.onclick = function(event) {
@@ -1723,6 +1980,18 @@
                 close3DModal();
             }
         };
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (currentModal) {
+                    if (currentModal.id === 'modal') {
+                        closeModal();
+                    } else if (currentModal.id === 'modal3D') {
+                        close3DModal();
+                    }
+                }
+            }
+        });
 
         window.addEventListener('beforeunload', () => {
             if (animationFrameId) {
