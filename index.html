@@ -307,6 +307,8 @@
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
+        
+        /* === COLORES DE FIGURAS (VERSIÓN ÓPTIMA) === */
         .fig-cuadrado { fill: #3498db; stroke: #2980b9; stroke-width: 3; }
         .fig-rectangulo { fill: #e74c3c; stroke: #c0392b; stroke-width: 3; }
         .fig-paralelogramo { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
@@ -317,18 +319,23 @@
         .fig-triangulo-isosceles { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
         .fig-triangulo-escaleno { fill: #7f8c8d; stroke: #95a5a6; stroke-width: 3; }
         .fig-triangulo-rectangulo { fill: #8e44ad; stroke: #7d3c98; stroke-width: 3; }
-        .fig-octagono { fill: #e67e22; stroke: #d35400; stroke-width: 3; }
+        /* RECUPERADOS DE LA VERSIÓN REFERENCIA */
+        .fig-octagono { fill: #98fb98; stroke: #000000; stroke-width: 3; }     /* Verde pálido */
+        .fig-hexagono { fill: #fffacd; stroke: #000000; stroke-width: 3; }     /* Amarillo limón */
         .fig-cometa { fill: #c0392b; stroke: #a93226; stroke-width: 3; }
         .fig-pentagono { fill: #ff9f43; stroke: #f39c12; stroke-width: 3; }
-        .fig-hexagono { fill: #ff6b6b; stroke: #e74c3c; stroke-width: 3; }
         .fig-circulo { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
         .fig-sector { fill: #9b59b6; stroke: #8e44ad; stroke-width: 3; }
         .fig-corona { fill: #1abc9c; stroke: #16a085; stroke-width: 3; }
         .fig-elipse { fill: #d35400; stroke: #e67e22; stroke-width: 3; }
+
+        /* === ESTILOS DE LÍNEAS Y ETIQUETAS === */
         .aux-line { stroke: #555; stroke-dasharray: 5 5; stroke-width: 2; }
-        .label { font-size: 14px; font-weight: bold; fill: #222; }
+        .apotema { stroke: #000; stroke-width: 2; }
+        .label { font-size: 14px; font-weight: bold; fill: #ff0000; }
         .angle-arc { fill: none; stroke: #e74c3c; stroke-width: 1.5; }
         .angle-label { font-size: 12px; fill: #e74c3c; font-weight: bold; }
+        
         .mini-3d-container {
             width: 100%;
             height: 100%;
@@ -532,22 +539,23 @@
                     </div>
                     <div class="formula">P = a+b+c<br>A = <div class="frac"><span class="frac-numer">a·b</span><span class="frac-denom">2</span></div><br>c² = a²+b²</div>
                 </div>
-                <!-- Octágono Regular -->
+
+                <!-- === OCTÁGONO REGULAR ACTUALIZADO === -->
                 <div class="figure-card" onclick="openModal('octagono')">
                     <div class="figure-title">Octágono Regular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,30 150,50 170,100 150,150 100,170 50,150 30,100 50,50" class="fig-octagono"/>
-                            <circle cx="100" cy="100" r="3" fill="#333"/>
-                            <line x1="100" y1="100" x2="100" y2="170" class="aux-line"/>
-                            <line x1="100" y1="100" x2="150" y2="150" class="aux-line"/>
-                            <text x="105" y="135" text-anchor="start" class="label">a</text>
-                            <text x="125" y="125" text-anchor="middle" class="label">r</text>
-                            <text x="100" y="185" text-anchor="middle" class="label">s</text>
+                            <polygon points="126.8,164.7 73.2,164.7 35.3,126.8 35.3,73.2 73.2,35.3 126.8,35.3 164.7,73.2 164.7,126.8"
+                                     fill="#98fb98" stroke="#000000" stroke-width="3"/>
+                            <line x1="100" y1="100" x2="100" y2="164.7" class="apotema"/>
+                            <line x1="100" y1="100" x2="126.8" y2="164.7" class="apotema"/>
+                            <text x="90" y="135" text-anchor="end" class="label">a</text>
+                            <text x="120" y="140" text-anchor="start" class="label">r</text>
                         </svg>
                     </div>
                     <div class="formula">P = 8s<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div><br>A = 2(1+√2)s²</div>
                 </div>
+
                 <!-- Segmento Circular -->
                 <div class="figure-card" onclick="openModal('segmento_circular')">
                     <div class="figure-title">Segmento Circular</div>
@@ -609,22 +617,23 @@
                     </div>
                     <div class="formula">P = 5b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
                 </div>
-                <!-- Hexágono Regular -->
+
+                <!-- === HEXÁGONO REGULAR ACTUALIZADO === -->
                 <div class="figure-card" onclick="openModal('hexagono')">
                     <div class="figure-title">Hexágono Regular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="100,50 143.3,75 143.3,125 100,150 56.7,125 56.7,75" class="fig-hexagono"/>
-                            <circle cx="100" cy="100" r="3" fill="#333"/>
-                            <line x1="100" y1="100" x2="100" y2="150" class="aux-line"/>
-                            <line x1="100" y1="100" x2="143.3" y2="125" class="aux-line"/>
-                            <text x="105" y="125" text-anchor="start" class="label">a</text>
-                            <text x="125" y="115" text-anchor="middle" class="label">b</text>
-                            <text x="78.35" y="137.5" text-anchor="middle" class="label">b</text>
+                            <polygon points="125,143.3 75,143.3 50,100 75,56.7 125,56.7 150,100"
+                                     fill="#fffacd" stroke="#000000" stroke-width="3"/>
+                            <line x1="100" y1="100" x2="100" y2="143.3" class="apotema"/>
+                            <line x1="100" y1="100" x2="125" y2="143.3" class="apotema"/>
+                            <text x="98" y="125" text-anchor="end" class="label">ap</text>
+                            <text x="120" y="130" text-anchor="start" class="label">r</text>
                         </svg>
                     </div>
-                    <div class="formula">P = 6b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
+                    <div class="formula">P = 6r<br>A = <div class="frac"><span class="frac-numer">P·ap</span><span class="frac-denom">2</span></div></div>
                 </div>
+
                 <!-- Círculo -->
                 <div class="figure-card" onclick="openModal('circulo')">
                     <div class="figure-title">Círculo</div>
@@ -689,6 +698,7 @@
         <div class="section">
             <div class="section-title">📦 Áreas y Volúmenes de Figuras en el Espacio</div>
             <div class="grid">
+                <!-- === RESTO DE FIGURAS 3D (sin cambios) === -->
                 <!-- Cubo -->
                 <div class="figure-card" onclick="open3DModal('cubo')">
                     <div class="figure-title">Cubo</div>
@@ -988,13 +998,38 @@
         </div>
     </div>
     <script>
-        // --- Datos para Modales 2D ---
+        // --- Datos para Modales 2D (con OCTÁGONO y HEXÁGONO actualizados) ---
         const figureData = {
+            // ... otras figuras sin cambios ...
+            'octagono': {
+                title: 'Octágono Regular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200">
+                    <polygon points="126.8,164.7 73.2,164.7 35.3,126.8 35.3,73.2 73.2,35.3 126.8,35.3 164.7,73.2 164.7,126.8"
+                             fill="#98fb98" stroke="#000000" stroke-width="3"/>
+                    <line x1="100" y1="100" x2="100" y2="164.7" class="apotema"/>
+                    <line x1="100" y1="100" x2="126.8" y2="164.7" class="apotema"/>
+                    <text x="90" y="135" text-anchor="end" class="label">a</text>
+                    <text x="120" y="140" text-anchor="start" class="label">r</text>
+                </svg>`,
+                formula: `Perímetro = 8s<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div><br>Área = 2(1+√2)s²`
+            },
+            'hexagono': {
+                title: 'Hexágono Regular',
+                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200">
+                    <polygon points="125,143.3 75,143.3 50,100 75,56.7 125,56.7 150,100"
+                             fill="#fffacd" stroke="#000000" stroke-width="3"/>
+                    <line x1="100" y1="100" x2="100" y2="143.3" class="apotema"/>
+                    <line x1="100" y1="100" x2="125" y2="143.3" class="apotema"/>
+                    <text x="98" y="125" text-anchor="end" class="label">ap</text>
+                    <text x="120" y="130" text-anchor="start" class="label">r</text>
+                </svg>`,
+                formula: `Perímetro = 6r<br>Área = <div class="frac"><span class="frac-numer">P·ap</span><span class="frac-denom">2</span></div>`
+            },
+            // ... resto de figureData sin cambios ...
             'cuadrado': {
                 title: 'Cuadrado',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><rect x="50" y="50" width="100" height="100" class="fig-cuadrado"/><text x="100" y="165" text-anchor="middle" class="label">a</text></svg>`,
-                formula: `Perímetro = 4a
-<br>Área = a²`
+                formula: `Perímetro = 4a<br>Área = a²`
             },
             'rectangulo': {
                 title: 'Rectángulo',
@@ -1041,11 +1076,7 @@
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="50,150 50,50 150,150" class="fig-triangulo-rectangulo"/><line x1="45" y1="50" x2="45" y2="150" class="aux-line"/><line x1="50" y1="155" x2="150" y2="155" class="aux-line"/><text x="25" y="100" text-anchor="middle" class="label">a</text><text x="100" y="165" text-anchor="middle" class="label">b</text><text x="110" y="110" text-anchor="middle" class="label">c</text><path d="M65,145 L65,135 L55,135" class="angle-arc"/></svg>`,
                 formula: `Perímetro = a+b+c<br>Área = <div class="frac"><span class="frac-numer">a·b</span><span class="frac-denom">2</span></div><br>c² = a²+b²`
             },
-            'octagono': {
-                title: 'Octágono Regular',
-                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,30 150,50 170,100 150,150 100,170 50,150 30,100 50,50" class="fig-octagono"/><circle cx="100" cy="100" r="3" fill="#333"/><line x1="100" y1="100" x2="100" y2="170" class="aux-line"/><line x1="100" y1="100" x2="150" y2="150" class="aux-line"/><text x="105" y="135" text-anchor="start" class="label">a</text><text x="125" y="125" text-anchor="middle" class="label">r</text><text x="100" y="185" text-anchor="middle" class="label">s</text></svg>`,
-                formula: `Perímetro = 8s<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div><br>Área = 2(1+√2)s²`
-            },
+
             'segmento_circular': {
                 title: 'Segmento Circular',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 280 200"><path d="M 52 80 A 60 60 0 0 1 148 80 L 148 80 L 100 80 Z" fill="#ffcc99" stroke="none"/><path d="M 148 80 A 60 60 0 1 1 52 80" fill="none" stroke="#000" stroke-width="2.5"/><path d="M 52 80 A 60 60 0 0 1 148 80" fill="none" stroke="#c44" stroke-width="2.5"/><line x1="52" y1="80" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="52" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><path d="M 115 102 A 18 18 0 0 0 85 102" fill="none" stroke="#4a4" stroke-width="2"/><path d="M 100 110 L 115 102 A 18 18 0 0 0 85 102 Z" fill="#d4f4dd" fill-opacity="0.6" stroke="none"/><line x1="100" y1="110" x2="100" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="110" x2="200" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="80" x2="200" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="190" y1="80" x2="190" y2="110" stroke="#333" stroke-width="1.5"/><polygon points="190,80 187,85 193,85" fill="#333"/><polygon points="190,110 187,105 193,105" fill="#333"/><circle cx="100" cy="110" r="2" fill="#000"/><text x="100" y="45" text-anchor="middle" fill="#c44" font-size="20">a</text><text x="125" y="75" text-anchor="middle" fill="#000" font-size="16">c</text><text x="70" y="90" text-anchor="middle" fill="#000" font-size="16">r</text><text x="105" y="125" text-anchor="start" fill="#4a4" font-size="16">α</text><text x="205" y="98" text-anchor="start" fill="#333" font-size="16">h</text></svg>`,
@@ -1060,11 +1091,6 @@
                 title: 'Pentágono Regular',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,40 170,85 145,155 55,155 30,85" class="fig-pentagono"/><circle cx="100" cy="105" r="3" fill="#333"/><line x1="100" y1="105" x2="100" y2="155" class="aux-line"/><line x1="100" y1="105" x2="145" y2="155" class="aux-line"/><text x="105" y="130" text-anchor="start" class="label">a</text><text x="125" y="135" text-anchor="middle" class="label">r</text><text x="100" y="170" text-anchor="middle" class="label">b</text></svg>`,
                 formula: `Perímetro (P) = 5b<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div>`
-            },
-            'hexagono': {
-                title: 'Hexágono Regular',
-                svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,50 143.3,75 143.3,125 100,150 56.7,125 56.7,75" class="fig-hexagono"/><circle cx="100" cy="100" r="3" fill="#333"/><line x1="100" y1="100" x2="100" y2="150" class="aux-line"/><line x1="100" y1="100" x2="143.3" y2="125" class="aux-line"/><text x="105" y="125" text-anchor="start" class="label">a</text><text x="125" y="115" text-anchor="middle" class="label">b</text><text x="78.35" y="137.5" text-anchor="middle" class="label">b</text></svg>`,
-                formula: `Perímetro (P) = 6b<br>Área = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div>`
             },
             'circulo': {
                 title: 'Círculo',
@@ -1087,7 +1113,7 @@
                 formula: `Perímetro ≈ π(a+b)<br>Área = πab`
             }
         };
-        // --- Variables Globales ---
+        // --- Resto del código JavaScript SIN CAMBIOS ---
         let currentModal = null;
         let currentScene = null;
         let currentCamera = null;
@@ -1096,28 +1122,20 @@
         let currentMesh = null;
         let animationFrameId = null;
         let miniScenes = {};
-
-        // --- NUEVA FUNCIÓN: liberar mini escenas ---
         function disposeMiniScenes() {
             Object.values(miniScenes).forEach(sceneData => {
                 if (sceneData.renderer) {
-                    // Elimina el canvas del DOM
                     if (sceneData.renderer.domElement.parentElement) {
                         sceneData.renderer.domElement.parentElement.innerHTML = '';
                     }
-                    // Libera la memoria de la GPU
                     sceneData.renderer.dispose();
                 }
             });
-            // Resetea el objeto de escenas
             miniScenes = {};
         }
-
-        // --- Inicialización ---
         document.addEventListener('DOMContentLoaded', function() {
             initializeMini3DScenes();
         });
-        // --- Funciones Modales 2D ---
         function openModal(figureName) {
             const data = figureData[figureName];
             if (!data) return;
@@ -1136,7 +1154,6 @@
             currentModal = null;
             document.body.style.overflow = 'auto';
         }
-        // --- Funciones Mini-Escenas 3D (Tarjetas) ---
         function initializeMini3DScenes() {
             const figures = [
                 'piramide', 'tronco_piramide', 
@@ -1187,7 +1204,6 @@
                 transparent: true,
                 opacity: 0.7
             });
-            // Geometrías
             switch(figura) {
                 case 'piramide':
                     geometry = new THREE.ConeGeometry(1.8, 2.5, 4);
@@ -1204,7 +1220,6 @@
                 case 'dodecaedro':
                     geometry = new THREE.DodecahedronGeometry(1.8, 0);
                     break;
-                // --- Casos especiales con geometría custom y return temprano ---
                 case 'piramide_oblicua':
                     const vertices_obl = new Float32Array([
                         -1, -1.5, -1,  1, -1.5, -1,  1, -1.5,  1, -1, -1.5,  1,
@@ -1240,7 +1255,7 @@
                     }
                     render();
                     miniScenes[figura] = { scene, renderer, mesh };
-                    return; // Return temprano
+                    return;
                 case 'prisma_oblicuo':
                     const vertices_prisma_obl = new Float32Array([
                         -1, -1.2, -0.8,  1, -1.2, -0.8,  1.5, -1.2, 0.8, -0.5, -1.2, 0.8,
@@ -1277,7 +1292,7 @@
                     }
                     renderPrisma();
                     miniScenes[figura] = { scene, renderer, mesh: mesh_prisma };
-                    return; // Return temprano
+                    return;
                 case 'antiprisma_pentagonal':
                     const n = 5;
                     const radius = 1.5;
@@ -1297,15 +1312,12 @@
                         );
                     }
                     const indices_anti = [];
-                    // Base inferior (pentágono)
                     for (let i = 1; i < n - 1; i++) {
                         indices_anti.push(0, i + 1, i);
                     }
-                    // Base superior (pentágono)
                     for (let i = 1; i < n - 1; i++) {
                         indices_anti.push(n, n + i, n + i + 1);
                     }
-                    // Caras laterales (triángulos)
                     for (let i = 0; i < n; i++) {
                         const next = (i + 1) % n;
                         indices_anti.push(i, n + i, next);
@@ -1337,11 +1349,10 @@
                     }
                     renderAnti();
                     miniScenes[figura] = { scene, renderer, mesh: mesh_anti };
-                    return; // Return temprano
+                    return;
                 default:
                     geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
             }
-            // Código común para las figuras que no retornaron
             const mesh2 = new THREE.Mesh(geometry, material);
             scene.add(mesh2);
             const edges2 = new THREE.EdgesGeometry(geometry);
@@ -1357,8 +1368,6 @@
             renderCommon();
             miniScenes[figura] = { scene, renderer, mesh: mesh2 };
         }
-        // --- Funciones Modales 3D ---
-        // Función de utilidad para líneas discontinuas
         function createDashedLine(start, end, material) {
             const points = [start, end];
             const geometry = new THREE.BufferGeometry().setFromPoints(points);
@@ -1366,11 +1375,7 @@
             return line;
         }
         function open3DModal(figura) {
-            // --- INICIO DE LA CORRECCIÓN ---
-            // 1. Destruye las mini-escenas para liberar contextos WebGL
             disposeMiniScenes();
-            // --- FIN DE LA CORRECCIÓN ---
-
             const modal = document.getElementById('modal3D');
             const container = document.getElementById('modal-3d-container');
             const titleElem = document.getElementById('modal3d-title');
@@ -1414,14 +1419,11 @@
                 'prismas': "Área lateral: A<sub>lat</sub> = P<sub>base</sub>·h<br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + 2A<sub>base</sub><br>Volumen: V = A<sub>base</sub>·h",
                 'icosaedro': "Área: A = 5√3·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>5</span><span class='frac-denom'>12</span></div>(3+√5)·a³<br>Donde:<br>a = arista",
                 'dodecaedro': "Área: A = 3√(25+10√5)·a²<br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>4</span></div>(15+7√5)·a³<br>Donde:<br>a = arista",
-                // --- INICIO CORRECCIÓN: Fórmulas añadidas ---
                 'piramide_oblicua': "Área lateral: A<sub>lat</sub> = <div class='frac'><span class='frac-numer'>P·ap</span><span class='frac-denom'>2</span></div><br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + A<sub>base</sub><br>Volumen: V = <div class='frac'><span class='frac-numer'>1</span><span class='frac-denom'>3</span></div>A<sub>base</sub>·h",
                 'prisma_oblicuo': "Área lateral: A<sub>lat</sub> = P<sub>base</sub>·a<sub>p</sub><br>Área total: A<sub>tot</sub> = A<sub>lat</sub> + 2A<sub>base</sub><br>Volumen: V = A<sub>base</sub>·h<br>Donde:<br>a<sub>p</sub> = apotema lateral<br>h = altura perpendicular",
                 'antiprisma_pentagonal': "A<sub>lat</sub> = 10·A<sub>△</sub><br>A<sub>tot</sub> = A<sub>lat</sub>+2A<sub>pent</sub><br>V = <div class='frac'><span class='frac-numer'>5</span><span class='frac-denom'>6</span></div>a²h"
-                // --- FIN CORRECCIÓN ---
             };
             formulaDiv.innerHTML = formulas[figura] || "Fórmulas no disponibles";
-            // Retraso ligero para permitir que el modal se muestre antes de la carga 3D
             setTimeout(() => {
                 setup3DScene(container, figura);
             }, 100); 
@@ -1430,7 +1432,6 @@
             currentModal = modal;
         }
         function setup3DScene(container, figura) {
-            // --- INICIO CORRECCIÓN: Limpieza robusta de la escena 3D anterior ---
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
                 animationFrameId = null;
@@ -1440,22 +1441,16 @@
                 currentControls = null;
             }
             if (currentRenderer) {
-                // Eliminar el canvas anterior del DOM
                 if (currentRenderer.domElement && container.contains(currentRenderer.domElement)) {
                     container.removeChild(currentRenderer.domElement);
                 }
-                // Liberar la memoria de la GPU
                 currentRenderer.dispose();
                 currentRenderer = null;
             }
-            // Limpiar referencias
             currentScene = null;
             currentCamera = null;
             currentMesh = null;
-            // --- FIN CORRECCIÓN ---
-            // Poner el loader *después* de limpiar
             container.innerHTML = '<div class="loader"><div class="spinner"></div>Cargando modelo 3D...</div>';
-            // --- Configuración de la nueva escena ---
             currentScene = new THREE.Scene();
             currentScene.background = new THREE.Color(0x2c3e50);
             currentCamera = new THREE.PerspectiveCamera(
@@ -1470,10 +1465,8 @@
             currentRenderer.setSize(container.clientWidth, container.clientHeight);
             currentRenderer.setPixelRatio(window.devicePixelRatio);
             currentRenderer.shadowMap.enabled = true;
-            // Limpiar el loader y añadir el nuevo canvas
             container.innerHTML = ''; 
             container.appendChild(currentRenderer.domElement);
-            // Luces
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
             currentScene.add(ambientLight);
             const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -1513,7 +1506,6 @@
                 transparent: true,
                 opacity: 0.7
             });
-            // --- Geometrías del Modal 3D ---
             switch(figura) {
                 case 'cubo':
                     geometry = new THREE.BoxGeometry(4, 4, 4);
@@ -1528,9 +1520,6 @@
                     });
                     const visibleEdges = new THREE.LineSegments(edgesGeometry, visibleEdgesMaterial);
                     currentMesh.add(visibleEdges);
-                    // --- INICIO CORRECCIÓN: Código de líneas ocultas redundante eliminado ---
-                    // El EdgesGeometry anterior ya dibuja todas las aristas.
-                    // --- FIN CORRECCIÓN ---
                     break;
                 case 'ortoedro':
                     geometry = new THREE.BoxGeometry(5, 4, 3);
@@ -1545,8 +1534,6 @@
                     });
                     const visibleEdgesOrtoedro = new THREE.LineSegments(edgesGeometryOrtoedro, visibleEdgesMaterialOrtoedro);
                     currentMesh.add(visibleEdgesOrtoedro);
-                    // --- INICIO CORRECCIÓN: Código de líneas ocultas redundante eliminado ---
-                    // --- FIN CORRECCIÓN ---
                     break;
                 case 'toro':
                     geometry = new THREE.TorusGeometry(3.2, 1, 32, 64);
@@ -1817,7 +1804,7 @@
                     currentMesh.add(wireframeTruncPyr);
                     break;
                 case 'prismas':
-                    createPrismasGroup(); // Esta función crea su propio 'currentMesh' (un Group)
+                    createPrismasGroup();
                     break;
                 case 'piramide_oblicua':
                     const verticesPirObl = new Float32Array([
@@ -1833,7 +1820,7 @@
                     geometry.setIndex(indicesPirObl);
                     geometry.computeVertexNormals();
                     currentMesh = new THREE.Mesh(geometry, material);
-                    currentMesh.material.side = THREE.DoubleSide; // Asegurar que se vean ambas caras
+                    currentMesh.material.side = THREE.DoubleSide;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
@@ -1876,7 +1863,7 @@
                     geometry.setIndex(indices_prisma_modal);
                     geometry.computeVertexNormals();
                     currentMesh = new THREE.Mesh(geometry, material);
-                    currentMesh.material.side = THREE.DoubleSide; // Asegurar que se vean ambas caras
+                    currentMesh.material.side = THREE.DoubleSide;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
@@ -1907,7 +1894,6 @@
                     const height_modal = 2;
                     const twist_modal = Math.PI / n_modal;
                     const vertices_anti_modal = [];
-                    // Vértices base inferior
                     for (let i = 0; i < n_modal; i++) {
                         const angle = (2 * Math.PI * i) / n_modal;
                         vertices_anti_modal.push(
@@ -1916,7 +1902,6 @@
                             radius_modal * Math.sin(angle)
                         );
                     }
-                    // Vértices base superior
                     for (let i = 0; i < n_modal; i++) {
                         const angle = (2 * Math.PI * i) / n_modal + twist_modal;
                         vertices_anti_modal.push(
@@ -1926,15 +1911,12 @@
                         );
                     }
                     const indices_anti_modal = [];
-                    // Base inferior (pentágono)
                     for (let i = 1; i < n_modal - 1; i++) {
                         indices_anti_modal.push(0, i + 1, i);
                     }
-                    // Base superior (pentágono)
                     for (let i = 1; i < n_modal - 1; i++) {
                         indices_anti_modal.push(n_modal, n_modal + i, n_modal + i + 1);
                     }
-                    // Caras laterales (triángulos)
                     for (let i = 0; i < n_modal; i++) {
                         const next = (i + 1) % n_modal;
                         indices_anti_modal.push(i, n_modal + i, next);
@@ -1945,7 +1927,7 @@
                     geometry.setIndex(indices_anti_modal);
                     geometry.computeVertexNormals();
                     currentMesh = new THREE.Mesh(geometry, material);
-                    currentMesh.material.side = THREE.DoubleSide; // Asegurar que se vean ambas caras
+                    currentMesh.material.side = THREE.DoubleSide;
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
@@ -1956,7 +1938,6 @@
                     });
                     const wireframeAntiModal = new THREE.LineSegments(edgesAntiModal, lineMaterialAntiModal);
                     currentMesh.add(wireframeAntiModal);
-                    // Líneas internas (altura y radios)
                     const dashedMatAnti = new THREE.LineDashedMaterial({
                         color: 0x000000,
                         linewidth: 2,
@@ -1992,7 +1973,6 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
             }
-            // Controles
             currentControls = new THREE.OrbitControls(currentCamera, currentRenderer.domElement);
             currentControls.enableDamping = true;
             currentControls.dampingFactor = 0.05;
@@ -2000,16 +1980,13 @@
             currentControls.minDistance = 3;
             currentControls.maxDistance = 20;
             currentControls.maxPolarAngle = Math.PI;
-            // Líneas de dimensión
             addDimensionLines(currentScene, figura);
-            // Bucle de animación
             function animate() {
                 animationFrameId = requestAnimationFrame(animate);
                 currentControls.update();
                 currentRenderer.render(currentScene, currentCamera);
             }
             animate();
-            // Manejador de redimensionamiento
             const handleResize = () => {
                 if (currentCamera && currentRenderer && container && currentModal && currentModal.style.display === 'flex') {
                     const width = container.clientWidth;
@@ -2209,7 +2186,7 @@
                     const prismaOblApPoints = [new THREE.Vector3(0, 0, -1.8), new THREE.Vector3(1.75, 0, -1.8)];
                     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismaOblApPoints), lineMaterial));
                     addTextLabel(scene, 'ap', new THREE.Vector3(0.875, 0.3, -2.1));
-                    break; // --- INICIO CORRECCIÓN: Se añadió el 'break' que faltaba ---
+                    break;
                 case 'antiprisma_pentagonal':
                     const antiH = [new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 1, 0)];
                     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(antiH), lineMaterial));
@@ -2220,7 +2197,6 @@
                     break;
             }
         }
-        // Función para crear etiquetas de texto en 3D
         function addTextLabel(scene, text, position) {
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
@@ -2242,7 +2218,6 @@
             sprite.scale.set(1, 0.5, 1);
             scene.add(sprite);
         }
-        // Función para crear el grupo de prismas
         function createPrismasGroup() {
             const group = new THREE.Group();
             const materialBase = new THREE.MeshStandardMaterial({
@@ -2276,13 +2251,11 @@
             currentScene.add(group);
             currentMesh = group;
         }
-        // Función de cierre del modal 3D (con limpieza)
         function close3DModal() {
             const modal = document.getElementById('modal3D');
             if (modal) {
                 modal.style.display = "none";
             }
-            // --- INICIO CORRECCIÓN: Lógica de limpieza ---
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
                 animationFrameId = null;
@@ -2302,18 +2275,10 @@
             currentScene = null;
             currentCamera = null;
             currentMesh = null;
-            // --- FIN CORRECCIÓN ---
-
-            // --- INICIO DE LA CORRECCIÓN ---
-            // 2. Vuelve a crear las mini-escenas ahora que el modal está cerrado
             initializeMini3DScenes();
-            // --- FIN DE LA CORRECCIÓN ---
-
             currentModal = null;
             document.body.style.overflow = 'auto';
         }
-        // --- Manejadores de Eventos Globales ---
-        // Cierre de modal al hacer clic fuera
         window.onclick = function(event) {
             if (event.target === document.getElementById('modal')) {
                 closeModal();
@@ -2321,7 +2286,6 @@
                 close3DModal();
             }
         };
-        // Cierre de modal con la tecla Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 if (currentModal) {
@@ -2333,7 +2297,6 @@
                 }
             }
         });
-        // Limpieza al salir de la página
         window.addEventListener('beforeunload', () => {
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
