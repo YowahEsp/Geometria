@@ -212,11 +212,11 @@
             animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         @keyframes slideUp {
-            from { 
+            from {
                 opacity: 0;
                 transform: translateY(100px) scale(0.9);
             }
-            to { 
+            to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
@@ -307,8 +307,7 @@
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
-        
-        /* === COLORES DE FIGURAS (VERSIÓN ÓPTIMA) === */
+        /* === COLORES DE FIGURAS === */
         .fig-cuadrado { fill: #3498db; stroke: #2980b9; stroke-width: 3; }
         .fig-rectangulo { fill: #e74c3c; stroke: #c0392b; stroke-width: 3; }
         .fig-paralelogramo { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
@@ -319,23 +318,20 @@
         .fig-triangulo-isosceles { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
         .fig-triangulo-escaleno { fill: #7f8c8d; stroke: #95a5a6; stroke-width: 3; }
         .fig-triangulo-rectangulo { fill: #8e44ad; stroke: #7d3c98; stroke-width: 3; }
-        /* RECUPERADOS DE LA VERSIÓN REFERENCIA */
-        .fig-octagono { fill: #98fb98; stroke: #000000; stroke-width: 3; }     /* Verde pálido */
-        .fig-hexagono { fill: #fffacd; stroke: #000000; stroke-width: 3; }     /* Amarillo limón */
+        .fig-octagono { fill: #98fb98; stroke: #000000; stroke-width: 3; }
+        .fig-hexagono { fill: #fffacd; stroke: #000000; stroke-width: 3; }
         .fig-cometa { fill: #c0392b; stroke: #a93226; stroke-width: 3; }
         .fig-pentagono { fill: #ff9f43; stroke: #f39c12; stroke-width: 3; }
         .fig-circulo { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
         .fig-sector { fill: #9b59b6; stroke: #8e44ad; stroke-width: 3; }
         .fig-corona { fill: #1abc9c; stroke: #16a085; stroke-width: 3; }
         .fig-elipse { fill: #d35400; stroke: #e67e22; stroke-width: 3; }
-
         /* === ESTILOS DE LÍNEAS Y ETIQUETAS === */
         .aux-line { stroke: #555; stroke-dasharray: 5 5; stroke-width: 2; }
         .apotema { stroke: #000; stroke-width: 2; }
         .label { font-size: 14px; font-weight: bold; fill: #ff0000; }
         .angle-arc { fill: none; stroke: #e74c3c; stroke-width: 1.5; }
         .angle-label { font-size: 12px; fill: #e74c3c; font-weight: bold; }
-        
         .mini-3d-container {
             width: 100%;
             height: 100%;
@@ -438,8 +434,8 @@
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
                             <polygon points="100,25 145,100 100,175 55,100" class="fig-rombo"/>
-                            <line x1="55" y1="100" x2="145" y2="100" class="aux-line"/> 
-                            <line x1="100" y1="25" x2="100" y2="175" class="aux-line"/> 
+                            <line x1="55" y1="100" x2="145" y2="100" class="aux-line"/>
+                            <line x1="100" y1="25" x2="100" y2="175" class="aux-line"/>
                             <text x="125" y="110" text-anchor="middle" class="label">d</text>
                             <text x="105" y="75" text-anchor="middle" class="label">D</text>
                             <text x="125" y="65" text-anchor="middle" class="label">a</text>
@@ -539,28 +535,28 @@
                     </div>
                     <div class="formula">P = a+b+c<br>A = <div class="frac"><span class="frac-numer">a·b</span><span class="frac-denom">2</span></div><br>c² = a²+b²</div>
                 </div>
-
-                <!-- === OCTÁGONO REGULAR ACTUALIZADO === -->
+                <!-- === OCTÁGONO REGULAR (LÍNEAS DISCONTINUAS) === -->
                 <div class="figure-card" onclick="openModal('octagono')">
                     <div class="figure-title">Octágono Regular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
                             <polygon points="126.8,164.7 73.2,164.7 35.3,126.8 35.3,73.2 73.2,35.3 126.8,35.3 164.7,73.2 164.7,126.8"
                                      fill="#98fb98" stroke="#000000" stroke-width="3"/>
-                            <line x1="100" y1="100" x2="100" y2="164.7" class="apotema"/>
-                            <line x1="100" y1="100" x2="126.8" y2="164.7" class="apotema"/>
+                            <!-- Líneas discontinuas añadidas -->
+                            <line x1="100" y1="100" x2="100" y2="164.7" class="apotema" stroke-dasharray="5,5"/>
+                            <line x1="100" y1="100" x2="126.8" y2="164.7" class="apotema" stroke-dasharray="5,5"/>
                             <text x="90" y="135" text-anchor="end" class="label">a</text>
                             <text x="120" y="140" text-anchor="start" class="label">r</text>
                         </svg>
                     </div>
                     <div class="formula">P = 8s<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div><br>A = 2(1+√2)s²</div>
                 </div>
-
                 <!-- Segmento Circular -->
                 <div class="figure-card" onclick="openModal('segmento_circular')">
                     <div class="figure-title">Segmento Circular</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="0 0 280 200">
+                        <!-- MODIFICADO: ViewBox ajustado para ampliar y centrar la figura segun archivo 'ajustado' -->
+                        <svg class="figure-svg" viewBox="15 30 230 150">
                             <path d="M 52 80 A 60 60 0 0 1 148 80 L 148 80 L 100 80 Z" fill="#ffcc99" stroke="none"/>
                             <path d="M 148 80 A 60 60 0 1 1 52 80" fill="none" stroke="#000" stroke-width="2.5"/>
                             <path d="M 52 80 A 60 60 0 0 1 148 80" fill="none" stroke="#c44" stroke-width="2.5"/>
@@ -585,9 +581,9 @@
                     </div>
                     <div class="formula">A = <div class="frac"><span class="frac-numer">r²</span><span class="frac-denom">2</span></div>(α - sinα)<br>L = rα<br>α en radianes</div>
                 </div>
-                <!-- Cometa/Romboide -->
+                <!-- Cometa/Deltoide (CAMBIADO NOMBRE) -->
                 <div class="figure-card" onclick="openModal('cometa')">
-                    <div class="figure-title">Cometa/Romboide</div>
+                    <div class="figure-title">Cometa/Deltoide</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
                             <polygon points="100,40 150,80 100,160 50,80" class="fig-cometa"/>
@@ -617,23 +613,23 @@
                     </div>
                     <div class="formula">P = 5b<br>A = <div class="frac"><span class="frac-numer">P·a</span><span class="frac-denom">2</span></div></div>
                 </div>
-
-                <!-- === HEXÁGONO REGULAR ACTUALIZADO === -->
+                <!-- === HEXÁGONO REGULAR (AUMENTADO Y LÍNEAS DISCONTINUAS) === -->
                 <div class="figure-card" onclick="openModal('hexagono')">
                     <div class="figure-title">Hexágono Regular</div>
                     <div class="figure-container">
                         <svg class="figure-svg" viewBox="0 0 200 200">
-                            <polygon points="125,143.3 75,143.3 50,100 75,56.7 125,56.7 150,100"
+                            <!-- Hexágono más grande (Radio ~70) -->
+                            <polygon points="135,160.6 65,160.6 30,100 65,39.4 135,39.4 170,100"
                                      fill="#fffacd" stroke="#000000" stroke-width="3"/>
-                            <line x1="100" y1="100" x2="100" y2="143.3" class="apotema"/>
-                            <line x1="100" y1="100" x2="125" y2="143.3" class="apotema"/>
-                            <text x="98" y="125" text-anchor="end" class="label">ap</text>
-                            <text x="120" y="130" text-anchor="start" class="label">r</text>
+                            <!-- Líneas discontinuas y ajustadas al nuevo tamaño -->
+                            <line x1="100" y1="100" x2="100" y2="160.6" class="apotema" stroke-dasharray="5,5"/>
+                            <line x1="100" y1="100" x2="135" y2="160.6" class="apotema" stroke-dasharray="5,5"/>
+                            <text x="98" y="135" text-anchor="end" class="label">ap</text>
+                            <text x="125" y="140" text-anchor="start" class="label">r</text>
                         </svg>
                     </div>
                     <div class="formula">P = 6r<br>A = <div class="frac"><span class="frac-numer">P·ap</span><span class="frac-denom">2</span></div></div>
                 </div>
-
                 <!-- Círculo -->
                 <div class="figure-card" onclick="openModal('circulo')">
                     <div class="figure-title">Círculo</div>
@@ -698,7 +694,6 @@
         <div class="section">
             <div class="section-title">📦 Áreas y Volúmenes de Figuras en el Espacio</div>
             <div class="grid">
-                <!-- === RESTO DE FIGURAS 3D (sin cambios) === -->
                 <!-- Cubo -->
                 <div class="figure-card" onclick="open3DModal('cubo')">
                     <div class="figure-title">Cubo</div>
@@ -750,15 +745,7 @@
                 <div class="figure-card" onclick="open3DModal('cilindro')">
                     <div class="figure-title">Cilindro</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="25 25 150 150">
-                            <path d="M60,70 L60,140 A40,15 0 0,0 140,140 L140,70 A40,15 0 0,1 60,70 Z" fill="#9b59b6" fill-opacity="0.7" stroke="none"/>
-                            <ellipse cx="100" cy="70" rx="40" ry="15" fill="#9b59b6" fill-opacity="0.7" stroke="none"/>
-                            <ellipse cx="100" cy="70" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
-                            <line x1="60" y1="70" x2="60" y2="140" stroke="#000" stroke-width="2"/>
-                            <line x1="140" y1="70" x2="140" y2="140" stroke="#000" stroke-width="2"/>
-                            <ellipse cx="100" cy="140" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
-                            <path d="M60,70 A40,15 0 0,1 140,70" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
-                        </svg>
+                        <div id="mini-cilindro" class="mini-3d-container"></div>
                     </div>
                     <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = 2πrh<br>A<sub>tot</sub> = 2πr(r+h)<br>V = πr²h</div>
                 </div>
@@ -766,13 +753,7 @@
                 <div class="figure-card" onclick="open3DModal('cono')">
                     <div class="figure-title">Cono</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="25 25 150 150">
-                            <path d="M100,40 L60,140 A40,15 0 0,0 140,140 Z" fill="#f39c12" fill-opacity="0.7" stroke="none" />
-                            <ellipse cx="100" cy="140" rx="40" ry="15" stroke="#000" stroke-width="2" fill="none"/>
-                            <line x1="100" y1="40" x2="60" y2="140" stroke="#000" stroke-width="2"/>
-                            <line x1="100" y1="40" x2="140" y2="140" stroke="#000" stroke-width="2"/>
-                            <path d="M60,140 A40,15 0 0,1 140,140" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
-                        </svg>
+                        <div id="mini-cono" class="mini-3d-container"></div>
                     </div>
                     <div class="formula" style="font-size: 13px; line-height: 1.5;">A<sub>lat</sub> = πrg<br>A<sub>tot</sub> = πr(r+g)<br>V = <div class="frac"><span class="frac-numer">1</span><span class="frac-denom">3</span></div>πr²h</div>
                 </div>
@@ -806,12 +787,7 @@
                 <div class="figure-card" onclick="open3DModal('semiesfera')">
                     <div class="figure-title">Semiesfera</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="25 25 150 150">
-                            <path d="M45,100 A55,55 0 0,1 155,100 A55,18 0 0,1 45,100 Z" fill="#d35400" fill-opacity="0.7" stroke="none"/>
-                            <path d="M45,100 A55,55 0 0,1 155,100" stroke="#000" stroke-width="2" fill="none"/>
-                            <ellipse cx="100" cy="100" rx="55" ry="18" stroke="#000" stroke-width="2" fill="none"/>
-                            <path d="M45,100 A55,18 0 0,0 155,100" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
-                        </svg>
+                        <div id="mini-semiesfera" class="mini-3d-container"></div>
                     </div>
                     <div class="formula" style="font-size: 12px; line-height: 1.5;">A<sub>curva</sub> = 2πr²<br>A<sub>tot</sub> = 3πr²<br>V = <div class="frac"><span class="frac-numer">2</span><span class="frac-denom">3</span></div>πr³</div>
                 </div>
@@ -819,15 +795,7 @@
                 <div class="figure-card" onclick="open3DModal('tronco_cono')">
                     <div class="figure-title">Tronco de Cono</div>
                     <div class="figure-container">
-                        <svg class="figure-svg" viewBox="25 25 150 150">
-                            <path d="M70,70 L55,140 A45,15 0 0,0 145,140 L130,70 A30,10 0 0,1 70,70 Z" fill="#34495e" fill-opacity="0.7" stroke="none"/>
-                            <ellipse cx="100" cy="70" rx="30" ry="10" fill="#34495e" fill-opacity="0.7" stroke="none"/>
-                            <ellipse cx="100" cy="140" rx="45" ry="15" stroke="#000" stroke-width="2" fill="none"/>
-                            <ellipse cx="100" cy="70" rx="30" ry="10" stroke="#000" stroke-width="2" fill="none"/>
-                            <line x1="70" y1="70" x2="55" y2="140" stroke="#000" stroke-width="2"/>
-                            <line x1="130" y1="70" x2="145" y2="140" stroke="#000" stroke-width="2"/>
-                            <path d="M70,70 A30,10 0 0,1 130,70" stroke="#000" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
-                        </svg>
+                        <div id="mini-tronco_cono" class="mini-3d-container"></div>
                     </div>
                     <div class="formula" style="font-size: 11px; line-height: 1.4;">A<sub>lat</sub> = πg(R+r)<br>A<sub>tot</sub> = A<sub>lat</sub>+πR²+πr²<br>V = <div class="frac"><span class="frac-numer">πh</span><span class="frac-denom">3</span></div>(R²+Rr+r²)</div>
                 </div>
@@ -879,17 +847,18 @@
                             <polygon points="100,40 30,160 135,170" fill="#c9a57b" fill-opacity="0.5" stroke="none"/>
                             <polygon points="100,40 135,170 170,160" fill="#b8935f" fill-opacity="0.5" stroke="none"/>
                             <polygon points="100,40 30,160 170,160" fill="#d4b896" fill-opacity="0.5" stroke="none"/>
-                            <line x1="100" y1="40" x2="30" y2="160" stroke="#000" stroke-width="3"/>
-                            <line x1="100" y1="40" x2="170" y2="160" stroke="#000" stroke-width="3"/>
-                            <line x1="100" y1="40" x2="135" y2="170" stroke="#000" stroke-width="3"/>
-                            <line x1="30" y1="160" x2="170" y2="160" stroke="#000" stroke-width="3"/>
-                            <line x1="170" y1="160" x2="135" y2="170" stroke="#000" stroke-width="3"/>
-                            <line x1="100" y1="40" x2="100" y2="155" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
-                            <line x1="100" y1="155" x2="30" y2="160" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
-                            <line x1="100" y1="155" x2="170" y2="160" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
-                            <line x1="100" y1="155" x2="135" y2="170" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
-                            <line x1="30" y1="160" x2="135" y2="170" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
-                            <line x1="100" y1="40" x2="152" y2="165" stroke="#000" stroke-width="2.5" stroke-dasharray="6,4"/>
+                            <!-- MODIFICADO: Grosor de líneas reducido -->
+                            <line x1="100" y1="40" x2="30" y2="160" stroke="#000" stroke-width="2"/>
+                            <line x1="100" y1="40" x2="170" y2="160" stroke="#000" stroke-width="2"/>
+                            <line x1="100" y1="40" x2="135" y2="170" stroke="#000" stroke-width="2"/>
+                            <line x1="30" y1="160" x2="170" y2="160" stroke="#000" stroke-width="2"/>
+                            <line x1="170" y1="160" x2="135" y2="170" stroke="#000" stroke-width="2"/>
+                            <line x1="100" y1="40" x2="100" y2="155" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
+                            <line x1="100" y1="155" x2="30" y2="160" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
+                            <line x1="100" y1="155" x2="170" y2="160" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
+                            <line x1="100" y1="155" x2="135" y2="170" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
+                            <line x1="30" y1="160" x2="135" y2="170" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
+                            <line x1="100" y1="40" x2="152" y2="165" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
                         </svg>
                     </div>
                     <div class="formula">Área: A = a²√3<br>Volumen: V = <div class="frac"><span class="frac-numer">a³√2</span><span class="frac-denom">12</span></div></div>
@@ -998,16 +967,15 @@
         </div>
     </div>
     <script>
-        // --- Datos para Modales 2D (con OCTÁGONO y HEXÁGONO actualizados) ---
+        // --- Datos para Modales 2D (ACTUALIZADOS) ---
         const figureData = {
-            // ... otras figuras sin cambios ...
             'octagono': {
                 title: 'Octágono Regular',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200">
                     <polygon points="126.8,164.7 73.2,164.7 35.3,126.8 35.3,73.2 73.2,35.3 126.8,35.3 164.7,73.2 164.7,126.8"
                              fill="#98fb98" stroke="#000000" stroke-width="3"/>
-                    <line x1="100" y1="100" x2="100" y2="164.7" class="apotema"/>
-                    <line x1="100" y1="100" x2="126.8" y2="164.7" class="apotema"/>
+                    <line x1="100" y1="100" x2="100" y2="164.7" class="apotema" stroke-dasharray="5,5"/>
+                    <line x1="100" y1="100" x2="126.8" y2="164.7" class="apotema" stroke-dasharray="5,5"/>
                     <text x="90" y="135" text-anchor="end" class="label">a</text>
                     <text x="120" y="140" text-anchor="start" class="label">r</text>
                 </svg>`,
@@ -1016,16 +984,17 @@
             'hexagono': {
                 title: 'Hexágono Regular',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200">
-                    <polygon points="125,143.3 75,143.3 50,100 75,56.7 125,56.7 150,100"
+                    <!-- Hexágono grande y líneas discontinuas -->
+                    <polygon points="135,160.6 65,160.6 30,100 65,39.4 135,39.4 170,100"
                              fill="#fffacd" stroke="#000000" stroke-width="3"/>
-                    <line x1="100" y1="100" x2="100" y2="143.3" class="apotema"/>
-                    <line x1="100" y1="100" x2="125" y2="143.3" class="apotema"/>
-                    <text x="98" y="125" text-anchor="end" class="label">ap</text>
-                    <text x="120" y="130" text-anchor="start" class="label">r</text>
+                    <line x1="100" y1="100" x2="100" y2="160.6" class="apotema" stroke-dasharray="5,5"/>
+                    <line x1="100" y1="100" x2="135" y2="160.6" class="apotema" stroke-dasharray="5,5"/>
+                    <text x="98" y="135" text-anchor="end" class="label">ap</text>
+                    <text x="125" y="140" text-anchor="start" class="label">r</text>
                 </svg>`,
                 formula: `Perímetro = 6r<br>Área = <div class="frac"><span class="frac-numer">P·ap</span><span class="frac-denom">2</span></div>`
             },
-            // ... resto de figureData sin cambios ...
+            // ... resto de figureData ...
             'cuadrado': {
                 title: 'Cuadrado',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><rect x="50" y="50" width="100" height="100" class="fig-cuadrado"/><text x="100" y="165" text-anchor="middle" class="label">a</text></svg>`,
@@ -1076,14 +1045,14 @@
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="50,150 50,50 150,150" class="fig-triangulo-rectangulo"/><line x1="45" y1="50" x2="45" y2="150" class="aux-line"/><line x1="50" y1="155" x2="150" y2="155" class="aux-line"/><text x="25" y="100" text-anchor="middle" class="label">a</text><text x="100" y="165" text-anchor="middle" class="label">b</text><text x="110" y="110" text-anchor="middle" class="label">c</text><path d="M65,145 L65,135 L55,135" class="angle-arc"/></svg>`,
                 formula: `Perímetro = a+b+c<br>Área = <div class="frac"><span class="frac-numer">a·b</span><span class="frac-denom">2</span></div><br>c² = a²+b²`
             },
-
             'segmento_circular': {
                 title: 'Segmento Circular',
-                svg: `<svg class="modal-figure-svg" viewBox="0 0 280 200"><path d="M 52 80 A 60 60 0 0 1 148 80 L 148 80 L 100 80 Z" fill="#ffcc99" stroke="none"/><path d="M 148 80 A 60 60 0 1 1 52 80" fill="none" stroke="#000" stroke-width="2.5"/><path d="M 52 80 A 60 60 0 0 1 148 80" fill="none" stroke="#c44" stroke-width="2.5"/><line x1="52" y1="80" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="52" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><path d="M 115 102 A 18 18 0 0 0 85 102" fill="none" stroke="#4a4" stroke-width="2"/><path d="M 100 110 L 115 102 A 18 18 0 0 0 85 102 Z" fill="#d4f4dd" fill-opacity="0.6" stroke="none"/><line x1="100" y1="110" x2="100" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="110" x2="200" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="80" x2="200" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="190" y1="80" x2="190" y2="110" stroke="#333" stroke-width="1.5"/><polygon points="190,80 187,85 193,85" fill="#333"/><polygon points="190,110 187,105 193,105" fill="#333"/><circle cx="100" cy="110" r="2" fill="#000"/><text x="100" y="45" text-anchor="middle" fill="#c44" font-size="20">a</text><text x="125" y="75" text-anchor="middle" fill="#000" font-size="16">c</text><text x="70" y="90" text-anchor="middle" fill="#000" font-size="16">r</text><text x="105" y="125" text-anchor="start" fill="#4a4" font-size="16">α</text><text x="205" y="98" text-anchor="start" fill="#333" font-size="16">h</text></svg>`,
+                // MODIFICADO: ViewBox ajustado segun archivo 'ajustado'
+                svg: `<svg class="modal-figure-svg" viewBox="10 20 230 140"><path d="M 52 80 A 60 60 0 0 1 148 80 L 148 80 L 100 80 Z" fill="#ffcc99" stroke="none"/><path d="M 148 80 A 60 60 0 1 1 52 80" fill="none" stroke="#000" stroke-width="2.5"/><path d="M 52 80 A 60 60 0 0 1 148 80" fill="none" stroke="#c44" stroke-width="2.5"/><line x1="52" y1="80" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="52" y2="80" stroke="#000" stroke-width="1.5"/><line x1="100" y1="110" x2="148" y2="80" stroke="#000" stroke-width="1.5"/><path d="M 115 102 A 18 18 0 0 0 85 102" fill="none" stroke="#4a4" stroke-width="2"/><path d="M 100 110 L 115 102 A 18 18 0 0 0 85 102 Z" fill="#d4f4dd" fill-opacity="0.6" stroke="none"/><line x1="100" y1="110" x2="100" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="110" x2="200" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="148" y1="80" x2="200" y2="80" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/><line x1="190" y1="80" x2="190" y2="110" stroke="#333" stroke-width="1.5"/><polygon points="190,80 187,85 193,85" fill="#333"/><polygon points="190,110 187,105 193,105" fill="#333"/><circle cx="100" cy="110" r="2" fill="#000"/><text x="100" y="45" text-anchor="middle" fill="#c44" font-size="20">a</text><text x="125" y="75" text-anchor="middle" fill="#000" font-size="16">c</text><text x="70" y="90" text-anchor="middle" fill="#000" font-size="16">r</text><text x="105" y="125" text-anchor="start" fill="#4a4" font-size="16">α</text><text x="205" y="98" text-anchor="start" fill="#333" font-size="16">h</text></svg>`,
                 formula: `Área = <div class="frac"><span class="frac-numer">r²</span><span class="frac-denom">2</span></div>(α - sinα)<br>Longitud de arco = rα<br>α en radianes`
             },
             'cometa': {
-                title: 'Cometa/Romboide',
+                title: 'Cometa/Deltoide',
                 svg: `<svg class="modal-figure-svg" viewBox="0 0 200 200"><polygon points="100,40 150,80 100,160 50,80" class="fig-cometa"/><line x1="50" y1="80" x2="150" y2="80" class="aux-line"/><line x1="100" y1="40" x2="100" y2="160" class="aux-line"/><text x="75" y="80" text-anchor="middle" class="label">d₁</text><text x="100" y="100" text-anchor="middle" class="label">d₂</text><text x="125" y="60" text-anchor="middle" class="label">a</text><text x="125" y="120" text-anchor="middle" class="label">b</text></svg>`,
                 formula: `Perímetro = 2(a+b)<br>Área = <div class="frac"><span class="frac-numer">d₁·d₂</span><span class="frac-denom">2</span></div>`
             },
@@ -1113,7 +1082,7 @@
                 formula: `Perímetro ≈ π(a+b)<br>Área = πab`
             }
         };
-        // --- Resto del código JavaScript SIN CAMBIOS ---
+        // --- Resto del código JavaScript ---
         let currentModal = null;
         let currentScene = null;
         let currentCamera = null;
@@ -1122,6 +1091,223 @@
         let currentMesh = null;
         let animationFrameId = null;
         let miniScenes = {};
+        // --- NUEVA FUNCIÓN: CONSTRUIR SEMIESFERA MEJORADA (DE SEMIESFERA.html) ---
+        function buildSemiesferaForModal(scene, color) {
+            const R = 3.0; // Radio aumentado para coincidir con otras figuras
+            const grupo = new THREE.Group();
+            const mat = new THREE.MeshStandardMaterial({
+                color: color,
+                metalness: 0.3,
+                roughness: 0.4,
+                transparent: true,
+                opacity: 0.6,
+                side: THREE.DoubleSide
+            });
+            // 1. Cúpula (hemisferio)
+            const geoCopa = new THREE.SphereGeometry(R, 40, 40, 0, Math.PI * 2, 0, Math.PI / 2);
+            const mallaCopa = new THREE.Mesh(geoCopa, mat);
+            grupo.add(mallaCopa);
+            // 2. Base plana (círculo)
+            const geoBase = new THREE.CircleGeometry(R, 40);
+            const mallaBase = new THREE.Mesh(geoBase, mat);
+            mallaBase.rotation.x = -Math.PI / 2;
+            grupo.add(mallaBase);
+            // 3. Borde de la base (línea discontinua)
+            const edgesGeo = new THREE.EdgesGeometry(geoBase);
+            const edgesMat = new THREE.LineDashedMaterial({
+                color: color,
+                linewidth: 2,
+                dashSize: 0.15,
+                gapSize: 0.08
+            });
+            const edges = new THREE.LineSegments(edgesGeo, edgesMat);
+            edges.computeLineDistances();
+            edges.rotation.x = -Math.PI / 2;
+            grupo.add(edges);
+            // 4. Esfera fantasma de referencia
+            const geoGhost = new THREE.SphereGeometry(R, 24, 16);
+            const matGhost = new THREE.MeshBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.08,
+                wireframe: true
+            });
+            const mallaGhost = new THREE.Mesh(geoGhost, matGhost);
+            grupo.add(mallaGhost);
+            // 5. COTACIONES (líneas de dimensión)
+            const rojo = new THREE.LineBasicMaterial({color: 0xff0000, linewidth: 3});
+            const rojoDash = new THREE.LineDashedMaterial({
+                color: 0xff0000,
+                dashSize: 0.2,
+                gapSize: 0.08,
+                linewidth: 3
+            });
+            // Radio r (línea horizontal sólida)
+            const rPts = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(R, 0, 0)];
+            const rGeo = new THREE.BufferGeometry().setFromPoints(rPts);
+            const rLinea = new THREE.Line(rGeo, rojo);
+            rLinea.position.y = 0.05; // Levantada ligeramente para evitar z-fighting
+            scene.add(rLinea);
+            addTextLabel(scene, 'r', new THREE.Vector3(R/2, 0.4, 0));
+            // Altura h = r (línea vertical discontinua)
+            const hPts = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, R, 0)];
+            const hGeo = new THREE.BufferGeometry().setFromPoints(hPts);
+            const hLinea = new THREE.Line(hGeo, rojoDash);
+            hLinea.computeLineDistances();
+            scene.add(hLinea);
+            addTextLabel(scene, 'h = r', new THREE.Vector3(-0.6, R/2, 0));
+            return grupo;
+        }
+        // --- Funciones para construir Casquete Esférico y Prisma Oblicuo (INTEGRADAS) ---
+        function buildCasqueteEsfericoForModal(scene, color) {
+            const group = new THREE.Group();
+            // Parámetros
+            const R_sphere = 3;
+            const cap_angle = Math.PI / 3.5;
+            const h_cut = R_sphere * Math.cos(cap_angle);
+            const r_base = R_sphere * Math.sin(cap_angle);
+            // Material con color dinámico
+            const material = new THREE.MeshStandardMaterial({
+                color: color,
+                metalness: 0.3,
+                roughness: 0.5,
+                transparent: true,
+                opacity: 0.8,
+                side: THREE.DoubleSide
+            });
+            // 1. La parte curva (Casquete)
+            const capGeometry = new THREE.SphereGeometry(R_sphere, 32, 32, 0, Math.PI * 2, 0, cap_angle);
+            const capMesh = new THREE.Mesh(capGeometry, material);
+            group.add(capMesh);
+            // 2. La base plana (Círculo de corte)
+            const capBaseGeometry = new THREE.CircleGeometry(r_base, 32);
+            const capBaseMesh = new THREE.Mesh(capBaseGeometry, material);
+            capBaseMesh.rotation.x = -Math.PI / 2;
+            capBaseMesh.position.y = h_cut;
+            group.add(capBaseMesh);
+            // 3. Esfera "Fantasma" (Wireframe para contexto)
+            const ghostGeo = new THREE.SphereGeometry(R_sphere, 24, 16);
+            const ghostMat = new THREE.MeshBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.05,
+                wireframe: true
+            });
+            const ghostSphere = new THREE.Mesh(ghostGeo, ghostMat);
+            group.add(ghostSphere);
+            // --- COTAS Y LÍNEAS (Dimensiones) ---
+            const lineMat = new THREE.LineBasicMaterial({ color: 0xff0000 });
+            const dashedMat = new THREE.LineDashedMaterial({
+                color: 0xff0000,
+                linewidth: 2,
+                dashSize: 0.2,
+                gapSize: 0.1
+            });
+            // Eje central discontinuo
+            const axisPoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, R_sphere + 0.5, 0)];
+            const axisLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints(axisPoints), dashedMat);
+            axisLine.computeLineDistances();
+            scene.add(axisLine);
+            // Línea indicadora de altura (h)
+            const hLineX = R_sphere + 0.5;
+            const hPoints = [new THREE.Vector3(hLineX, h_cut, 0), new THREE.Vector3(hLineX, R_sphere, 0)];
+            const hLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints(hPoints), lineMat);
+            scene.add(hLine);
+            // Líneas auxiliares horizontales para la cota h
+            const auxH1Points = [new THREE.Vector3(0, h_cut, 0), new THREE.Vector3(hLineX, h_cut, 0)];
+            const auxH2Points = [new THREE.Vector3(0, R_sphere, 0), new THREE.Vector3(hLineX, R_sphere, 0)];
+            const l1 = new THREE.Line(new THREE.BufferGeometry().setFromPoints(auxH1Points), dashedMat);
+            const l2 = new THREE.Line(new THREE.BufferGeometry().setFromPoints(auxH2Points), dashedMat);
+            l1.computeLineDistances(); l2.computeLineDistances();
+            scene.add(l1); scene.add(l2);
+            // Etiqueta h
+            addTextLabel(scene, 'h', new THREE.Vector3(hLineX + 0.3, (h_cut + R_sphere)/2, 0));
+            // Línea del Radio (R)
+            const rPoints = [new THREE.Vector3(0,0,0), new THREE.Vector3(R_sphere * Math.sin(cap_angle), h_cut, 0)];
+            const rLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints(rPoints), lineMat);
+            scene.add(rLine);
+            addTextLabel(scene, 'R', new THREE.Vector3(0.8, h_cut/2, 0));
+            return group;
+        }
+        function buildPrismaOblicuoForModal(scene, color) {
+            // Vértices extraídos del archivo original
+            const verticesPrisma = new Float32Array([
+                // Base inferior (Y=0)
+                -1.6, 0, -1.2,
+                 1.6, 0, -1.2,
+                 1.6, 0,  1.2,
+                -1.6, 0,  1.2,
+                // Base superior (Y=3.5) desplazada hacia la derecha (oblicuidad)
+                -0.4, 3.5, -1.2,
+                 2.8, 3.5, -1.2,
+                 2.8, 3.5,  1.2,
+                -0.4, 3.5,  1.2
+            ]);
+            const indicesPrisma = [
+                0, 1, 2, 0, 2, 3, // Base inferior
+                4, 6, 5, 4, 7, 6, // Base superior
+                0, 1, 5, 0, 5, 4, // Lados...
+                1, 2, 6, 1, 6, 5,
+                2, 3, 7, 2, 7, 6,
+                3, 0, 4, 3, 4, 7
+            ];
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.BufferAttribute(verticesPrisma, 3));
+            geometry.setIndex(indicesPrisma);
+            geometry.computeVertexNormals();
+            // Centrar la geometría visualmente
+            geometry.translate(-0.6, -1.75, 0);
+            const material = new THREE.MeshStandardMaterial({
+                color: color,
+                metalness: 0.2,
+                roughness: 0.5,
+                transparent: true,
+                opacity: 0.8,
+                side: THREE.DoubleSide
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            // Bordes negros (Wireframe)
+            const edges = new THREE.EdgesGeometry(geometry);
+            const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 2 });
+            const wireframe = new THREE.LineSegments(edges, lineMaterial);
+            mesh.add(wireframe);
+            // --- COTAS Y LÍNEAS (Dimensiones) ---
+            const redLineMat = new THREE.LineBasicMaterial({ color: 0xff0000 });
+            const redDashedMat = new THREE.LineDashedMaterial({
+                color: 0xff0000,
+                dashSize: 0.2,
+                gapSize: 0.1
+            });
+            const dx = -0.6; // Ajuste por la traslación
+            const dy = -1.75;
+            const dz = 0;
+            // 1. Altura perpendicular (h)
+            const hStart = new THREE.Vector3(0.6 + dx + 2.5, 0 + dy, 0);
+            const hEnd = new THREE.Vector3(0.6 + dx + 2.5, 3.5 + dy, 0);
+            // Línea vertical h
+            scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([hStart, hEnd]), redLineMat));
+            addTextLabel(scene, 'h', new THREE.Vector3(hStart.x + 0.4, 0, 0));
+            // Líneas auxiliares discontinuas hacia la cota h
+            const auxTopPoints = [new THREE.Vector3(2.8 + dx, 3.5 + dy, -1.2), hEnd];
+            const auxBotPoints = [new THREE.Vector3(1.6 + dx, 0 + dy, -1.2), hStart];
+            const lTop = new THREE.Line(new THREE.BufferGeometry().setFromPoints(auxTopPoints), redDashedMat);
+            const lBot = new THREE.Line(new THREE.BufferGeometry().setFromPoints(auxBotPoints), redDashedMat);
+            lTop.computeLineDistances(); lBot.computeLineDistances();
+            scene.add(lTop); scene.add(lBot);
+            // 2. Apotema lateral / Arista lateral (ap)
+            const p1 = new THREE.Vector3(0 + dx, 0 + dy, 1.2 + dz);
+            const p2 = new THREE.Vector3(1.2 + dx, 3.5 + dy, 1.2 + dz);
+            // La desplazamos un poco en Z para que se vea sobre la figura
+            p1.z += 0.1; p2.z += 0.1;
+            scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([p1, p2]), redLineMat));
+            addTextLabel(scene, 'ap', new THREE.Vector3((p1.x+p2.x)/2 - 0.5, (p1.y+p2.y)/2, p1.z + 0.5));
+            // 3. Base
+            const bStart = new THREE.Vector3(-1.6 + dx, 0 + dy, 1.2 + 0.1);
+            const bEnd = new THREE.Vector3(1.6 + dx, 0 + dy, 1.2 + 0.1);
+            scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([bStart, bEnd]), redLineMat));
+            addTextLabel(scene, 'Base', new THREE.Vector3(0 + dx, 0 + dy - 0.5, 1.5));
+            return mesh;
+        }
         function disposeMiniScenes() {
             Object.values(miniScenes).forEach(sceneData => {
                 if (sceneData.renderer) {
@@ -1133,9 +1319,61 @@
             });
             miniScenes = {};
         }
+        // --- NUEVAS FUNCIONES AUXILIARES PARA FIGURAS DE REVOLUCIÓN MINI ---
+        function createSimpleEdgeCircle(radius, yPos, isDashed, color = 0x2c3e50) {
+            const segments = 64;
+            const points = [];
+            for (let i = 0; i <= segments; i++) {
+                const angle = (i / segments) * Math.PI * 2;
+                const x = Math.cos(angle) * radius;
+                const y = yPos;
+                const z = Math.sin(angle) * radius;
+                points.push(new THREE.Vector3(x, y, z));
+            }
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const material = isDashed
+                ? new THREE.LineDashedMaterial({ color: color, linewidth: 2, dashSize: 0.15, gapSize: 0.08 })
+                : new THREE.LineBasicMaterial({ color: color, linewidth: 2 });
+            const line = isDashed ? new THREE.Line(geometry, material) : new THREE.LineLoop(geometry, material);
+            if (isDashed) line.computeLineDistances();
+            return line;
+        }
         document.addEventListener('DOMContentLoaded', function() {
             initializeMini3DScenes();
         });
+        // --- FUNCIÓN addTextLabel ACTUALIZADA (CORREGIDA) ---
+        function addTextLabel(scene, text, position) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 256; // Mayor resolución
+            canvas.height = 128;
+            // ✅ CORRECCIÓN PRINCIPAL: Fondo completamente transparente
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            // Configurar texto con borde para mejor legibilidad
+            context.font = 'Bold 96px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            // ✅ Borde negro para contraste
+            context.strokeStyle = 'rgba(0, 0, 0, 0.8)';
+            context.lineWidth = 8;
+            context.strokeText(text, 128, 64);
+            // Texto blanco sólido
+            context.fillStyle = 'white';
+            context.fillText(text, 128, 64);
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.needsUpdate = true;
+            const spriteMaterial = new THREE.SpriteMaterial({
+                map: texture,
+                transparent: true,
+                opacity: 1.0, // ✅ Opacidad completa
+                depthTest: true,
+                depthWrite: false
+            });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.copy(position);
+            sprite.scale.set(1, 0.5, 1);
+            scene.add(sprite);
+        }
         function openModal(figureName) {
             const data = figureData[figureName];
             if (!data) return;
@@ -1154,10 +1392,12 @@
             currentModal = null;
             document.body.style.overflow = 'auto';
         }
+        // --- ACTUALIZACIÓN DE initializeMini3DScenes ---
         function initializeMini3DScenes() {
             const figures = [
-                'piramide', 'tronco_piramide', 
-                'prismas', 'icosaedro', 'dodecaedro', 'piramide_oblicua', 'prisma_oblicuo', 'antiprisma_pentagonal'
+                'piramide', 'tronco_piramide',
+                'prismas', 'icosaedro', 'dodecaedro', 'piramide_oblicua', 'prisma_oblicuo', 'antiprisma_pentagonal',
+                'cilindro', 'cono', 'semiesfera', 'tronco_cono'
             ];
             figures.forEach(figura => {
                 const container = document.getElementById(`mini-${figura}`);
@@ -1166,6 +1406,7 @@
                 }
             });
         }
+        // --- ACTUALIZACIÓN DE setupMini3DScene ---
         function setupMini3DScene(container, figura) {
             const scene = new THREE.Scene();
             scene.background = new THREE.Color(0xf5f7fa);
@@ -1195,7 +1436,11 @@
                 'dodecaedro': 0x8e44ad,
                 'piramide_oblicua': 0x7d3c98,
                 'prisma_oblicuo': 0x16a085,
-                'antiprisma_pentagonal': 0xe67e22
+                'antiprisma_pentagonal': 0xe67e22,
+                'cilindro': 0x9b59b6,
+                'cono': 0xf39c12,
+                'semiesfera': 0xd35400,
+                'tronco_cono': 0x34495e
             };
             const material = new THREE.MeshStandardMaterial({
                 color: colors[figura] || 0x3498db,
@@ -1244,8 +1489,8 @@
                     const mesh = new THREE.Mesh(geometry, material_obl);
                     scene.add(mesh);
                     const edges = new THREE.EdgesGeometry(geometry);
-                    const lineMaterial = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const lineMaterial = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 2
                     });
                     const wireframe = new THREE.LineSegments(edges, lineMaterial);
@@ -1270,6 +1515,8 @@
                     geometry.setAttribute('position', new THREE.BufferAttribute(vertices_prisma_obl, 3));
                     geometry.setIndex(indices_prisma_obl);
                     geometry.computeVertexNormals();
+                    // MODIFICACIÓN: Centrar la figura desplazándola a la izquierda
+                    geometry.translate(-0.6, 0, 0);
                     const material_prisma_obl = new THREE.MeshStandardMaterial({
                         color: colors[figura] || 0x16a085,
                         metalness: 0.2,
@@ -1281,8 +1528,8 @@
                     const mesh_prisma = new THREE.Mesh(geometry, material_prisma_obl);
                     scene.add(mesh_prisma);
                     const edges_prisma = new THREE.EdgesGeometry(geometry);
-                    const lineMaterial_prisma = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const lineMaterial_prisma = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 2
                     });
                     const wireframe_prisma = new THREE.LineSegments(edges_prisma, lineMaterial_prisma);
@@ -1338,8 +1585,8 @@
                     const mesh_anti = new THREE.Mesh(geometry, material_anti);
                     scene.add(mesh_anti);
                     const edges_anti = new THREE.EdgesGeometry(geometry);
-                    const lineMaterial_anti = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const lineMaterial_anti = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 2
                     });
                     const wireframe_anti = new THREE.LineSegments(edges_anti, lineMaterial_anti);
@@ -1350,14 +1597,123 @@
                     renderAnti();
                     miniScenes[figura] = { scene, renderer, mesh: mesh_anti };
                     return;
+                // --- NUEVAS IMPLEMENTACIONES PARA FIGURAS DE REVOLUCIÓN ---
+                case 'cilindro':
+                    const r_cyl = 1.2, h_cyl = 2.5;
+                    // Mantener color original: 0x9b59b6
+                    const lateralMaterial_cyl = new THREE.MeshStandardMaterial({
+                        color: colors['cilindro'],
+                        metalness: 0.2,
+                        roughness: 0.6,
+                        transparent: true,
+                        opacity: 0.85
+                    });
+                    const baseMaterial_cyl = new THREE.MeshStandardMaterial({
+                        color: colors['cilindro'],
+                        metalness: 0.2,
+                        roughness: 0.6,
+                        transparent: true,
+                        opacity: 0.95
+                    });
+                    geometry = new THREE.CylinderGeometry(r_cyl, r_cyl, h_cyl, 32);
+                    const mesh_cyl = new THREE.Mesh(geometry, [lateralMaterial_cyl, baseMaterial_cyl, baseMaterial_cyl]);
+                    scene.add(mesh_cyl);
+                    scene.add(createSimpleEdgeCircle(r_cyl, h_cyl/2, true, 0x000000));
+                    scene.add(createSimpleEdgeCircle(r_cyl, -h_cyl/2, true, 0x000000));
+                    function renderCyl() {
+                        renderer.render(scene, camera);
+                    }
+                    renderCyl();
+                    miniScenes[figura] = { scene, renderer, mesh: mesh_cyl };
+                    return;
+                case 'cono':
+                    const r_cone = 1.2, h_cone = 2.5;
+                    geometry = new THREE.ConeGeometry(r_cone, h_cone, 32);
+                    const mesh_cone = new THREE.Mesh(geometry, material);
+                    scene.add(mesh_cone);
+                    scene.add(createSimpleEdgeCircle(r_cone, -h_cone/2, true, 0x000000));
+                    function renderCone() {
+                        renderer.render(scene, camera);
+                    }
+                    renderCone();
+                    miniScenes[figura] = { scene, renderer, mesh: mesh_cone };
+                    return;
+                case 'semiesfera':
+                    const R_hemi = 1.8;
+                    const yOffset_hemi = -0.9;
+                    const sphereGroup = new THREE.Group();
+                    scene.add(sphereGroup);
+                    const geo_hemi = new THREE.SphereGeometry(R_hemi, 32, 32, 0, Math.PI * 2, 0, Math.PI / 2);
+                    const mat_hemi = new THREE.MeshStandardMaterial({
+                        color: colors['semiesfera'],
+                        metalness: 0.3,
+                        roughness: 0.5,
+                        transparent: true,
+                        opacity: 0.85,
+                        side: THREE.DoubleSide
+                    });
+                    const mesh_hemi = new THREE.Mesh(geo_hemi, mat_hemi);
+                    sphereGroup.add(mesh_hemi);
+                    const capGeo_hemi = new THREE.CircleGeometry(R_hemi, 32);
+                    const capMat_hemi = new THREE.MeshStandardMaterial({
+                        color: colors['semiesfera'],
+                        metalness: 0.3,
+                        roughness: 0.5,
+                        transparent: true,
+                        opacity: 0.9,
+                        side: THREE.DoubleSide
+                    });
+                    const cap_hemi = new THREE.Mesh(capGeo_hemi, capMat_hemi);
+                    cap_hemi.rotation.x = -Math.PI / 2;
+                    sphereGroup.add(cap_hemi);
+                    const edgeCircle_hemi = createSimpleEdgeCircle(R_hemi, 0, true, 0x000000);
+                    sphereGroup.add(edgeCircle_hemi);
+                    sphereGroup.position.y = yOffset_hemi;
+                    sphereGroup.rotation.y = -0.4;
+                    sphereGroup.rotation.x = 0.2;
+                    function renderHemi() {
+                        renderer.render(scene, camera);
+                    }
+                    renderHemi();
+                    miniScenes[figura] = { scene, renderer, mesh: sphereGroup };
+                    return;
+                case 'tronco_cono':
+                    const radiusTop_tc = 0.8;
+                    const radiusBottom_tc = 1.5;
+                    const height_tc = 2.2;
+                    const lateralMaterial_tc = new THREE.MeshStandardMaterial({
+                        color: colors['tronco_cono'],
+                        metalness: 0.2,
+                        roughness: 0.6,
+                        transparent: true,
+                        opacity: 0.85
+                    });
+                    const baseMaterial_tc = new THREE.MeshStandardMaterial({
+                        color: colors['tronco_cono'],
+                        metalness: 0.2,
+                        roughness: 0.6,
+                        transparent: true,
+                        opacity: 0.95
+                    });
+                    geometry = new THREE.CylinderGeometry(radiusTop_tc, radiusBottom_tc, height_tc, 32);
+                    const mesh_tc = new THREE.Mesh(geometry, [lateralMaterial_tc, baseMaterial_tc, baseMaterial_tc]);
+                    scene.add(mesh_tc);
+                    scene.add(createSimpleEdgeCircle(radiusTop_tc, height_tc/2, true, 0x000000));
+                    scene.add(createSimpleEdgeCircle(radiusBottom_tc, -height_tc/2, true, 0x000000));
+                    function renderTroncoCone() {
+                        renderer.render(scene, camera);
+                    }
+                    renderTroncoCone();
+                    miniScenes[figura] = { scene, renderer, mesh: mesh_tc };
+                    return;
                 default:
                     geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
             }
             const mesh2 = new THREE.Mesh(geometry, material);
             scene.add(mesh2);
             const edges2 = new THREE.EdgesGeometry(geometry);
-            const lineMaterial2 = new THREE.LineBasicMaterial({ 
-                color: 0x000000, 
+            const lineMaterial2 = new THREE.LineBasicMaterial({
+                color: 0x000000,
                 linewidth: 2
             });
             const wireframe2 = new THREE.LineSegments(edges2, lineMaterial2);
@@ -1426,7 +1782,7 @@
             formulaDiv.innerHTML = formulas[figura] || "Fórmulas no disponibles";
             setTimeout(() => {
                 setup3DScene(container, figura);
-            }, 100); 
+            }, 100);
             modal.style.display = "flex";
             document.body.style.overflow = 'hidden';
             currentModal = modal;
@@ -1465,7 +1821,7 @@
             currentRenderer.setSize(container.clientWidth, container.clientHeight);
             currentRenderer.setPixelRatio(window.devicePixelRatio);
             currentRenderer.shadowMap.enabled = true;
-            container.innerHTML = ''; 
+            container.innerHTML = '';
             container.appendChild(currentRenderer.domElement);
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
             currentScene.add(ambientLight);
@@ -1514,8 +1870,8 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesGeometry = new THREE.EdgesGeometry(geometry);
-                    const visibleEdgesMaterial = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const visibleEdgesMaterial = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 3
                     });
                     const visibleEdges = new THREE.LineSegments(edgesGeometry, visibleEdgesMaterial);
@@ -1528,58 +1884,93 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesGeometryOrtoedro = new THREE.EdgesGeometry(geometry);
-                    const visibleEdgesMaterialOrtoedro = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const visibleEdgesMaterialOrtoedro = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 3
                     });
                     const visibleEdgesOrtoedro = new THREE.LineSegments(edgesGeometryOrtoedro, visibleEdgesMaterialOrtoedro);
                     currentMesh.add(visibleEdgesOrtoedro);
                     break;
                 case 'toro':
-                    geometry = new THREE.TorusGeometry(3.2, 1, 32, 64);
+                    // === NUEVA VISUALIZACIÓN 3D DEL TORO (MEJORADA) ===
+                    const R_mayor = 3.0;
+                    const r_menor = 1.0;
+                    // 1. Malla del Toro (Transparente)
+                    geometry = new THREE.TorusGeometry(R_mayor, r_menor, 32, 100);
                     const torusMaterial = new THREE.MeshStandardMaterial({
                         color: 0x6BA3D4,
-                        metalness: 0.5,
+                        metalness: 0.1,
                         roughness: 0.2,
                         transparent: true,
-                        opacity: 0.9
+                        opacity: 0.4,
+                        side: THREE.DoubleSide,
+                        depthWrite: false
                     });
                     currentMesh = new THREE.Mesh(geometry, torusMaterial);
+                    currentMesh.rotation.x = Math.PI / 2; // Rotar 90° en X para plano XZ
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
-                    currentMesh.rotation.x = Math.PI * 0.35;
-                    currentMesh.rotation.y = Math.PI * 0.15;
                     currentScene.add(currentMesh);
-                    const glowGeometry = new THREE.TorusGeometry(3.2, 0.95, 32, 64);
-                    const glowMaterial = new THREE.MeshStandardMaterial({
-                        color: 0x00FFFF,
-                        metalness: 0.8,
-                        roughness: 0.1,
-                        transparent: true,
-                        opacity: 0.6,
-                        emissive: 0x00FFFF,
-                        emissiveIntensity: 0.5
+                    // 2. Líneas de dimensión (en el plano XZ)
+                    const dimGroup = new THREE.Group();
+                    currentScene.add(dimGroup);
+                    const matDashed = new THREE.LineDashedMaterial({
+                        color: 0xff3333,
+                        linewidth: 2,
+                        dashSize: 0.2,
+                        gapSize: 0.1
                     });
-                    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
-                    currentMesh.add(glowMesh);
-                    const innerLight = new THREE.PointLight(0x00FFFF, 1, 10);
-                    innerLight.position.set(0, 0, 0);
-                    currentMesh.add(innerLight);
+                    const matSolid = new THREE.LineBasicMaterial({
+                        color: 0xff3333,
+                        linewidth: 2
+                    });
+                    const matSection = new THREE.LineBasicMaterial({
+                        color: 0xff3333,
+                        linewidth: 2,
+                        transparent: true,
+                        opacity: 0.7
+                    });
+                    // A. Radio Mayor (R) - en el eje X
+                    const pointsR = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(R_mayor, 0, 0)];
+                    const geoR = new THREE.BufferGeometry().setFromPoints(pointsR);
+                    const lineR = new THREE.Line(geoR, matDashed);
+                    lineR.computeLineDistances();
+                    dimGroup.add(lineR);
+                    // B. Sección transversal (círculo en el plano XZ, centro (R_mayor,0,0), radio r_menor)
+                    const sectionGeo = new THREE.BufferGeometry();
+                    const sectionPoints = [];
+                    const segments = 64;
+                    for (let i = 0; i <= segments; i++) {
+                        const theta = (i / segments) * Math.PI * 2;
+                        sectionPoints.push(
+                            R_mayor + Math.cos(theta) * r_menor,
+                            0,
+                            Math.sin(theta) * r_menor
+                        );
+                    }
+                    sectionGeo.setAttribute('position', new THREE.Float32BufferAttribute(sectionPoints, 3));
+                    const sectionLine = new THREE.Line(sectionGeo, matSection);
+                    dimGroup.add(sectionLine);
+                    // C. Radio Menor (r) - en el eje Z, desde (R_mayor,0,0) hasta (R_mayor,0,r_menor)
+                    const pointsSmallR = [new THREE.Vector3(R_mayor, 0, 0), new THREE.Vector3(R_mayor, 0, r_menor)];
+                    const geoSmallR = new THREE.BufferGeometry().setFromPoints(pointsSmallR);
+                    const lineSmallR = new THREE.Line(geoSmallR, matSolid);
+                    dimGroup.add(lineSmallR);
+                    // 3. Etiquetas de texto
+                    addTextLabel(currentScene, 'R', new THREE.Vector3(R_mayor / 2, 0.3, 0));
+                    addTextLabel(currentScene, 'r', new THREE.Vector3(R_mayor + 0.2, 0.3, r_menor / 2));
+                    // 4. Puntos de referencia
+                    const dotGeo = new THREE.SphereGeometry(0.08);
+                    const dotMat = new THREE.MeshBasicMaterial({ color: 0xff3333 });
+                    const centerDot = new THREE.Mesh(dotGeo, dotMat);
+                    currentScene.add(centerDot);
+                    const tubeCenterDot = new THREE.Mesh(dotGeo, dotMat);
+                    tubeCenterDot.position.set(R_mayor, 0, 0);
+                    currentScene.add(tubeCenterDot);
                     break;
                 case 'casquete_esferico':
-                    const capGroup = new THREE.Group();
-                    const capAngle = Math.PI / 3;
-                    geometry = new THREE.SphereGeometry(3, 32, 16, 0, Math.PI * 2, 0, capAngle);
-                    const capMesh = new THREE.Mesh(geometry, material);
-                    capGroup.add(capMesh);
-                    const capRadius = 3 * Math.sin(capAngle);
-                    const capHeight = 3 * Math.cos(capAngle);
-                    const capBaseGeometry = new THREE.CircleGeometry(capRadius, 32);
-                    const capBaseMesh = new THREE.Mesh(capBaseGeometry, material);
-                    capBaseMesh.position.y = -capHeight;
-                    capBaseMesh.rotation.x = -Math.PI / 2;
-                    capGroup.add(capBaseMesh);
-                    currentMesh = capGroup;
+                    // USAR LA NUEVA FUNCIÓN INTEGRADA
+                    currentMesh = buildCasqueteEsfericoForModal(currentScene, colors[figura]);
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
@@ -1603,7 +1994,7 @@
                     geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
                     geometry.setIndex(indices);
                     geometry.computeVertexNormals();
-                    const materialTetraedro = new THREE.MeshStandardMaterial({ 
+                    const materialTetraedro = new THREE.MeshStandardMaterial({
                         color: 0xc9a57b,
                         transparent: true,
                         opacity: 0.6,
@@ -1615,8 +2006,8 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesGeometryTetraedro = new THREE.EdgesGeometry(geometry);
-                    const edgesMaterialTetraedro = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const edgesMaterialTetraedro = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 2
                     });
                     const edgesTetraedro = new THREE.LineSegments(edgesGeometryTetraedro, edgesMaterialTetraedro);
@@ -1638,7 +2029,7 @@
                     break;
                 case 'octaedro':
                     geometry = new THREE.OctahedronGeometry(3, 0);
-                    const materialOctaedro = new THREE.MeshStandardMaterial({ 
+                    const materialOctaedro = new THREE.MeshStandardMaterial({
                         color: 0xffb3ba,
                         transparent: true,
                         opacity: 0.6,
@@ -1650,8 +2041,8 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesGeometryOctaedro = new THREE.EdgesGeometry(geometry);
-                    const edgesMaterialOctaedro = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
+                    const edgesMaterialOctaedro = new THREE.LineBasicMaterial({
+                        color: 0x000000,
                         linewidth: 2
                     });
                     const edgesOctaedro = new THREE.LineSegments(edgesGeometryOctaedro, edgesMaterialOctaedro);
@@ -1678,10 +2069,7 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesGeometryIcosaedro = new THREE.EdgesGeometry(geometry);
-                    const edgesMaterialIcosaedro = new THREE.LineBasicMaterial({ 
-                        color: 0xffffff, 
-                        linewidth: 3
-                    });
+                    const edgesMaterialIcosaedro = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 3 });
                     const wireframeIcosaedro = new THREE.LineSegments(edgesGeometryIcosaedro, edgesMaterialIcosaedro);
                     currentMesh.add(wireframeIcosaedro);
                     break;
@@ -1692,10 +2080,7 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesGeometryDodecaedro = new THREE.EdgesGeometry(geometry);
-                    const edgesMaterialDodecaedro = new THREE.LineBasicMaterial({ 
-                        color: 0xffffff, 
-                        linewidth: 3
-                    });
+                    const edgesMaterialDodecaedro = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 3 });
                     const wireframeDodecaedro = new THREE.LineSegments(edgesGeometryDodecaedro, edgesMaterialDodecaedro);
                     currentMesh.add(wireframeDodecaedro);
                     break;
@@ -1748,23 +2133,12 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesPiramide = new THREE.EdgesGeometry(geometry);
-                    const lineMaterialPiramide = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
-                        linewidth: 3
-                    });
+                    const lineMaterialPiramide = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 3 });
                     const wireframePiramide = new THREE.LineSegments(edgesPiramide, lineMaterialPiramide);
                     currentMesh.add(wireframePiramide);
                     break;
                 case 'semiesfera':
-                    const hemisphereGroup = new THREE.Group();
-                    const hemisphereGeometry = new THREE.SphereGeometry(3, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
-                    const hemisphereMesh = new THREE.Mesh(hemisphereGeometry, material);
-                    hemisphereGroup.add(hemisphereMesh);
-                    const hemisphereBaseGeometry = new THREE.CircleGeometry(3, 32);
-                    const hemisphereBaseMesh = new THREE.Mesh(hemisphereBaseGeometry, material);
-                    hemisphereBaseMesh.rotation.x = -Math.PI / 2;
-                    hemisphereGroup.add(hemisphereBaseMesh);
-                    currentMesh = hemisphereGroup;
+                    currentMesh = buildSemiesferaForModal(currentScene, colors[figura]);
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
@@ -1796,10 +2170,7 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesTruncPyr = new THREE.EdgesGeometry(geometry);
-                    const lineMaterialTruncPyr = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
-                        linewidth: 3
-                    });
+                    const lineMaterialTruncPyr = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 3 });
                     const wireframeTruncPyr = new THREE.LineSegments(edgesTruncPyr, lineMaterialTruncPyr);
                     currentMesh.add(wireframeTruncPyr);
                     break;
@@ -1808,12 +2179,19 @@
                     break;
                 case 'piramide_oblicua':
                     const verticesPirObl = new Float32Array([
-                        -2, -2, -2,    2, -2, -2,    2, -2,  2,   -2, -2,  2,
-                        0.8, 2.5, 0.5
+                        -2, -2, -2,
+                         2, -2, -2,
+                         2, -2,  2,
+                        -2, -2,  2,
+                         0.8, 2.5, 0.5
                     ]);
                     const indicesPirObl = [
-                        0, 2, 1,  0, 3, 2,
-                        0, 1, 4,  1, 2, 4,  2, 3, 4,  3, 0, 4
+                        0, 2, 1,
+                        0, 3, 2,
+                        0, 1, 4,
+                        1, 2, 4,
+                        2, 3, 4,
+                        3, 0, 4
                     ];
                     geometry = new THREE.BufferGeometry();
                     geometry.setAttribute('position', new THREE.BufferAttribute(verticesPirObl, 3));
@@ -1825,18 +2203,10 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesPirObl = new THREE.EdgesGeometry(geometry);
-                    const lineMaterialPirObl = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
-                        linewidth: 3
-                    });
+                    const lineMaterialPirObl = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 3 });
                     const wireframePirObl = new THREE.LineSegments(edgesPirObl, lineMaterialPirObl);
                     currentMesh.add(wireframePirObl);
-                    const dashedMat = new THREE.LineDashedMaterial({
-                        color: 0x000000,
-                        linewidth: 2,
-                        dashSize: 0.3,
-                        gapSize: 0.2
-                    });
+                    const dashedMat = new THREE.LineDashedMaterial({ color: 0x000000, linewidth: 2, dashSize: 0.3, gapSize: 0.2 });
                     const centerBase = new THREE.Vector3(0, -2, 0);
                     const dashedLines = [
                         createDashedLine(centerBase, new THREE.Vector3(-2, -2, -2), dashedMat),
@@ -1850,43 +2220,10 @@
                     });
                     break;
                 case 'prisma_oblicuo':
-                    const vertices_prisma_modal = new Float32Array([
-                        -2, -2, -1.5,  2, -2, -1.5,  3, -2, 1.5,   -1, -2, 1.5,
-                        -0.5, 2, -1.5, 3.5, 2, -1.5, 4.5, 2, 1.5,  0.5, 2, 1.5
-                    ]);
-                    const indices_prisma_modal = [
-                        0, 1, 2,  0, 2, 3, 4, 6, 5,  4, 7, 6,
-                        0, 1, 5,  0, 5, 4, 1, 2, 6,  1, 6, 5, 2, 3, 7,  2, 7, 6, 3, 0, 4,  3, 4, 7
-                    ];
-                    geometry = new THREE.BufferGeometry();
-                    geometry.setAttribute('position', new THREE.BufferAttribute(vertices_prisma_modal, 3));
-                    geometry.setIndex(indices_prisma_modal);
-                    geometry.computeVertexNormals();
-                    currentMesh = new THREE.Mesh(geometry, material);
-                    currentMesh.material.side = THREE.DoubleSide;
+                    currentMesh = buildPrismaOblicuoForModal(currentScene, colors[figura]);
                     currentMesh.castShadow = true;
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
-                    const edgesPrismaObl = new THREE.EdgesGeometry(geometry);
-                    const lineMaterialPrismaObl = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
-                        linewidth: 3
-                    });
-                    const wireframePrismaObl = new THREE.LineSegments(edgesPrismaObl, lineMaterialPrismaObl);
-                    currentMesh.add(wireframePrismaObl);
-                    const dashedMatPrisma = new THREE.LineDashedMaterial({
-                        color: 0x000000,
-                        linewidth: 2,
-                        dashSize: 0.3,
-                        gapSize: 0.2
-                    });
-                    const alturaLine = createDashedLine(
-                        new THREE.Vector3(0.5, -2, 0),
-                        new THREE.Vector3(0.5, 2, 0),
-                        dashedMatPrisma
-                    );
-                    alturaLine.computeLineDistances();
-                    currentMesh.add(alturaLine);
                     break;
                 case 'antiprisma_pentagonal':
                     const n_modal = 5;
@@ -1897,17 +2234,13 @@
                     for (let i = 0; i < n_modal; i++) {
                         const angle = (2 * Math.PI * i) / n_modal;
                         vertices_anti_modal.push(
-                            radius_modal * Math.cos(angle), 
-                            -height_modal/2, 
-                            radius_modal * Math.sin(angle)
+                            radius_modal * Math.cos(angle), -height_modal/2, radius_modal * Math.sin(angle)
                         );
                     }
                     for (let i = 0; i < n_modal; i++) {
                         const angle = (2 * Math.PI * i) / n_modal + twist_modal;
                         vertices_anti_modal.push(
-                            radius_modal * Math.cos(angle), 
-                            height_modal/2, 
-                            radius_modal * Math.sin(angle)
+                            radius_modal * Math.cos(angle), height_modal/2, radius_modal * Math.sin(angle)
                         );
                     }
                     const indices_anti_modal = [];
@@ -1932,18 +2265,10 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
                     const edgesAntiModal = new THREE.EdgesGeometry(geometry);
-                    const lineMaterialAntiModal = new THREE.LineBasicMaterial({ 
-                        color: 0x000000, 
-                        linewidth: 3
-                    });
+                    const lineMaterialAntiModal = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 3 });
                     const wireframeAntiModal = new THREE.LineSegments(edgesAntiModal, lineMaterialAntiModal);
                     currentMesh.add(wireframeAntiModal);
-                    const dashedMatAnti = new THREE.LineDashedMaterial({
-                        color: 0x000000,
-                        linewidth: 2,
-                        dashSize: 0.3,
-                        gapSize: 0.2
-                    });
+                    const dashedMatAnti = new THREE.LineDashedMaterial({ color: 0x000000, linewidth: 2, dashSize: 0.3, gapSize: 0.2 });
                     const alturaLineAnti = createDashedLine(
                         new THREE.Vector3(0, -height_modal/2, 0),
                         new THREE.Vector3(0, height_modal/2, 0),
@@ -1955,11 +2280,7 @@
                         const angle = (2 * Math.PI * i) / n_modal;
                         const lineaRadial = createDashedLine(
                             new THREE.Vector3(0, -height_modal/2, 0),
-                            new THREE.Vector3(
-                                radius_modal * Math.cos(angle),
-                                -height_modal/2,
-                                radius_modal * Math.sin(angle)
-                            ),
+                            new THREE.Vector3(radius_modal * Math.cos(angle), -height_modal/2, radius_modal * Math.sin(angle)),
                             dashedMatAnti
                         );
                         lineaRadial.computeLineDistances();
@@ -1973,6 +2294,7 @@
                     currentMesh.receiveShadow = true;
                     currentScene.add(currentMesh);
             }
+
             currentControls = new THREE.OrbitControls(currentCamera, currentRenderer.domElement);
             currentControls.enableDamping = true;
             currentControls.dampingFactor = 0.05;
@@ -1980,13 +2302,18 @@
             currentControls.minDistance = 3;
             currentControls.maxDistance = 20;
             currentControls.maxPolarAngle = Math.PI;
-            addDimensionLines(currentScene, figura);
+
+            if (figura !== 'semiesfera' && figura !== 'casquete_esferico' && figura !== 'prisma_oblicuo') {
+                addDimensionLines(currentScene, figura);
+            }
+
             function animate() {
                 animationFrameId = requestAnimationFrame(animate);
                 currentControls.update();
                 currentRenderer.render(currentScene, currentCamera);
             }
             animate();
+
             const handleResize = () => {
                 if (currentCamera && currentRenderer && container && currentModal && currentModal.style.display === 'flex') {
                     const width = container.clientWidth;
@@ -1998,7 +2325,12 @@
             };
             window.addEventListener('resize', handleResize);
         }
+
         function addDimensionLines(scene, figura) {
+            // Si la figura ya tiene líneas de dimensión integradas (funciones build...), omitir
+            if (figura === 'semiesfera' || figura === 'casquete_esferico' || figura === 'prisma_oblicuo') {
+                return;
+            }
             const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000 });
             switch(figura) {
                 case 'cubo':
@@ -2020,11 +2352,16 @@
                     addTextLabel(scene, 'c', new THREE.Vector3(2.5, 2.3, 0));
                     break;
                 case 'esfera':
-                    const spherePoints = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(3, 0, 0)];
+                    const spherePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3, 0, 0)];
                     const sphereGeometry = new THREE.BufferGeometry().setFromPoints(spherePoints);
                     const sphereLine = new THREE.Line(sphereGeometry, lineMaterial);
                     scene.add(sphereLine);
-                    addTextLabel(scene, 'r', new THREE.Vector3(0, 0.5, 0));
+                    addTextLabel(scene, 'r', new THREE.Vector3(1.5, 0.2, 0));
+                    const centerDotSphere = new THREE.Mesh(
+                        new THREE.SphereGeometry(0.1, 8, 8),
+                        new THREE.MeshBasicMaterial({ color: 0xff0000 })
+                    );
+                    scene.add(centerDotSphere);
                     break;
                 case 'cilindro':
                     const cylinderRadiusPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2, -2, 0)];
@@ -2046,28 +2383,7 @@
                     addTextLabel(scene, 'g', new THREE.Vector3(1, 0, 0.5));
                     break;
                 case 'toro':
-                    const toroRPoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3.2, 0, 0)];
-                    const toroRMaterial = new THREE.LineDashedMaterial({
-                        color: 0xff0000,
-                        linewidth: 2,
-                        dashSize: 0.3,
-                        gapSize: 0.2
-                    });
-                    const toroRGeometry = new THREE.BufferGeometry().setFromPoints(toroRPoints);
-                    const toroRLine = new THREE.Line(toroRGeometry, toroRMaterial);
-                    toroRLine.computeLineDistances();
-                    scene.add(toroRLine);
-                    const tororPoints = [new THREE.Vector3(3.2, 0, 0), new THREE.Vector3(3.2, 1, 0)];
-                    const tororGeometry = new THREE.BufferGeometry().setFromPoints(tororPoints);
-                    const tororLine = new THREE.Line(tororGeometry, lineMaterial);
-                    scene.add(tororLine);
-                    const centerDot = new THREE.Mesh(
-                        new THREE.SphereGeometry(0.1, 16, 16),
-                        new THREE.MeshBasicMaterial({ color: 0xff0000 })
-                    );
-                    scene.add(centerDot);
-                    addTextLabel(scene, 'R', new THREE.Vector3(1.6, 0.3, 0));
-                    addTextLabel(scene, 'r', new THREE.Vector3(3.5, 0.5, 0));
+                    // Dimensiones integradas en el caso break;
                     break;
                 case 'piramide':
                     const pyramidHeightPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(0, 2, 0)];
@@ -2076,13 +2392,6 @@
                     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pyramidApothemPoints), lineMaterial));
                     addTextLabel(scene, 'h', new THREE.Vector3(0.5, 0, 0));
                     addTextLabel(scene, 'ap', new THREE.Vector3(0.8, 0, 1.5));
-                    break;
-                case 'semiesfera':
-                    const semiSpherePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(3, 0, 0)];
-                    const semiSphereGeometry = new THREE.BufferGeometry().setFromPoints(semiSpherePoints);
-                    const semiSphereLine = new THREE.Line(semiSphereGeometry, lineMaterial);
-                    scene.add(semiSphereLine);
-                    addTextLabel(scene, 'r', new THREE.Vector3(1.5, 0.3, 0));
                     break;
                 case 'tronco_cono':
                     const troncoConoRPoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(2.5, -2, 0)];
@@ -2106,23 +2415,13 @@
                     addTextLabel(scene, 'b', new THREE.Vector3(0, 2.3, 0));
                     addTextLabel(scene, 'h', new THREE.Vector3(2.8, 0, 0));
                     break;
-                case 'casquete_esferico':
-                    const capAngle = Math.PI / 3;
-                    const capRadius = 3 * Math.sin(capAngle);
-                    const capHeight = 3 * (1 - Math.cos(capAngle));
-                    const capRPoints = [new THREE.Vector3(0, -3 * Math.cos(capAngle), 0), new THREE.Vector3(capRadius, -3 * Math.cos(capAngle), 0)];
-                    const capHPoints = [new THREE.Vector3(0, -3 * Math.cos(capAngle), 0), new THREE.Vector3(0, 3, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(capRPoints), lineMaterial));
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(capHPoints), lineMaterial));
-                    addTextLabel(scene, 'R', new THREE.Vector3(capRadius/2, -3 * Math.cos(capAngle) - 0.3, 0));
-                    addTextLabel(scene, 'h', new THREE.Vector3(-0.5, 0, 0));
-                    break;
                 case 'tetraedro':
-                    const aPoints = [new THREE.Vector3(-2, -0.3, -2/(2*Math.sqrt(3))), new THREE.Vector3(2, -0.3, -2/(2*Math.sqrt(3)))];
+                    const tetraZ = -4 / (2 * Math.sqrt(3));
+                    const aPoints = [new THREE.Vector3(-2, 0, tetraZ), new THREE.Vector3(2, 0, tetraZ)];
                     const aGeometry = new THREE.BufferGeometry().setFromPoints(aPoints);
                     const aLine = new THREE.Line(aGeometry, lineMaterial);
                     scene.add(aLine);
-                    addTextLabel(scene, 'a', new THREE.Vector3(0, -0.6, -2/(2*Math.sqrt(3))));
+                    addTextLabel(scene, 'a', new THREE.Vector3(0, -0.4, tetraZ + 0.5));
                     break;
                 case 'octaedro':
                     const aPointsOcta = [new THREE.Vector3(-3, 0, 0), new THREE.Vector3(0, 3, 0)];
@@ -2165,27 +2464,11 @@
                     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pirOblApPoints), lineMaterial));
                     addTextLabel(scene, 'ap', new THREE.Vector3(0.4, 0.25, -0.75));
                     const pirOblObliquePoints = [new THREE.Vector3(0, -2, 0), new THREE.Vector3(0.8, -2, 0.5)];
-                    const dashedMatDim = new THREE.LineDashedMaterial({
-                        color: 0xff0000,
-                        linewidth: 2,
-                        dashSize: 0.3,
-                        gapSize: 0.2
-                    });
+                    const dashedMatDim = new THREE.LineDashedMaterial({ color: 0xff0000, linewidth: 2, dashSize: 0.3, gapSize: 0.2 });
                     const obliqueLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pirOblObliquePoints), dashedMatDim);
                     obliqueLine.computeLineDistances();
                     scene.add(obliqueLine);
                     addTextLabel(scene, 'd', new THREE.Vector3(0.4, -2.3, 0.25));
-                    break;
-                case 'prisma_oblicuo':
-                    const prismaOblHPoints = [new THREE.Vector3(0.5, -2, 0), new THREE.Vector3(0.5, 2, 0)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismaOblHPoints), lineMaterial));
-                    addTextLabel(scene, 'h', new THREE.Vector3(0.8, 0, 0));
-                    const prismaOblBPoints = [new THREE.Vector3(-2, -2.3, -1.5), new THREE.Vector3(2, -2.3, -1.5)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismaOblBPoints), lineMaterial));
-                    addTextLabel(scene, 'B', new THREE.Vector3(0, -2.6, -1.5));
-                    const prismaOblApPoints = [new THREE.Vector3(0, 0, -1.8), new THREE.Vector3(1.75, 0, -1.8)];
-                    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(prismaOblApPoints), lineMaterial));
-                    addTextLabel(scene, 'ap', new THREE.Vector3(0.875, 0.3, -2.1));
                     break;
                 case 'antiprisma_pentagonal':
                     const antiH = [new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 1, 0)];
@@ -2197,35 +2480,10 @@
                     break;
             }
         }
-        function addTextLabel(scene, text, position) {
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = 128;
-            canvas.height = 64;
-            context.fillStyle = 'white';
-            context.font = 'Bold 48px Arial';
-            context.textAlign = 'center';
-            context.textBaseline = 'middle';
-            context.fillText(text, 64, 32);
-            const texture = new THREE.CanvasTexture(canvas);
-            const spriteMaterial = new THREE.SpriteMaterial({
-                map: texture,
-                transparent: true,
-                opacity: 0.9
-            });
-            const sprite = new THREE.Sprite(spriteMaterial);
-            sprite.position.copy(position);
-            sprite.scale.set(1, 0.5, 1);
-            scene.add(sprite);
-        }
+
         function createPrismasGroup() {
             const group = new THREE.Group();
-            const materialBase = new THREE.MeshStandardMaterial({
-                metalness: 0.3,
-                roughness: 0.5,
-                transparent: true,
-                opacity: 0.7
-            });
+            const materialBase = new THREE.MeshStandardMaterial({ metalness: 0.3, roughness: 0.5, transparent: true, opacity: 0.7 });
             const prismas = [
                 { type: 'triangular', color: 0x3498db, pos: -4 },
                 { type: 'cuadrangular', color: 0xe74c3c, pos: -1.5 },
@@ -2251,6 +2509,7 @@
             currentScene.add(group);
             currentMesh = group;
         }
+
         function close3DModal() {
             const modal = document.getElementById('modal3D');
             if (modal) {
@@ -2279,6 +2538,7 @@
             currentModal = null;
             document.body.style.overflow = 'auto';
         }
+
         window.onclick = function(event) {
             if (event.target === document.getElementById('modal')) {
                 closeModal();
@@ -2286,6 +2546,7 @@
                 close3DModal();
             }
         };
+
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 if (currentModal) {
@@ -2297,6 +2558,7 @@
                 }
             }
         });
+
         window.addEventListener('beforeunload', () => {
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
@@ -2310,6 +2572,7 @@
                 }
             });
         });
+
     </script>
 </body>
 </html>
